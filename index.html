@@ -3,346 +3,116 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>세나폰 — 대구 북구 휴대폰 전문 매장</title>
+    <title>세나폰</title>
+    <meta name="description" content="휴대폰성지 세나폰" />
+    <link rel="canonical" href="https://sena-phone.com/"/>
+    <meta property="og:title" content="세나폰" />
+    <meta property="og:description" content="휴대폰성지 세나폰" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sena-phone.com" />
+    <meta property="og:image" content="https://sena-phone.com/og-image.png" />
     <meta name="naver-site-verification" content="c52c0acb58430e98afc2e5fc69721eed7e38fe1c" />
-    <meta name="description" content="세나폰 | 대구 북구 학정로 421 1층 · 010-8014-8600 · 오전 10:00 – 오후 8:00" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='black'/><text x='50' y='58' font-size='44' text-anchor='middle' fill='white' font-family='Arial, Helvetica, sans-serif'>S</text></svg>">
-    <!-- Tailwind CSS CDN -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- React 18 + ReactDOM UMD + Babel for JSX (no build needed) -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <style>
-      html { scroll-behavior: smooth; }
-    </style>
+    <style>html{scroll-behavior:smooth}</style>
   </head>
   <body class="bg-white text-neutral-900 antialiased">
-    <div id="root"></div>
+    <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70 border-b border-neutral-200/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img src="/favicon.ico" alt="세나폰" class="w-8 h-8 rounded"/>
+          <span class="font-semibold tracking-tight">세나폰</span>
+        </div>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="tel:01080148600" class="px-3 py-2 rounded-xl text-sm bg-neutral-900 text-white shadow-sm hover:opacity-90">전화문의</a>
+          <a href="https://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener" class="px-3 py-2 rounded-xl text-sm bg-red-600 text-white shadow-sm hover:opacity-90">빠른 견적 받기</a>
+        </div>
+      </div>
+    </header>
 
-    <script type="text/babel">
-      const STORE = {
-        name: "세나폰",
-        phone: "010-8014-8600",
-        address: "대구 북구 학정로 421 1층",
-        hours: "오전 10:00 – 오후 8:00",
-        kakaoLink: "#",
-        naverMap: "https://map.naver.com/p/search/%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421",
-        googleMap: "https://www.google.com/maps/search/?api=1&query=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421",
-      };
-
-      const PAGES = [
-        { key: "home", label: "홈" },
-        { key: "products", label: "모델/프로모션" },
-        { key: "plans", label: "요금제" },
-        { key: "tradein", label: "중고보상/기변" },
-        { key: "repairs", label: "수리/부가서비스" },
-        { key: "reviews", label: "후기" },
-        { key: "about", label: "매장소개/오시는길" },
-      ];
-
-      function Dot(){ return <span className="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5" aria-hidden></span>; }
-
-      function TopBar({ page, setPage }){
-        return (
-          <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 border-b border-neutral-200/60">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-neutral-900" aria-hidden></div>
-                <span className="font-semibold tracking-tight">{STORE.name}</span>
-              </div>
-              <nav className="hidden md:flex items-center gap-1">
-                {PAGES.map((p) => (
-                  <button key={p.key} onClick={() => setPage(p.key)}
-                    className={
-                      "px-3 py-2 rounded-xl text-sm transition-all " +
-                      (page === p.key ? "bg-neutral-900 text-white shadow-sm" : "hover:bg-neutral-100")
-                    }>
-                    {p.label}
-                  </button>
-                ))}
-              </nav>
-              <div className="flex items-center gap-2">
-                <a href={"tel:" + STORE.phone.replace(/[^0-9]/g, "")}
-                   className="px-3 py-2 rounded-xl text-sm bg-neutral-900 text-white shadow-sm hover:opacity-90">
-                  전화문의
-                </a>
-              </div>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section class="py-16">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <img src="/og-image.png" alt="세나폰" class="w-full rounded-3xl border border-neutral-200 hidden lg:block"/>
+            <h1 class="lg:hidden text-4xl font-extrabold tracking-tight leading-tight">
+              휴대폰성지 세나폰
+              <span class="block font-semibold text-neutral-500 mt-2">대구 북구 최저가 · 당일개통 · 사은품 혜택</span>
+            </h1>
+            <div class="mt-8 flex flex-wrap gap-3 lg:hidden">
+              <a href="tel:01080148600" class="px-5 py-3 rounded-2xl bg-neutral-900 text-white text-sm font-medium shadow hover:opacity-90">지금 전화하기</a>
+              <a href="https://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener" class="px-5 py-3 rounded-2xl bg-red-600 text-white text-sm font-medium shadow hover:opacity-90">빠른 견적 받기</a>
+              <a href="https://map.naver.com/p/search/%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421" target="_blank" class="px-5 py-3 rounded-2xl bg-neutral-100 text-sm font-medium hover:bg-neutral-200">길찾기 (네이버)</a>
             </div>
-            <div className="md:hidden border-t border-neutral-200/60">
-              <nav className="flex overflow-x-auto gap-2 px-4 py-2">
-                {PAGES.map((p) => (
-                  <button key={p.key} onClick={() => setPage(p.key)}
-                    className={
-                      "px-3 py-1.5 rounded-xl text-sm whitespace-nowrap " +
-                      (page === p.key ? "bg-neutral-900 text-white" : "bg-neutral-100")
-                    }>
-                    {p.label}
-                  </button>
-                ))}
-              </nav>
-            </div>
-          </header>
-        );
-      }
-
-      function Home(){
-        return (
-          <section className="py-16">
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
-              <div>
-                <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-                  {STORE.name}
-                  <span className="block font-semibold text-neutral-500 mt-2">대구 북구 휴대폰 전문 매장</span>
-                </h1>
-                <p className="mt-6 text-lg text-neutral-600 leading-relaxed">
-                  애플 공식 홈페이지 감성의 심플하고 세련된 경험. 신규/기변 상담,
-                  통신사 요금제 비교, 데이터 이전, 액정/배터리 수리까지 한 곳에서 해결하세요.
-                </p>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <a href={"tel:" + STORE.phone.replace(/[^0-9]/g, "")} className="px-5 py-3 rounded-2xl bg-neutral-900 text-white text-sm font-medium shadow hover:opacity-90">지금 전화하기</a>
-                  <a href={STORE.kakaoLink} className="px-5 py-3 rounded-2xl bg-neutral-100 text-sm font-medium hover:bg-neutral-200">카톡 상담</a>
-                  <a href={STORE.naverMap} target="_blank" className="px-5 py-3 rounded-2xl bg-neutral-100 text-sm font-medium hover:bg-neutral-200">길찾기 (네이버)</a>
-                </div>
-                <ul className="mt-10 grid sm:grid-cols-2 gap-4 text-sm">
-                  {[
-                    "요금제 비교 · 최적 요금 설계",
-                    "데이터 이전 · 번호이동 · 당일 개통",
-                    "액정/배터리/침수 수리 상담",
-                    "공시/선약/자급제 모두 취급",
-                  ].map((t) => (
-                    <li key={t} className="flex items-center gap-2 p-4 rounded-2xl bg-neutral-50 border border-neutral-200">
-                      <Dot /><span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="aspect-[4/3] rounded-3xl bg-gradient-to-br from-neutral-200 to-neutral-50 shadow-inner"></div>
-            </div>
-          </section>
-        );
-      }
-
-      function SectionCard({title, children}){
-        return (
-          <div className="rounded-3xl border border-neutral-200 p-6">{children}</div>
-        );
-      }
-
-      function Products(){
-        const items = React.useMemo(() => [
-          { name: "iPhone 16 Pro", desc: "티타늄 · A18 Pro · ProMotion", price: "상담가" },
-          { name: "iPhone 16", desc: "A18 · 더 밝은 디스플레이", price: "상담가" },
-          { name: "Galaxy S24 Ultra", desc: "S Pen · 고성능 줌", price: "상담가" },
-          { name: "Galaxy Z Flip6", desc: "컴팩트 폴더블", price: "상담가" },
-          { name: "자급제 인기모델", desc: "공식 판매 · 요금제 자유", price: "상담가" },
-          { name: "인터넷/TV 결합", desc: "결합할인 · 사은품", price: "상담가" },
-        ], []);
-        return (
-          <section className="py-16">
-            <h2 className="text-3xl font-bold tracking-tight">모델/프로모션</h2>
-            <p className="mt-3 text-neutral-600">최신 출시/인기모델, 통신사/자급제 별 혜택을 한눈에 살펴보세요. 가격은 시기·재고·약정에 따라 달라질 수 있어, 방문/전화 상담이 가장 정확합니다.</p>
-            <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {items.map((it) => (
-                <div key={it.name} className="group rounded-3xl border border-neutral-200 p-6 hover:shadow-md transition-shadow">
-                  <div className="aspect-[4/3] rounded-2xl bg-neutral-100 group-hover:bg-neutral-200"></div>
-                  <div className="mt-4">
-                    <h3 className="text-lg font-semibold">{it.name}</h3>
-                    <p className="text-sm text-neutral-600 mt-1">{it.desc}</p>
-                    <div className="mt-3 text-sm font-medium">{it.price}</div>
-                    <div className="mt-4 flex gap-2">
-                      <a href={"tel:" + STORE.phone.replace(/[^0-9]/g, "")} className="px-3 py-2 rounded-xl bg-neutral-900 text-white text-xs">전화문의</a>
-                      <a href={STORE.kakaoLink} className="px-3 py-2 rounded-xl bg-neutral-100 text-xs">카톡문의</a>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        );
-      }
-
-      function Plans(){
-        const plans = [
-          { name: "SKT", perks: ["온가족 결합/인터넷 할인", "5G/알뜰 비교 상담", "공시·선약 최적화"] },
-          { name: "KT", perks: ["프리미엄 가족결합", "인터넷/IPTV 결합", "기업·학생 할인"] },
-          { name: "LG U+", perks: ["유독/인터넷 결합", "뮤직·OTT 제휴", "알뜰U+ 비교"] },
-        ];
-        return (
-          <section className="py-16">
-            <h2 className="text-3xl font-bold tracking-tight">요금제</h2>
-            <p className="mt-3 text-neutral-600">
-              사용패턴과 결합여부에 따라 요금은 크게 달라집니다. 통화/데이터 습관을 알려주시면 낭비 없이 설계해드립니다.
-            </p>
-            <div className="mt-8 grid md:grid-cols-3 gap-6">
-              {plans.map((p) => (
-                <div key={p.name} className="rounded-3xl border border-neutral-200 p-6">
-                  <div className="text-xl font-semibold">{p.name}</div>
-                  <ul className="mt-4 space-y-2 text-sm">
-                    {p.perks.map(perk => <li key={perk} className="flex gap-2 items-start"><Dot />{perk}</li>)}
-                  </ul>
-                  <a href={STORE.kakaoLink} className="mt-6 inline-block px-4 py-2 rounded-xl bg-neutral-900 text-white text-sm">
-                    내게 맞는 요금 추천받기
-                  </a>
-                </div>
-              ))}
-            </div>
-          </section>
-        );
-      }
-
-      function TradeIn(){
-        const bullets = ["중고보상가 실시간 안내", "통신사/제조사 보상 프로그램 비교", "자급제·약정 조합 최적화"];
-        return (
-          <section className="py-16">
-            <h2 className="text-3xl font-bold tracking-tight">중고보상/기변</h2>
-            <div className="mt-6 grid lg:grid-cols-2 gap-8">
-              <div className="rounded-3xl border border-neutral-200 p-6">
-                <h3 className="text-lg font-semibold">이전 기기 보상</h3>
-                <ul className="mt-3 space-y-2 text-sm text-neutral-700">
-                  {bullets.map(b => <li key={b} className="flex gap-2 items-start"><Dot />{b}</li>)}
-                </ul>
-                <a href={STORE.kakaoLink} className="mt-6 inline-block px-4 py-2 rounded-xl bg-neutral-900 text-white text-sm">보상가 문의</a>
-              </div>
-              <div className="rounded-3xl border border-neutral-200 p-6">
-                <h3 className="text-lg font-semibold">데이터 이전/개통</h3>
-                <p className="mt-3 text-sm text-neutral-700 leading-relaxed">
-                  아이폰↔갤럭시, 통신사 변경, 번호이동 모두 빠르고 꼼꼼하게. 사진/연락처/앱 데이터까지 안전하게 이전해드립니다.
-                </p>
-                <a href={"tel:" + STORE.phone.replace(/[^0-9]/g, "")} className="mt-6 inline-block px-4 py-2 rounded-xl bg-neutral-100 text-sm">전화 상담</a>
-              </div>
-            </div>
-          </section>
-        );
-      }
-
-      function Repairs(){
-        const items = [
-          { title: "액정 교체", detail: "정품/호환 안내, 당일 수리 가능" },
-          { title: "배터리 교체", detail: "사이클 점검, 합리적 비용" },
-          { title: "침수/고장", detail: "점검 후 비용 안내" },
-          { title: "보험/분실", detail: "보험 처리·기기변경 상담" },
-        ];
-        return (
-          <section className="py-16">
-            <h2 className="text-3xl font-bold tracking-tight">수리/부가서비스</h2>
-            <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {items.map(it => (
-                <div key={it.title} className="rounded-3xl border border-neutral-200 p-6">
-                  <div className="text-lg font-semibold">{it.title}</div>
-                  <p className="mt-2 text-sm text-neutral-700">{it.detail}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-8 rounded-3xl border border-neutral-200 p-6">
-              <h3 className="font-semibold">유심/부가서비스</h3>
-              <p className="mt-2 text-sm text-neutral-700">eSIM, 번호이동, 가족결합, 로밍, 기기보험 등 원스톱 처리</p>
-            </div>
-          </section>
-        );
-      }
-
-      function Reviews(){
-        const reviews = [
-          { name: "이**", text: "요금제부터 데이터 이전까지 깔끔하게 처리해주셔서 편했습니다. 다음에 또 올게요!" },
-          { name: "김**", text: "보상가 안내가 투명했고, 안내가 친절했어요." },
-          { name: "박**", text: "아이폰에서 갤럭시로 이전 빠르게 도와주셔서 감사해요." },
-        ];
-        return (
-          <section className="py-16">
-            <h2 className="text-3xl font-bold tracking-tight">후기</h2>
-            <div className="mt-6 grid md:grid-cols-3 gap-6">
-              {reviews.map((r, i) => (
-                <div key={i} className="rounded-3xl border border-neutral-200 p-6">
-                  <div className="text-sm text-neutral-500">{r.name}</div>
-                  <p className="mt-2 text-neutral-800 leading-relaxed">“{r.text}”</p>
-                </div>
-              ))}
-            </div>
-            <a href={STORE.kakaoLink} className="mt-6 inline-block px-4 py-2 rounded-xl bg-neutral-900 text-white text-sm">카톡으로 리뷰 남기기</a>
-          </section>
-        );
-      }
-
-      function About(){
-        return (
-          <section className="py-16">
-            <h2 className="text-3xl font-bold tracking-tight">매장소개/오시는길</h2>
-            <div className="mt-6 grid lg:grid-cols-2 gap-8">
-              <div className="rounded-3xl border border-neutral-200 p-6">
-                <dl className="text-sm">
-                  <dt className="text-neutral-500">상호</dt>
-                  <dd className="font-medium">{STORE.name}</dd>
-                  <dt className="mt-4 text-neutral-500">주소</dt>
-                  <dd className="font-medium">{STORE.address}</dd>
-                  <dt className="mt-4 text-neutral-500">영업시간</dt>
-                  <dd className="font-medium">{STORE.hours}</dd>
-                  <dt className="mt-4 text-neutral-500">연락처</dt>
-                  <dd className="font-medium">{STORE.phone}</dd>
-                </dl>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  <a href={"tel:" + STORE.phone.replace(/[^0-9]/g, "")} className="px-4 py-2 rounded-xl bg-neutral-900 text-white text-sm">전화하기</a>
-                  <a href={STORE.kakaoLink} className="px-4 py-2 rounded-xl bg-neutral-100 text-sm">카톡상담</a>
-                  <a href={STORE.naverMap} target="_blank" className="px-4 py-2 rounded-xl bg-neutral-100 text-sm">네이버 지도</a>
-                  <a href={STORE.googleMap} target="_blank" className="px-4 py-2 rounded-xl bg-neutral-100 text-sm">구글 지도</a>
-                </div>
-              </div>
-              <div className="rounded-3xl overflow-hidden border border-neutral-200">
-                <iframe title="map" src={STORE.naverMap} className="w-full h-[360px]"></iframe>
-              </div>
-            </div>
-          </section>
-        );
-      }
-
-      function Footer(){
-        return (
-          <footer className="mt-16 border-t border-neutral-200/60">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div>
-                  <div className="font-semibold">{STORE.name}</div>
-                  <div className="text-sm text-neutral-600 mt-1">{STORE.address} · {STORE.hours}</div>
-                  <div className="text-sm text-neutral-600">Tel. {STORE.phone}</div>
-                </div>
-                <div className="text-xs text-neutral-500">© 2025 {STORE.name}. All rights reserved.</div>
-              </div>
-            </div>
-          </footer>
-        );
-      }
-
-      function FloatingCTA(){
-        return (
-          <div className="fixed bottom-4 right-4 flex flex-col gap-2">
-            <a href={"tel:" + STORE.phone.replace(/[^0-9]/g, "")} className="px-4 py-3 rounded-2xl shadow-lg bg-neutral-900 text-white text-sm">전화하기</a>
-            <a href={STORE.kakaoLink} className="px-4 py-3 rounded-2xl shadow-lg bg-neutral-100 text-sm">카톡상담</a>
+            <ul class="mt-10 grid sm:grid-cols-2 gap-4 text-sm">
+              <li class="flex items-center gap-2 p-4 rounded-2xl bg-neutral-50 border border-neutral-200"><span class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5"></span><span>요금제 비교 · 최적 요금 설계</span></li>
+              <li class="flex items-center gap-2 p-4 rounded-2xl bg-neutral-50 border border-neutral-200"><span class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5"></span><span>데이터 이전 · 번호이동 · 당일 개통</span></li>
+              <li class="flex items-center gap-2 p-4 rounded-2xl bg-neutral-50 border border-neutral-200"><span class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5"></span><span>액정/배터리/침수 수리 상담</span></li>
+              <li class="flex items-center gap-2 p-4 rounded-2xl bg-neutral-50 border border-neutral-200"><span class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5"></span><span>공시/선약/자급제 모두 취급</span></li>
+            </ul>
           </div>
-        );
-      }
-
-      function Site(){
-        const [page, setPage] = React.useState("home");
-        return (
-          <div className="min-h-screen bg-white">
-            <TopBar page={page} setPage={setPage} />
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              {page === "home" && <Home />}
-              {page === "products" && <Products />}
-              {page === "plans" && <Plans />}
-              {page === "tradein" && <TradeIn />}
-              {page === "repairs" && <Repairs />}
-              {page === "reviews" && <Reviews />}
-              {page === "about" && <About />}
-            </main>
-            <Footer />
-            <FloatingCTA />
+          <div class="rounded-3xl border border-neutral-200 p-6">
+            <dl class="text-sm">
+              <dt class="text-neutral-500">상호</dt><dd class="font-medium">세나폰</dd>
+              <dt class="mt-4 text-neutral-500">주소</dt><dd class="font-medium">대구 북구 학정로 421 1층</dd>
+              <dt class="mt-4 text-neutral-500">영업시간</dt><dd class="font-medium">오전 10:00 – 오후 8:00</dd>
+              <dt class="mt-4 text-neutral-500">연락처</dt><dd class="font-medium">010-8014-8600</dd>
+            </dl>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <a href="tel:01080148600" class="px-4 py-2 rounded-xl bg-neutral-900 text-white text-sm">전화하기</a>
+              <a href="https://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-red-600 text-white text-sm">빠른 견적 받기</a>
+              <a href="https://map.naver.com/p/search/%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421" target="_blank" class="px-4 py-2 rounded-xl bg-neutral-100 text-sm">네이버 지도</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421" target="_blank" class="px-4 py-2 rounded-xl bg-neutral-100 text-sm">구글 지도</a>
+            </div>
           </div>
-        );
-      }
+        </div>
+      </section>
 
-      const root = ReactDOM.createRoot(document.getElementById('root'));
-      root.render(<Site />);
-    </script>
+      <section class="py-12">
+        <h2 class="text-2xl font-bold tracking-tight">모델/프로모션</h2>
+        <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="rounded-3xl border border-neutral-200 p-6">
+            <div class="aspect-[4/3] rounded-2xl bg-neutral-100"></div>
+            <div class="mt-4"><div class="text-lg font-semibold">iPhone 16 Pro</div><p class="text-sm text-neutral-600 mt-1">티타늄 · A18 Pro · ProMotion</p></div>
+          </div>
+          <div class="rounded-3xl border border-neutral-200 p-6">
+            <div class="aspect-[4/3] rounded-2xl bg-neutral-100"></div>
+            <div class="mt-4"><div class="text-lg font-semibold">Galaxy S24 Ultra</div><p class="text-sm text-neutral-600 mt-1">S Pen · 고성능 줌</p></div>
+          </div>
+          <div class="rounded-3xl border border-neutral-200 p-6">
+            <div class="aspect-[4/3] rounded-2xl bg-neutral-100"></div>
+            <div class="mt-4"><div class="text-lg font-semibold">자급제 인기모델</div><p class="text-sm text-neutral-600 mt-1">요금제 자유 + 중고보상</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-12">
+        <h2 class="text-2xl font-bold tracking-tight">후기</h2>
+        <div class="mt-6 grid md:grid-cols-3 gap-6">
+          <div class="rounded-3xl border border-neutral-200 p-6"><div class="text-sm text-neutral-500">이**</div><p class="mt-2 text-neutral-800 leading-relaxed">“요금제부터 데이터 이전까지 깔끔. 다음에 또 올게요!”</p></div>
+          <div class="rounded-3xl border border-neutral-200 p-6"><div class="text-sm text-neutral-500">김**</div><p class="mt-2 text-neutral-800 leading-relaxed">“보상가 투명했고, 상담이 친절했습니다.”</p></div>
+          <div class="rounded-3xl border border-neutral-200 p-6"><div class="text-sm text-neutral-500">박**</div><p class="mt-2 text-neutral-800 leading-relaxed">“아이폰→갤럭시 이전 빠르게 도와주셨어요.”</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mt-16 border-t border-neutral-200/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <div class="font-semibold">세나폰</div>
+            <div class="text-sm text-neutral-600 mt-1">대구 북구 학정로 421 1층 · 오전 10:00 – 오후 8:00</div>
+            <div class="text-sm text-neutral-600">Tel. 010-8014-8600</div>
+          </div>
+          <div class="text-xs text-neutral-500">© 2025 세나폰. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="fixed bottom-4 right-4 flex flex-col gap-2">
+      <a href="tel:01080148600" class="px-4 py-3 rounded-2xl shadow-lg bg-neutral-900 text-white text-sm">전화하기</a>
+      <a href="https://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener" class="px-4 py-3 rounded-2xl shadow-lg bg-red-600 text-white text-sm">빠른 견적 받기</a>
+    </div>
   </body>
 </html>
