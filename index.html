@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>세나폰 — 대구 북구 휴대폰성지 | 학정로 421 1층 · 010-8014-8600</title>
-  <meta name="description" content="대구 북구 휴대폰성지 세나폰. 번호이동/기변/자급제, 요금제 최적화, 중고보상, 당일 개통. 학정로 421 1층 · 010-8014-8600 · 10:00–20:00">
+  <title>세나폰 — iPhone 17 / Galaxy S25 / 폴더블7 성지특가 | 대구 북구 휴대폰성지</title>
+  <meta name="description" content="대구 북구 휴대폰성지 세나폰. iPhone 17, Galaxy S25, 폴더블7 성지특가. 번호이동/기변/자급제, 요금제 최적화, 중고보상, 당일 개통. 학정로 421 1층 · 010-8014-8600 · 10:00–20:00">
   <link rel="canonical" href="https://sena-phone.com"/>
 
   <!-- 공유 미리보기 -->
-  <meta property="og:title" content="세나폰 — 대구 북구 휴대폰성지">
-  <meta property="og:description" content="번호이동/기변/자급제, 요금제 최적화, 중고보상, 당일 개통 · 010-8014-8600">
+  <meta property="og:title" content="세나폰 — iPhone 17 / Galaxy S25 / 폴더블7 성지특가">
+  <meta property="og:description" content="대구 북구 최저가 · 당일개통 · 사은품 혜택 · 010-8014-8600">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sena-phone.com">
   <meta property="og:image" content="https://sena-phone.com/og-image.png">
@@ -20,15 +20,14 @@
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/favicon.ico">
 
-  <!-- 폰트 & Tailwind -->
+  <!-- 웹폰트 & Tailwind (한글 □□ 방지) -->
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.min.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root { --brand:#E23723; }
     html{ scroll-behavior:smooth }
-    body{ font-family: "Pretendard Variable", Pretendard, -apple-system, system-ui, Segoe UI, Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
-    .text-brand{ color:var(--brand) }
-    .bg-brand{ background:var(--brand) }
+    body{ font-family:"Pretendard Variable", Pretendard, -apple-system, system-ui, Segoe UI, Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+    .text-brand{ color:var(--brand) } .bg-brand{ background:var(--brand) }
     .hero{
       background:
         radial-gradient(1200px 700px at -20% -20%, rgba(226,55,35,.08), transparent),
@@ -37,9 +36,16 @@
     }
     .card{ border:1px solid rgba(0,0,0,.08); border-radius:24px; background:#fff }
     .card:hover{ box-shadow:0 10px 30px rgba(0,0,0,.06) }
+
+    /* 배너 텍스트 가독성 */
+    .ad-title{ font-weight:800; letter-spacing:-.02em }
+    .ad-sub{ opacity:.9 }
+    /* 현재 슬라이드만 클릭되도록 */
+    .slide{ pointer-events:none; } 
+    .slide.active{ pointer-events:auto; }
   </style>
 
-  <!-- 로컬 비즈니스 구조화 데이터 -->
+  <!-- 로컬 비즈니스 구조화데이터 -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -79,43 +85,84 @@
     <!-- 히어로 -->
     <section class="hero py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="card p-8 sm:p-12 flex flex-col lg:flex-row items-center gap-10">
-          <!-- 왼쪽: 큰 이미지 -->
-          <div class="w-full lg:w-[460px] h-[320px] rounded-3xl overflow-hidden border border-neutral-200 bg-center bg-no-repeat bg-cover"
-            <img id="heroImg" src="hero-senaphone-gradient.png" alt="세나폰 홍보 배너(대구 북구 휴대폰 성지)" class="w-full h-full object-cover" loading="eager">
+        <div class="card p-5 sm:p-8">
+          <!-- ✅ 광고 배너 슬라이드(상단 한 줄 전체) -->
+          <div id="adSlider" class="relative w-full h-[240px] sm:h-[260px] rounded-2xl overflow-hidden border border-neutral-200">
+            <!-- Slide 1 : iPhone 17 -->
+            <a href="https://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener"
+               class="slide active absolute inset-0 flex items-center px-6 sm:px-10 transition-opacity duration-700 opacity-100"
+               style="background:radial-gradient(1000px 480px at -10% -20%, rgba(226,55,35,.10), transparent), linear-gradient(90deg,#fff,#f9f9f9);">
+              <div>
+                <div class="ad-title text-3xl sm:text-4xl">iPhone 17 <span class="text-brand">성지특가</span></div>
+                <div class="ad-sub mt-2 text-base sm:text-lg text-neutral-700">오늘 견적 → 오늘 개통 · 재고/색상 문의 환영</div>
+                <div class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand text-white text-sm">카톡으로 빠른 견적 받기 →</div>
+              </div>
+            </a>
+
+            <!-- Slide 2 : Galaxy S25 -->
+            <a href="#promo" class="slide absolute inset-0 flex items-center px-6 sm:px-10 transition-opacity duration-700 opacity-0"
+               style="background:radial-gradient(900px 460px at 110% -10%, rgba(226,55,35,.08), transparent), linear-gradient(90deg,#fff,#fafafa);">
+              <div>
+                <div class="ad-title text-3xl sm:text-4xl">Galaxy S25 Ultra <span class="text-brand">전기종 상담가</span></div>
+                <div class="ad-sub mt-2 text-base sm:text-lg text-neutral-700">번호이동/기변 총비용 최저 · 사은품 혜택</div>
+                <div class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-neutral-900 text-white text-sm">인기모델/프로모션 보러가기</div>
+              </div>
+            </a>
+
+            <!-- Slide 3 : 폴더블 7 -->
+            <a href="#promo" class="slide absolute inset-0 flex items-center px-6 sm:px-10 transition-opacity duration-700 opacity-0"
+               style="background:linear-gradient(90deg,#fff,#f7f7f7);">
+              <div>
+                <div class="ad-title text-3xl sm:text-4xl">Galaxy Z Fold7 · Flip7 <span class="text-brand">상담 우대</span></div>
+                <div class="ad-sub mt-2 text-base sm:text-lg text-neutral-700">자급제+중고보상 패키지 · 데이터 이전 무료(조건)</div>
+                <div class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-neutral-900 text-white text-sm">프로모션 자세히 보기</div>
+              </div>
+            </a>
+
+            <!-- Dots -->
+            <div class="absolute bottom-3 right-3 flex gap-2">
+              <button class="dot w-2.5 h-2.5 rounded-full bg-black/70"></button>
+              <button class="dot w-2.5 h-2.5 rounded-full bg-black/30"></button>
+              <button class="dot w-2.5 h-2.5 rounded-full bg-black/30"></button>
+            </div>
           </div>
 
-          <!-- 오른쪽: 카피 -->
-          <div class="flex-1 text-center lg:text-left">
-            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-              휴대폰성지 <span class="text-brand">세나폰</span>
-            </h1>
-            <p class="mt-4 text-neutral-600 text-lg">
-              대구 북구 <b>최저가</b> · <b>당일개통</b> · <b>사은품 혜택</b>
-            </p>
-            <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:justify-start justify-center">
-              <a href="https://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener"
-                 class="px-6 py-3 rounded-2xl bg-brand text-white text-sm font-medium shadow hover:opacity-95">
-                🔴 빠른 견적 받기
-              </a>
-              <a href="tel:01080148600"
-                 class="px-6 py-3 rounded-2xl bg-neutral-900 text-white text-sm font-medium shadow hover:opacity-95">
-                📞 지금 전화하기
-              </a>
-              <a href="https://map.naver.com/p/search/%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421"
-                 target="_blank"
-                 class="px-6 py-3 rounded-2xl bg-neutral-100 text-sm font-medium hover:bg-neutral-200">
-                🗺 길찾기(네이버)
-              </a>
-            </div>
+          <!-- ✅ 본문(CTA+포인트) -->
+          <div class="mt-8 flex flex-col lg:flex-row items-center gap-10">
+            <!-- 왼쪽 큰 이미지 영역은 제거(배너로 대체) -->
 
-            <!-- 포인트 이점 -->
-            <ul class="mt-10 grid sm:grid-cols-2 gap-3 text-sm">
-              <li class="flex items-center gap-2 p-4 rounded-2xl bg-neutral-50 border border-neutral-200"><span class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5"></span>요금제 비교 · 최적 요금 설계</li>
-              <li class="flex items-center gap-2 p-4 rounded-2xl bg-neutral-50 border border-neutral-200"><span class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5"></span>데이터 이전 · 번호이동 · 당일 개통</li>
-              <li class="flex items-center gap-2 p-4 rounded-2xl bg-neutral-50 border border-neutral-200"><span class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5"></span>공시/선약/자급제 · 인터넷 결합</li>
-              <li class="flex items-center gap-2 p-4 rounded-2xl bg-neutral-50 border border-neutral-200"><span class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5"></span>중고보상 · 액정/배터리/침수 수리 상담</li>
-            </ul>
+            <!-- 오른쪽 카피/버튼 -->
+            <div class="flex-1 text-center lg:text-left">
+              <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                휴대폰성지 <span class="text-brand">세나폰</span>
+              </h1>
+              <p class="mt-4 text-neutral-600 text-lg">
+                대구 북구 <b>최저가</b> · <b>당일개통</b> · <b>사은품 혜택</b>
+              </p>
+              <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:justify-start justify-center">
+                <a href="https://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener"
+                   class="px-6 py-3 rounded-2xl bg-brand text-white text-sm font-medium shadow hover:opacity-95">
+                  🔴 빠른 견적 받기
+                </a>
+                <a href="tel:01080148600"
+                   class="px-6 py-3 rounded-2xl bg-neutral-900 text-white text-sm font-medium shadow hover:opacity-95">
+                  📞 지금 전화하기
+                </a>
+                <a href="https://map.naver.com/p/search/%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421"
+                   target="_blank"
+                   class="px-6 py-3 rounded-2xl bg-neutral-100 text-sm font-medium hover:bg-neutral-200">
+                  🗺 길찾기(네이버)
+                </a>
+              </div>
+
+              <!-- 포인트 -->
+              <ul class="mt-10 grid sm:grid-cols-2 gap-3 text-sm">
+                <li class="flex items-center gap-2 p-4 rounded-2xl bg-neutral-50 border border-neutral-200"><span class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5"></span>요금제 비교 · 최적 요금 설계</li>
+                <li class="flex items-center gap-2 p-4 rounded-2xl bg-neutral-50 border border-neutral-200"><span class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5"></span>데이터 이전 · 번호이동 · 당일 개통</li>
+                <li class="flex items-center gap-2 p-4 rounded-2xl bg-neutral-50 border border-neutral-200"><span class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5"></span>공시/선약/자급제 · 인터넷 결합</li>
+                <li class="flex items-center gap-2 p-4 rounded-2xl bg-neutral-50 border border-neutral-200"><span class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5"></span>중고보상 · 액정/배터리/침수 수리 상담</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -131,8 +178,8 @@
           <div class="card p-6">
             <div class="aspect-[4/3] rounded-2xl bg-neutral-100"></div>
             <div class="mt-4">
-              <div class="text-lg font-semibold">iPhone 16 Pro</div>
-              <p class="text-sm text-neutral-600 mt-1">티타늄 · A18 Pro · ProMotion</p>
+              <div class="text-lg font-semibold">iPhone 17 Pro</div>
+              <p class="text-sm text-neutral-600 mt-1">새로운 칩셋 · 더 밝은 디스플레이</p>
               <div class="mt-4 flex gap-2">
                 <a href="tel:01080148600" class="px-3 py-2 rounded-xl bg-neutral-900 text-white text-xs">전화문의</a>
                 <a href="https://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener" class="px-3 py-2 rounded-xl bg-neutral-100 text-xs">카톡문의</a>
@@ -142,8 +189,8 @@
           <div class="card p-6">
             <div class="aspect-[4/3] rounded-2xl bg-neutral-100"></div>
             <div class="mt-4">
-              <div class="text-lg font-semibold">Galaxy S24 Ultra</div>
-              <p class="text-sm text-neutral-600 mt-1">S Pen · 고성능 줌</p>
+              <div class="text-lg font-semibold">Galaxy S25 Ultra</div>
+              <p class="text-sm text-neutral-600 mt-1">S Pen · 초망원 · 신규 AI 기능</p>
               <div class="mt-4 flex gap-2">
                 <a href="tel:01080148600" class="px-3 py-2 rounded-xl bg-neutral-900 text-white text-xs">전화문의</a>
                 <a href="https://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener" class="px-3 py-2 rounded-xl bg-neutral-100 text-xs">카톡문의</a>
@@ -153,8 +200,8 @@
           <div class="card p-6">
             <div class="aspect-[4/3] rounded-2xl bg-neutral-100"></div>
             <div class="mt-4">
-              <div class="text-lg font-semibold">자급제 인기모델</div>
-              <p class="text-sm text-neutral-600 mt-1">요금제 자유 + 중고보상</p>
+              <div class="text-lg font-semibold">Galaxy Z Fold7</div>
+              <p class="text-sm text-neutral-600 mt-1">경량 폴더블 · 멀티태스킹 향상</p>
               <div class="mt-4 flex gap-2">
                 <a href="tel:01080148600" class="px-3 py-2 rounded-xl bg-neutral-900 text-white text-xs">전화문의</a>
                 <a href="https://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener" class="px-3 py-2 rounded-xl bg-neutral-100 text-xs">카톡문의</a>
@@ -258,18 +305,34 @@
     <a href="https://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener" class="px-4 py-3 rounded-2xl shadow-lg bg-brand text-white text-sm">빠른 견적 받기</a>
   </div>
 
-  <!-- 히어로 이미지 폴백 스크립트: 루트에 없으면 /img/ 경로로 자동 대체 -->
+  <!-- 광고배너 슬라이드 JS -->
   <script>
     (function(){
-      const img = document.getElementById('heroImg');
-      img.addEventListener('error', function onErr(){
-        img.removeEventListener('error', onErr);
-        img.src = '/img/hero-senaphone-gradient.png';
-        img.addEventListener('error', function onErr2(){
-          img.removeEventListener('error', onErr2);
-          img.src = 'og-image.png';
-        }, {once:true});
-      }, {once:true});
+      const root = document.getElementById('adSlider');
+      if(!root) return;
+      const slides = root.querySelectorAll('.slide');
+      const dots = root.querySelectorAll('.dot');
+      let i = 0, t;
+
+      function show(n){
+        slides.forEach((el,k)=>{
+          el.classList.toggle('opacity-100', k===n);
+          el.classList.toggle('opacity-0', k!==n);
+          el.classList.toggle('active', k===n);
+        });
+        dots.forEach((d,k)=> d.style.background = (k===n? 'rgba(0,0,0,.7)' : 'rgba(0,0,0,.3)'));
+        i = n;
+      }
+      function next(){ show((i+1)%slides.length); }
+      function play(){ t = setInterval(next, 4000); }
+      function stop(){ clearInterval(t); }
+
+      // 도트 클릭/호버 제어
+      dots.forEach((d,k)=> d.addEventListener('click', ()=>{ stop(); show(k); play(); }));
+      root.addEventListener('mouseenter', stop);
+      root.addEventListener('mouseleave', play);
+
+      show(0); play();
     })();
   </script>
 </body>
