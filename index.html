@@ -366,31 +366,56 @@
 
   <!-- 광고배너 슬라이드 JS -->
   <script>
-    (function(){
-      const root = document.getElementById('adSlider'); if(!root) return;
-      const slides = root.querySelectorAll('.slide');
-      const dots = root.querySelectorAll('.dot');
-      let i = 0, t;
+  // 광고배너 슬라이드 (안정화 + 7초 전환)
+  (function () {
+    const root = document.getElementById('adSlider');
+    if (!root) return;
 
-      function show(n){
-        slides.forEach((el,k)=>{
-          el.classList.toggle('opacity-100', k===n);
-          el.classList.toggle('opacity-0', k!==n);
-          el.classList.toggle('active', k===n); // active만 클릭 허용
-        });
-        dots.forEach((d,k)=> d.style.background = (k===n? 'rgba(0,0,0,.7)' : 'rgba(0,0,0,.3)'));
-        i = n;
+    const slides = root.querySelectorAll('.slide');
+    const dots   = root.querySelectorAll('.dot');
+
+    let i = 0;
+    let timer = null;
+    const INTERVAL = 7000; // ▶ 7초로 느리게
+
+    function show(n) {
+      slides.forEach((el, k) => {
+        el.classList.toggle('opacity-100', k === n);
+        el.classList.toggle('opacity-0',   k !== n);
+        el.classList.toggle('active',      k === n); // active만 클릭 허용
+      });
+      dots.forEach((d, k) => {
+        d.style.background = (k === n ? 'rgba(0,0,0,.7)' : 'rgba(0,0,0,.3)');
+      });
+      i = n;
+    }
+
+    function next() { show((i + 1) % slides.length); }
+
+    function play() {
+      stop();                       // 중복 타이머 방지
+      timer = setInterval(next, INTERVAL);
+    }
+
+    function stop() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
       }
-      function next(){ show((i+1)%slides.length); }
-      function play(){ t = setInterval(next, 4000); }
-      function stop(){ clearInterval(t); }
+    }
 
-      dots.forEach((d,k)=> d.addEventListener('click', ()=>{ stop(); show(k); play(); }));
-      root.addEventListener('mouseenter', stop);
-      root.addEventListener('mouseleave', play);
+    // 도트 클릭 → 해당 슬라이드 표시 후 재생
+    dots.forEach((d, k) => d.addEventListener('click', () => { show(k); play(); }));
 
-      show(0); play();
-    })();
+    // 마우스 올리면 멈추고, 떼면 다시 재생
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', play);
+
+    // 시작
+    show(0);
+    play();
+  })();
+
   </script>
 </body>
 </html>
