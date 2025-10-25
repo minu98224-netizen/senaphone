@@ -85,7 +85,7 @@
           <!-- 왼쪽: 로고 -->
           <div class="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] rounded-3xl overflow-hidden ring-1 ring-neutral-200/60 flex items-center justify-center bg-white">
             <!-- og-image에 로고가 포함되어 있으니 임시로 사용 -->
-            <img src="/hero-senaphone-gradient.png" alt="세나폰 홍보 배너" class="object-contain w-full h-full p-2">
+            <img src="hero-senaphone-gradient.png" alt="세나폰 홍보 배너" class="w-full h-full object-cover">
           </div>
 
           <!-- 오른쪽: 카피 -->
