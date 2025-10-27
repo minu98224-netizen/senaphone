@@ -4,150 +4,179 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>세나폰 | 세상에 나쁜 폰은 없다</title>
-  <meta name="description" content="대구 북구 세나폰 — 합리적인 판매가, 깔끔한 상담, 데이터 이전/개통·AS까지 한 번에." />
+
+  <!-- Meta / OG -->
+  <meta name="description" content="대구 북구 세나폰 — 합리적인 판매가, 깔끔한 상담, 데이터 이전·개통·AS까지 한 번에." />
   <meta property="og:title" content="세나폰 | 세상에 나쁜 폰은 없다" />
-  <meta property="og:description" content="합리적인 판매가, 깔끔한 상담, 데이터 이전/개통·AS 한 번에." />
+  <meta property="og:description" content="합리적인 판매가, 깔끔한 상담, 데이터 이전/개통/AS 한 번에." />
   <meta property="og:image" content="https://sena-phone.com/sena.png" />
   <meta name="format-detection" content="telephone=no" />
   <link rel="icon" href="favicon.ico" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#f5f5f7; --card:#fff; --text:#000; --muted:#666; --line:#ececec;
-      --brand:#e0362b; --radius:22px;
-      --shadow:0 10px 30px rgba(0,0,0,.06); --shadow-strong:0 22px 60px rgba(0,0,0,.10);
+      --bg:#f5f5f7; --card:#ffffff; --text:#0a0a0a; --muted:#6b6b6b; --line:#ececec;
+      --brand:#e0362b; --brand-deep:#c1211a;
+      --radius:22px; --shadow:0 10px 30px rgba(0,0,0,.07); --shadow-strong:0 22px 60px rgba(0,0,0,.12);
       --maxw:1080px;
     }
     *{box-sizing:border-box}
     html,body{
-      margin:0;padding:0;background:var(--bg);color:var(--text);
-      font:16px/1.55 -apple-system,BlinkMacSystemFont,Inter,Roboto,Apple SD Gothic Neo,Noto Sans KR,system-ui,sans-serif;
-      letter-spacing:-.2px; word-break:keep-all;
+      margin:0; padding:0; background:var(--bg); color:var(--text);
+      font:16px/1.6 Inter, Noto Sans KR, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Apple SD Gothic Neo, system-ui, sans-serif;
+      letter-spacing:-.2px; word-break:keep-all; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     }
-    a{color:inherit;text-decoration:none}
-    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+    * { -webkit-tap-highlight-color: rgba(0,0,0,0.08); }
 
-    /* NAV */
-    .nav{position:sticky;top:0;z-index:60; border-bottom:1px solid var(--line);
-      backdrop-filter:saturate(160%) blur(12px);
-      background:color-mix(in oklab, var(--bg) 85%, transparent)}
-    .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .brand{display:flex;gap:12px;align-items:center;flex-wrap:nowrap}
-    .brand img{height:34px;width:auto;flex-shrink:0}
-    .brand h1{margin:0;font-size:18px;font-weight:800;white-space:nowrap;letter-spacing:-.3px}
-    /* 데스크톱 메뉴 */
-    .desktop-menu{display:flex;gap:10px;align-items:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:14px;
-      border:1px solid var(--line); background:var(--card); box-shadow:var(--shadow);
-      transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease; font-weight:600; white-space:nowrap}
-    .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-strong)}
-    .btn-primary{background:linear-gradient(180deg, color-mix(in oklab, var(--brand) 94%, white) 0%, var(--brand) 100%); color:#fff; border-color:transparent}
-    /* 모바일 햄버거 */
-    .hamburger{display:none; width:40px;height:40px;border-radius:12px;border:1px solid var(--line); background:var(--card);
-      align-items:center;justify-content:center; box-shadow:var(--shadow)}
+    /* ===== NAV (Glass + Scroll Elevation) ===== */
+    .nav{
+      position:sticky; top:0; z-index:60; border-bottom:1px solid var(--line);
+      background:color-mix(in oklab, var(--bg) 86%, transparent);
+      backdrop-filter:saturate(160%) blur(12px); transition: box-shadow .2s ease, background .2s ease;
+    }
+    .nav.scrolled{ box-shadow: 0 4px 20px rgba(0,0,0,.06); background:color-mix(in oklab, var(--bg) 94%, transparent) }
+    .nav-wrap{display:flex; align-items:center; justify-content:space-between; height:64px}
+    .brand{display:flex; gap:12px; align-items:center; flex-wrap:nowrap}
+    .brand img{height:34px; width:auto; flex-shrink:0}
+    .brand h1{margin:0; font-size:18px; font-weight:900; white-space:nowrap; letter-spacing:-.3px}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      height:40px; padding:0 16px; border-radius:14px; border:1px solid var(--line);
+      background:var(--card); box-shadow:var(--shadow);
+      transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+      font-weight:700; white-space:nowrap
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow:var(--shadow-strong)}
+    .btn-primary{background:linear-gradient(180deg, color-mix(in oklab, var(--brand) 94%, #fff) 0%, var(--brand) 100%); color:#fff; border-color:transparent}
+
+    /* Desktop menu */
+    .desktop-menu{display:flex; gap:10px; align-items:center}
+    /* Mobile hamburger */
+    .hamburger{display:none; width:40px; height:40px; border-radius:12px; border:1px solid var(--line); background:var(--card);
+      align-items:center; justify-content:center; box-shadow:var(--shadow)}
     .hamburger span{display:block;width:18px;height:2px;background:#111;position:relative}
     .hamburger span::before,.hamburger span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:#111}
     .hamburger span::before{top:-6px}.hamburger span::after{top:6px}
+    @media(max-width:980px){ .desktop-menu{display:none} .hamburger{display:flex} }
 
-    /* 드로어 */
-    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.28);opacity:0;pointer-events:none;transition:opacity .2s ease;z-index:70}
-    .drawer{position:fixed;top:0;right:-320px;width:min(88%,320px);height:100%;background:var(--card);box-shadow:var(--shadow-strong);
-      z-index:80;transition:right .24s ease;border-left:1px solid var(--line);display:flex;flex-direction:column}
-    .drawer-head{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid var(--line)}
-    .drawer-body{padding:14px;display:flex;flex-direction:column;gap:10px}
-    .drawer .btn{height:46px;border-radius:14px}
+    /* Drawer */
+    .overlay{position:fixed; inset:0; background:rgba(0,0,0,.28); opacity:0; pointer-events:none; transition:opacity .2s; z-index:70}
+    .overlay.show{opacity:1; pointer-events:auto}
+    .drawer{position:fixed; top:0; right:-320px; width:min(88%,320px); height:100%; background:var(--card);
+      display:flex; flex-direction:column; border-left:1px solid var(--line); box-shadow:var(--shadow-strong); z-index:80; transition:right .24s}
     .drawer.open{right:0}
-    .overlay.show{opacity:1;pointer-events:auto}
+    .drawer-head{display:flex; align-items:center; justify-content:space-between; padding:16px; border-bottom:1px solid var(--line)}
+    .drawer-body{padding:14px; display:flex; flex-direction:column; gap:10px}
+    .drawer .btn{height:46px; border-radius:14px}
 
-    @media(max-width:980px){
-      .desktop-menu{display:none}
-      .hamburger{display:flex}
+    /* ===== HERO ===== */
+    .hero{padding:64px 0 42px}
+    .hero-card{
+      position:relative; border:1px solid var(--line); border-radius:calc(var(--radius) + 6px); padding:48px;
+      background:
+        radial-gradient(1200px 600px at 85% -10%, rgba(224,54,43,.10), transparent 60%),
+        radial-gradient(900px 500px at -10% 110%, rgba(224,54,43,.08), transparent 60%),
+        linear-gradient(180deg,#fff 0%, #fafafa 100%);
+      box-shadow:var(--shadow-strong); overflow:hidden;
     }
+    .hero-top{display:flex; gap:36px; align-items:center; flex-wrap:wrap}
+    .hero img.logo{width:120px; height:auto; border-radius:22px; box-shadow:var(--shadow)}
+    .title{font-size:44px; line-height:1.1; margin:0 0 12px; font-weight:900; letter-spacing:-.6px}
+    .subtitle{font-size:18px; color:var(--muted); margin:0 0 24px; max-width:720px}
+    .hero-cta{display:flex; gap:12px; flex-wrap:wrap}
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:20px}
+    .badge{border:1px solid var(--line); background:var(--card); padding:8px 12px; border-radius:999px; color:var(--muted); font-weight:700}
+    @media(max-width:980px){ .title{font-size:36px} .hero img.logo{width:96px} }
+    @media(max-width:640px){ .hero-card{padding:28px} .title{font-size:30px} }
 
-    /* HERO */
-    .hero{padding:64px 0 40px}
-    .hero-card{border:1px solid var(--line); border-radius:calc(var(--radius) + 6px); padding:48px;
-      background:linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
-      box-shadow:var(--shadow-strong); overflow:hidden; position:relative}
-    .ribbon{position:absolute; inset:-120px -120px auto auto; width:480px; aspect-ratio:1/1; opacity:.06;
-      background:radial-gradient(closest-side at 70% 30%, var(--brand) 0%, transparent 70%)}
-    .hero-top{display:flex;gap:36px;align-items:center;flex-wrap:wrap}
-    .hero img.logo{width:120px;height:auto;border-radius:22px;box-shadow:var(--shadow)}
-    .title{font-size:44px;line-height:1.1;margin:0 0 12px;font-weight:900;letter-spacing:-.6px}
-    .subtitle{font-size:18px;color:var(--muted);margin:0 0 24px;max-width:720px}
-    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
-    .badge{border:1px solid var(--line);background:var(--card); padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:600}
-
-    /* GRID CARDS */
-    .grid{display:grid;gap:18px;grid-template-columns:repeat(12,1fr); margin-top:28px}
-    .card{grid-column:span 4; border:1px solid var(--line); background:var(--card); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow);
-      transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease}
-    .card:hover{transform:translateY(-2px);box-shadow:var(--shadow-strong)}
-    .card h3{margin:6px 0 8px;font-size:18px}
-    .card p{margin:0;color:var(--muted)}
-    @media(max-width:980px){ .card{grid-column:span 6} .title{font-size:36px} .hero img.logo{width:96px} }
-    @media(max-width:640px){ .card{grid-column:span 12} .hero-card{padding:28px} .title{font-size:30px} }
+    /* ===== CARDS with icons ===== */
+    .grid{display:grid; gap:18px; grid-template-columns:repeat(12,1fr); margin-top:28px}
+    .card{grid-column:span 4; border:1px solid var(--line); background:var(--card); border-radius:var(--radius); padding:22px;
+      box-shadow:var(--shadow); transition:transform .15s, box-shadow .2s, border-color .2s}
+    .card:hover{transform:translateY(-3px); box-shadow:var(--shadow-strong)}
+    .card .ico{width:28px; height:28px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center;
+      background:color-mix(in oklab, var(--brand) 12%, #fff); border:1px solid var(--line)}
+    .card h3{margin:10px 0 8px; font-size:18px}
+    .card p{margin:0; color:var(--muted)}
+    @media(max-width:980px){ .card{grid-column:span 6} }
+    @media(max-width:640px){ .card{grid-column:span 12} }
 
     .section{padding:28px 0 70px}
-    .section h2{font-size:26px;margin:0 0 18px}
-    .price{display:flex;gap:18px;flex-wrap:wrap}
-    .price .plan{flex:1 1 260px; border:1px solid var(--line); background:var(--card); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
-    .plan h3{margin:0 0 6px;font-size:18px}
-    .plan .num{font-size:34px;font-weight:800;letter-spacing:-.5px}
-    .plan ul{margin:12px 0 0;padding:0 0 0 18px;color:var(--muted)}
-    .note{color:var(--muted);font-size:14px}
+    .section h2{font-size:26px; margin:0 0 18px}
 
-    /* REVIEWS */
+    .price{display:flex; gap:18px; flex-wrap:wrap}
+    .price .plan{flex:1 1 260px; border:1px solid var(--line); background:var(--card); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+    .plan h3{margin:0 0 6px; font-size:18px}
+    .plan .num{font-size:34px; font-weight:900; letter-spacing:-.5px}
+    .plan ul{margin:12px 0 0; padding:0 0 0 18px; color:var(--muted)}
+    .note{color:var(--muted); font-size:14px}
+
+    /* ===== REVIEWS (avatar + stars) ===== */
     .reviews{padding:10px 0 90px}
     .reviews h2{margin-bottom:14px}
     .reviews-wrap{position:relative}
-    .reviews-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
-    .review{grid-column:span 4; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px;
-      box-shadow:var(--shadow); min-height:120px}
-    .review .stars{font-size:14px;letter-spacing:.5px;color:#f1b400}
-    .review .txt{margin:8px 0 10px}
-    .review .meta{color:var(--muted);font-size:13px}
+    .reviews-grid{display:grid; grid-template-columns:repeat(12,1fr); gap:14px}
+    .review{grid-column:span 4; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:var(--shadow); min-height:120px}
+    .meta-row{display:flex; align-items:center; gap:10px; margin-bottom:8px}
+    .avatar{width:32px; height:32px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:900; font-size:12px; color:#fff;
+      background: radial-gradient(120% 120% at 80% 20%, var(--brand) 0%, var(--brand-deep) 70%)}
+    .name{font-weight:800}
+    .stars svg{width:14px; height:14px; margin-right:2px; fill:#f1b400}
+    .review .txt{margin:6px 0 10px}
+    .review .meta{color:var(--muted); font-size:13px}
     @media(max-width:980px){ .review{grid-column:span 6} }
     @media(max-width:640px){ .review{grid-column:span 12} }
+
+    /* collapse to ~6cards */
     .collapsed .reviews-grid{max-height:820px; overflow:hidden}
     .collapsed .fade{content:""; position:absolute; left:0; right:0; bottom:0; height:120px;
-      background:linear-gradient(180deg, transparent, color-mix(in oklab, var(--bg) 85%, transparent));
-      pointer-events:none; border-bottom-left-radius:18px; border-bottom-right-radius:18px}
+      background:linear-gradient(180deg, transparent, color-mix(in oklab, var(--bg) 88%, transparent)); pointer-events:none; border-bottom-left-radius:18px; border-bottom-right-radius:18px}
     .more{display:flex; justify-content:center; margin-top:14px}
-    .more .btn{height:44px;border-radius:16px;padding:0 18px}
+    .more .btn{height:44px; border-radius:16px; padding:0 18px}
 
-    /* MAP */
+    /* ===== MAP ===== */
     .mapcard{border:1px solid var(--line); border-radius:20px; background:var(--card); box-shadow:var(--shadow-strong); overflow:hidden}
     .map-wrap{position:relative; width:100%; aspect-ratio:16/9; background:#ddd}
     .map-wrap iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
     .map-info{display:flex; gap:16px; align-items:center; justify-content:space-between; padding:14px 16px; border-top:1px solid var(--line); flex-wrap:wrap}
     .map-actions{display:flex; gap:8px; flex-wrap:wrap}
-    .btn.small{height:36px;border-radius:12px;padding:0 12px;font-weight:700}
+    .btn.small{height:36px; border-radius:12px; padding:0 12px; font-weight:800}
 
-    /* FOOTER */
-    .footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px}
+    /* ===== FOOTER ===== */
+    .footer{border-top:1px solid var(--line); padding:28px 0; color:var(--muted); font-size:14px}
 
-    /* Sticky CTA: 1개 버튼만 */
-    body{padding-bottom:86px}
-    .sticky-cta{position:fixed; left:50%; bottom:12px; transform:translateX(-50%);
-      width:min(100%, var(--maxw)); z-index:90; padding:8px}
-    .sticky-cta .wrap{display:flex; justify-content:center}
-    .sticky-cta a{
-      height:46px; padding:0 22px; border-radius:999px; font-weight:900;
-      background:var(--brand); color:#fff; border:0; box-shadow:var(--shadow-strong)
+    /* ===== Sticky CTA (1 button) ===== */
+    body{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+    .sticky-cta{position:fixed; left:50%; bottom:12px; transform:translateX(-50%); width:min(100%, var(--maxw)); z-index:90; padding:8px 10px}
+    .sticky-cta .wrap{
+      display:flex; justify-content:center; background:color-mix(in oklab, var(--card) 98%, transparent);
+      border:1px solid var(--line); box-shadow:var(--shadow-strong); border-radius:999px; padding:6px 8px; backdrop-filter:saturate(140%) blur(8px)
     }
+    .sticky-cta a{
+      display:flex; align-items:center; justify-content:center; min-width:240px; height:52px; padding:0 24px; border-radius:999px;
+      font-weight:900; font-size:16.5px; line-height:1; letter-spacing:-.2px; background:var(--brand); color:#fff; border:0; box-shadow:var(--shadow-strong)
+    }
+    @media(max-width:420px){ .sticky-cta a{min-width:unset; width:100%} }
   </style>
 </head>
 <body>
-  <!-- NAV -->
-  <nav class="nav">
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav">
     <div class="container nav-wrap">
       <div class="brand">
-        <img src="sena.png" alt="세나폰 로고" />
+        <img src="sena.png" alt="세나폰 로고" loading="lazy" decoding="async" />
         <h1>세나폰</h1>
       </div>
 
-      <!-- 데스크톱 메뉴 -->
+      <!-- desktop -->
       <div class="desktop-menu">
         <a class="btn" href="#benefits">혜택</a>
         <a class="btn" href="#price">프로모션</a>
@@ -155,12 +184,12 @@
         <a class="btn btn-primary" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">상담하기</a>
       </div>
 
-      <!-- 모바일 햄버거 -->
+      <!-- mobile -->
       <button class="hamburger" id="openMenu" aria-label="메뉴 열기" aria-controls="drawer" aria-expanded="false"><span></span></button>
     </div>
   </nav>
 
-  <!-- 드로어 & 오버레이 -->
+  <!-- Drawer & Overlay -->
   <div class="overlay" id="overlay" aria-hidden="true"></div>
   <aside class="drawer" id="drawer" aria-hidden="true" role="dialog" aria-label="내비게이션 메뉴">
     <div class="drawer-head">
@@ -175,17 +204,16 @@
     </div>
   </aside>
 
-  <!-- HERO -->
+  <!-- ===== HERO ===== -->
   <header class="hero">
     <div class="container hero-card">
-      <div class="ribbon" aria-hidden="true"></div>
       <div class="hero-top">
-        <img class="logo" src="sena.png" alt="세나폰 로고" />
+        <img class="logo" src="sena.png" alt="세나폰 로고" width="240" height="240" loading="lazy" decoding="async" />
         <div>
           <h2 class="title">세상에 나쁜 폰은 없다.</h2>
           <p class="subtitle">대구 북구 <b>세나폰</b>. 합리적인 판매가와 깔끔한 상담, 데이터 이전부터 개통·AS까지 한 번에.</p>
           <div class="hero-cta">
-            <a class="btn btn-primary" href="http://pf.kakao.com/_Mtxmxcn" target="_blank">카톡 상담</a>
+            <a class="btn btn-primary" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">카톡 상담</a>
             <a class="btn" href="tel:01080148600">전화 문의</a>
             <a class="btn" href="#reviews">실후기 보기</a>
           </div>
@@ -198,16 +226,34 @@
         </div>
       </div>
 
-      <!-- BENEFITS -->
+      <!-- Benefits -->
       <div id="benefits" class="grid">
-        <article class="card"><h3>합리적인 판매가</h3><p>통신 3사 프로모션 반영. 불필요한 부가서비스 없이 깔끔한 견적.</p></article>
-        <article class="card"><h3>데이터 그대로 이전</h3><p>사진·연락처·카톡·앱까지 안전 이전. 아이폰 ↔ 갤럭시도 OK.</p></article>
-        <article class="card"><h3>사후관리까지 완벽</h3><p>요금제 변경/분실/파손 등 사후 문의 즉시 응대. 끝까지 챙깁니다.</p></article>
+        <article class="card">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 7h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7zm3-3h10l1 3H6l1-3z"/></svg>
+          </span>
+          <h3>합리적인 판매가</h3>
+          <p>통신 3사 프로모션을 반영해 불필요한 옵션 없이 깔끔한 견적만 제시합니다.</p>
+        </article>
+        <article class="card">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 7h10v10H7z"/><path d="M3 11h4v2H3zM17 11h4v2h-4zM11 3h2v4h-2zM11 17h2v4h-2z"/></svg>
+          </span>
+          <h3>데이터 그대로 이전</h3>
+          <p>사진·연락처·카톡·앱까지 안전 이전. 아이폰↔갤럭시 모두 문제없습니다.</p>
+        </article>
+        <article class="card">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm1 5v6l4 2"/></svg>
+          </span>
+          <h3>사후관리까지 완벽</h3>
+          <p>요금제 변경·분실·파손 등 문제 발생 시 빠르게 응대하고 끝까지 챙깁니다.</p>
+        </article>
       </div>
     </div>
   </header>
 
-  <!-- PRICE -->
+  <!-- ===== PRICE ===== -->
   <section id="price" class="section">
     <div class="container">
       <h2>이달의 프로모션</h2>
@@ -228,7 +274,7 @@
     </div>
   </section>
 
-  <!-- REVIEWS -->
+  <!-- ===== REVIEWS ===== -->
   <section id="reviews" class="section reviews">
     <div class="container">
       <h2>고객 후기</h2>
@@ -240,7 +286,7 @@
     </div>
   </section>
 
-  <!-- MAP -->
+  <!-- ===== MAP ===== -->
   <section id="map" class="section">
     <div class="container">
       <h2>오시는 길</h2>
@@ -267,7 +313,7 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
       <div>© <span id="year"></span> 세나폰 · All rights reserved.</div>
@@ -275,18 +321,41 @@
     </div>
   </footer>
 
-  <!-- Sticky CTA (1개) -->
-  <div class="sticky-cta" role="region" aria-label="실시간 최저가 견적받기 고정바">
+  <!-- ===== Sticky CTA (single) ===== -->
+  <div class="sticky-cta" role="region" aria-label="실시간 최저가 견적받기">
     <div class="wrap">
-      <a href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener" aria-label="실시간 최저가 견적받기">실시간 최저가 견적받기</a>
+      <a href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">실시간 최저가 견적받기</a>
     </div>
   </div>
 
-  <script>
-    // 연도
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "세나폰",
+    "image": "https://sena-phone.com/sena.png",
+    "telephone": "+82-10-8014-8600",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "KR",
+      "addressRegion": "대구광역시",
+      "addressLocality": "북구",
+      "streetAddress": "학정로 421, 일도프라자 106-2호"
+    },
+    "openingHours": "Mo-Su 10:00-20:00",
+    "url": "https://sena-phone.com"
+  }
+  </script>
 
-    // 부드러운 스크롤 + 드로어 닫힘
+  <script>
+    // Year + header elevation
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const nav = document.getElementById('nav');
+    const elevate = () => nav.classList.toggle('scrolled', window.scrollY > 6);
+    elevate(); window.addEventListener('scroll', elevate, {passive:true});
+
+    // Smooth scroll + close drawer after click
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
         const id=a.getAttribute('href');
@@ -298,32 +367,32 @@
       });
     });
 
-    // 드로어 제어
+    // Drawer (with basic focus trap)
     const drawer = document.getElementById('drawer');
     const overlay = document.getElementById('overlay');
     const openBtn = document.getElementById('openMenu');
     const closeBtn = document.getElementById('closeMenu');
+    let lastFocus = null;
 
     function openDrawer(){
-      drawer.classList.add('open');
-      overlay.classList.add('show');
-      drawer.setAttribute('aria-hidden','false');
-      overlay.setAttribute('aria-hidden','false');
+      lastFocus = document.activeElement;
+      drawer.classList.add('open'); overlay.classList.add('show');
+      drawer.setAttribute('aria-hidden','false'); overlay.setAttribute('aria-hidden','false');
       openBtn.setAttribute('aria-expanded','true');
+      closeBtn.focus();
     }
     function closeDrawer(){
-      drawer.classList.remove('open');
-      overlay.classList.remove('show');
-      drawer.setAttribute('aria-hidden','true');
-      overlay.setAttribute('aria-hidden','true');
+      drawer.classList.remove('open'); overlay.classList.remove('show');
+      drawer.setAttribute('aria-hidden','true'); overlay.setAttribute('aria-hidden','true');
       openBtn.setAttribute('aria-expanded','false');
+      if(lastFocus) lastFocus.focus();
     }
     openBtn.addEventListener('click', (e)=>{e.preventDefault(); openDrawer();});
     closeBtn.addEventListener('click', (e)=>{e.preventDefault(); closeDrawer();});
     overlay.addEventListener('click', closeDrawer);
     window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeDrawer(); });
 
-    // ==== 후기 50개 ====
+    // ===== Reviews (50) with avatars & stars =====
     const REVIEWS = [
       {n:"김*우", m:"아이폰 15", t:"가격 깔끔, 설명 친절. 데이터 이전도 바로 끝!", d:"2025-08-02"},
       {n:"박*민", m:"갤럭시 S24", t:"호갱 방지 제대로. 요금제 비교해주셔서 만족합니다.", d:"2025-07-26"},
@@ -375,27 +444,38 @@
       {n:"박*훈", m:"갤럭시 S24", t:"지방에서 일부러 왔습니다. 만족!", d:"2024-06-24"}
     ];
 
-    // 후기 DOM 렌더
+    // shuffle slightly so 첫 6개가 고정되지 않음
+    REVIEWS.sort(()=>Math.random()-.5);
+
     const grid = document.getElementById('reviewsGrid');
-    const star = '★★★★★';
+    const starSVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l-6.2 3.3 1.2-6.9-5-4.8 6.9-1L12 1.5l3.1 6.4 6.9 1-5 4.8 1.2 6.9z"/></svg>';
+    const makeAvatar = (name)=>{
+      // "김*우" -> "김우" 이니셜
+      const s = name.replace('*','');
+      return s[0] + (s[1] || '');
+    };
+
     REVIEWS.forEach(r=>{
       const el = document.createElement('article');
       el.className = 'review';
       el.innerHTML = `
-        <div class="stars" aria-label="별점 5점">${star}</div>
+        <div class="meta-row">
+          <span class="avatar">${makeAvatar(r.n)}</span>
+          <span class="name">${r.n}</span>
+          <span class="stars" aria-label="별점 5점">${starSVG.repeat(5)}</span>
+        </div>
         <div class="txt">${r.t}</div>
-        <div class="meta">${r.n} · ${r.m} · <time datetime="${r.d}">${r.d}</time></div>
+        <div class="meta">${r.m} · <time datetime="${r.d}">${r.d}</time></div>
       `;
       grid.appendChild(el);
     });
 
-    // 더보기/접기 토글
+    // Show more / collapse
     const wrap = document.querySelector('.reviews-wrap');
     const btn = document.getElementById('toggleMore');
     const total = REVIEWS.length;
     const initialVisible = 6;
     btn.textContent = `실후기 더 보기 (${total - initialVisible}개)`;
-
     let expanded = false;
     btn.addEventListener('click', ()=>{
       expanded = !expanded;
