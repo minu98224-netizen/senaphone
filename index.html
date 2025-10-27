@@ -1,15 +1,237 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <title>세나폰 | 새로 시작</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>세나폰 | 세상에 나쁜 폰은 없다</title>
+  <meta name="description" content="대구 북구 세나폰 — 합리적인 판매가, 깔끔한 상담, 데이터 이전/개통/AS까지 한 번에. 세상에 나쁜 폰은 없습니다." />
+  <meta property="og:title" content="세나폰 | 세상에 나쁜 폰은 없다" />
+  <meta property="og:description" content="합리적인 판매가, 깔끔한 상담, 데이터 이전/개통/AS 한 번에." />
+  <meta property="og:image" content="https://sena-phone.com/sena.png" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="icon" href="favicon.ico" />
   <style>
-    body { text-align: center; font-family: sans-serif; margin-top: 100px; }
+    :root{
+      --bg:#f7f5ef;
+      --card:#ffffff;
+      --text:#0a0a0a;
+      --muted:#6b6b6b;
+      --line:#eceae4;
+      --brand:#e0362b; /* 로고 레드톤 */
+      --brand-deep:#c51f1a;
+      --radius:22px;
+      --shadow:0 10px 30px rgba(0,0,0,.05);
+      --shadow-strong:0 20px 60px rgba(0,0,0,.08);
+      --maxw:1080px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0e0e0e; --card:#141414; --text:#f6f6f6; --muted:#bcbcbc; --line:#1f1f1f;
+        --shadow:0 10px 30px rgba(0,0,0,.35); --shadow-strong:0 20px 60px rgba(0,0,0,.5);
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Apple SD Gothic Neo,Noto Sans KR,system-ui,sans-serif;letter-spacing:-.2px}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+    .nav{
+      position:sticky;top:0;backdrop-filter:saturate(180%) blur(16px);
+      background:color-mix(in oklab, var(--bg) 82%, transparent);
+      border-bottom:1px solid var(--line); z-index:50;
+    }
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand img{height:34px;width:auto;display:block}
+    .brand h1{font-size:18px;margin:0;font-weight:700;letter-spacing:-.3px}
+    .cta{display:flex;gap:10px;align-items:center}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      height:40px;padding:0 16px;border-radius:14px;border:1px solid var(--line);
+      background:var(--card); box-shadow:var(--shadow); transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+      font-weight:600; white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-strong)}
+    .btn-primary{
+      background:linear-gradient(180deg, color-mix(in oklab, var(--brand) 94%, white) 0%, var(--brand) 100%);
+      color:#fff; border-color:transparent;
+    }
+    .hero{padding:64px 0 40px}
+    .hero-card{
+      border:1px solid var(--line); border-radius:calc(var(--radius) + 6px); 
+      padding:48px; background:linear-gradient(180deg, color-mix(in oklab,var(--card) 92%, transparent) 0%, var(--card) 100%);
+      box-shadow:var(--shadow-strong); overflow:hidden; position:relative;
+    }
+    .ribbon{
+      position:absolute; inset:-120px -120px auto auto; width:480px; aspect-ratio:1/1; opacity:.06;
+      background:radial-gradient(closest-side at 70% 30%, var(--brand) 0%, transparent 70%);
+      filter:saturate(120%);
+    }
+    .hero-top{display:flex;gap:36px;align-items:center;flex-wrap:wrap}
+    .hero img.logo{width:120px;height:auto;border-radius:22px;box-shadow:var(--shadow)}
+    .title{font-size:44px;line-height:1.1;margin:0 0 12px;font-weight:800;letter-spacing:-.6px}
+    .subtitle{font-size:18px;color:var(--muted);margin:0 0 24px;max-width:720px}
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+    .badge{border:1px solid var(--line);background:var(--card); padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:600}
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(12,1fr); margin-top:28px}
+    .card{
+      grid-column:span 4; border:1px solid var(--line); background:var(--card); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow);
+      transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .card:hover{transform:translateY(-2px);box-shadow:var(--shadow-strong)}
+    .card h3{margin:6px 0 8px;font-size:18px}
+    .card p{margin:0;color:var(--muted)}
+    @media(max-width:980px){ .card{grid-column:span 6} .title{font-size:36px} .hero img.logo{width:96px} }
+    @media(max-width:640px){ .card{grid-column:span 12} .hero-card{padding:28px} .title{font-size:30px} }
+    .section{padding:28px 0 70px}
+    .section h2{font-size:26px;margin:0 0 18px}
+    .price{
+      display:flex;gap:18px;flex-wrap:wrap
+    }
+    .price .plan{
+      flex:1 1 260px; border:1px solid var(--line); background:var(--card); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)
+    }
+    .plan h3{margin:0 0 6px;font-size:18px}
+    .plan .num{font-size:34px;font-weight:800;letter-spacing:-.5px}
+    .plan ul{margin:12px 0 0;padding:0 0 0 18px;color:var(--muted)}
+    .note{color:var(--muted);font-size:14px}
+    .footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px}
+    /* 하단 고정 모바일 CTA */
+    .dock{
+      position:fixed; left:50%; bottom:14px; transform:translateX(-50%);
+      background:var(--card); border:1px solid var(--line); box-shadow:var(--shadow-strong);
+      padding:8px; border-radius:999px; display:flex; gap:8px; z-index:60;
+    }
+    .dock a{height:38px; padding:0 14px; border-radius:999px; border:1px solid var(--line); display:flex; align-items:center; font-weight:700}
+    .dock a.primary{background:var(--brand); color:#fff; border-color:transparent}
+    @media(min-width:820px){ .dock{display:none} }
   </style>
 </head>
 <body>
-  <h1>세나폰 새 홈페이지 준비 중...</h1>
-  <p>곧 새로운 디자인으로 돌아옵니다 🚀</p>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-wrap">
+      <div class="brand">
+        <img src="sena.png" alt="세나폰 로고" />
+        <h1>세나폰</h1>
+      </div>
+      <div class="cta">
+        <a class="btn" href="#benefits">혜택</a>
+        <a class="btn" href="#price">프로모션</a>
+        <a class="btn btn-primary" href="tel:010-0000-0000" aria-label="전화하기">전화하기</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-card">
+      <div class="ribbon" aria-hidden="true"></div>
+      <div class="hero-top">
+        <img class="logo" src="sena.png" alt="세나폰 로고" />
+        <div>
+          <h2 class="title">세상에 나쁜 폰은 없다.</h2>
+          <p class="subtitle">대구 북구 <b>세나폰</b>. 합리적인 판매가와 깔끔한 상담, 데이터 이전부터 개통·AS까지 한 번에.  
+          불필요한 옵션 없이, 고객에게 딱 맞는 선택만 추천합니다.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="https://pf.kakao.com/_YOUR_ID" target="_blank" rel="noopener">카톡 상담</a>
+            <a class="btn" href="tel:010-0000-0000">전화 문의</a>
+            <a class="btn" href="https://map.naver.com/p/entry/place/YOUR_PLACE_ID" target="_blank" rel="noopener">길찾기</a>
+          </div>
+          <div class="badges">
+            <span class="badge">데이터 이전 무료</span>
+            <span class="badge">최대 보상판매</span>
+            <span class="badge">요금제 꼼꼼 비교</span>
+            <span class="badge">사후 A/S 안내</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BENEFITS -->
+      <div id="benefits" class="grid">
+        <article class="card">
+          <h3>정가보다 합리적인 판매가</h3>
+          <p>제조사/통신사 프로모션을 실시간 반영. 필요 없는 부가서비스는 빼고, 깔끔한 견적만.</p>
+        </article>
+        <article class="card">
+          <h3>데이터·앱 그대로</h3>
+          <p>사진/연락처/카톡/앱 이전을 안전하게 도와드립니다. 아이폰↔갤럭시도 OK.</p>
+        </article>
+        <article class="card">
+          <h3>사후관리까지 확실히</h3>
+          <p>요금제 변경, 파손/분실, 배터리 교체 등 문제 생기면 바로 연락주세요. 끝까지 챙깁니다.</p>
+        </article>
+      </div>
+    </div>
+  </header>
+
+  <!-- PRICE / PROMO -->
+  <section id="price" class="section">
+    <div class="container">
+      <h2>이달의 프로모션</h2>
+      <div class="price">
+        <div class="plan">
+          <h3>신규/번호이동</h3>
+          <div class="num">특가 진행중</div>
+          <ul>
+            <li>통신 3사 요금제 비교 후 최저가 제시</li>
+            <li>사은품 선택형(케이스/보조배터리 등)</li>
+            <li>데이터 이전 무료</li>
+          </ul>
+          <p class="note">* 재고/행사 조건은 매장 상황에 따라 변동</p>
+        </div>
+        <div class="plan">
+          <h3>기기변경</h3>
+          <div class="num">보상·할인 제공</div>
+          <ul>
+            <li>중고/보상판매가 즉시 반영</li>
+            <li>배터리 무상점검</li>
+            <li>필름 1회 무료 부착</li>
+          </ul>
+          <p class="note">* 정확한 금액은 방문/연락 시 안내</p>
+        </div>
+        <div class="plan">
+          <h3>알뜰요금제</h3>
+          <div class="num">월 0.9만~</div>
+          <ul>
+            <li>부모님·학생 맞춤 요금제</li>
+            <li>유심 개통 10분 컷</li>
+            <li>번호 그대로 이동 가능</li>
+          </ul>
+          <p class="note">* 제휴사 프로모션 상시 업데이트</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div>© <span id="year"></span> 세나폰 · All rights reserved.</div>
+      <div class="note">대구 북구 | 상담 10:00–20:00 · <a href="tel:010-0000-0000">010-0000-0000</a></div>
+    </div>
+  </footer>
+
+  <!-- MOBILE DOCK -->
+  <div class="dock" role="navigation" aria-label="빠른 상담">
+    <a href="tel:010-0000-0000">전화</a>
+    <a class="primary" href="https://pf.kakao.com/_YOUR_ID" target="_blank" rel="noopener">카톡 상담</a>
+    <a href="https://map.naver.com/p/entry/place/YOUR_PLACE_ID" target="_blank" rel="noopener">길찾기</a>
+  </div>
+
+  <script>
+    // 연도 자동 갱신
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // 부드러운 스크롤
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        if(id.length>1){
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-
