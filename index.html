@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>세나폰 | 세상에 나쁜 폰은 없다</title>
-  <meta name="description" content="대구 북구 세나폰 — 합리적인 판매가, 깔끔한 상담, 데이터 이전/개통/AS까지 한 번에. 세상에 나쁜 폰은 없습니다." />
+  <meta name="description" content="대구 북구 세나폰 — 합리적인 판매가, 깔끔한 상담, 데이터 이전/개통/AS까지 한 번에." />
   <meta property="og:title" content="세나폰 | 세상에 나쁜 폰은 없다" />
   <meta property="og:description" content="합리적인 판매가, 깔끔한 상담, 데이터 이전/개통/AS 한 번에." />
   <meta property="og:image" content="https://sena-phone.com/sena.png" />
@@ -22,8 +22,13 @@
         --shadow:0 10px 30px rgba(0,0,0,.35); --shadow-strong:0 20px 60px rgba(0,0,0,.5);
       }
     }
-    *{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
-      font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Apple SD Gothic Neo,Noto Sans KR,system-ui,sans-serif;letter-spacing:-.2px}
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;padding:0;background:var(--bg);color:var(--text);
+      font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Apple SD Gothic Neo,Noto Sans KR,system-ui,sans-serif;
+      letter-spacing:-.2px;
+      word-break: keep-all; /* 한국어 단어 세로로 쪼개짐 방지 */
+    }
     a{color:inherit;text-decoration:none}
     .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
 
@@ -31,8 +36,9 @@
     .nav{position:sticky;top:0;backdrop-filter:saturate(180%) blur(16px);
       background:color-mix(in oklab, var(--bg) 82%, transparent); border-bottom:1px solid var(--line); z-index:50}
     .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .brand{display:flex;gap:12px;align-items:center}
-    .brand img{height:34px} .brand h1{font-size:18px;margin:0;font-weight:700;letter-spacing:-.3px}
+    .brand{display:flex;gap:12px;align-items:center; flex-wrap:nowrap;} /* 세로 쪼개짐 방지 */
+    .brand img{height:34px; width:auto; flex-shrink:0;}
+    .brand h1{font-size:18px;margin:0;font-weight:700;letter-spacing:-.3px; white-space:nowrap;} /* 세로 쪼개짐 방지 */
     .cta{display:flex;gap:10px;align-items:center}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:14px;
       border:1px solid var(--line); background:var(--card); box-shadow:var(--shadow);
@@ -86,16 +92,20 @@
     .review .meta{color:var(--muted);font-size:13px}
     @media(max-width:980px){ .review{grid-column:span 6} }
     @media(max-width:640px){ .review{grid-column:span 12} }
-
-    /* 처음엔 6개 분량만 보이게 (대략 높이 제한) */
     .collapsed .reviews-grid{max-height:820px; overflow:hidden}
-    .collapsed .fade{
-      content:""; position:absolute; left:0; right:0; bottom:0; height:120px;
+    .collapsed .fade{content:""; position:absolute; left:0; right:0; bottom:0; height:120px;
       background:linear-gradient(180deg, transparent, color-mix(in oklab, var(--bg) 85%, transparent));
-      pointer-events:none; border-bottom-left-radius:18px; border-bottom-right-radius:18px;
-    }
+      pointer-events:none; border-bottom-left-radius:18px; border-bottom-right-radius:18px}
     .more{display:flex; justify-content:center; margin-top:14px}
     .more .btn{height:44px;border-radius:16px;padding:0 18px}
+
+    /* MAP (오시는 길) */
+    .mapcard{border:1px solid var(--line); border-radius:20px; background:var(--card); box-shadow:var(--shadow-strong); overflow:hidden}
+    .map-wrap{position:relative; width:100%; aspect-ratio:16/9; background:#ddd}
+    .map-wrap iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+    .map-info{display:flex; gap:16px; align-items:center; justify-content:space-between; padding:14px 16px; border-top:1px solid var(--line); flex-wrap:wrap}
+    .map-actions{display:flex; gap:8px; flex-wrap:wrap}
+    .btn.small{height:36px;border-radius:12px;padding:0 12px;font-weight:700}
 
     /* FOOTER */
     .footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px}
@@ -119,6 +129,7 @@
       <div class="cta">
         <a class="btn" href="#benefits">혜택</a>
         <a class="btn" href="#price">프로모션</a>
+        <a class="btn" href="#map">오시는 길</a>
         <a class="btn btn-primary" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">상담하기</a>
       </div>
     </div>
@@ -162,25 +173,16 @@
       <h2>이달의 프로모션</h2>
       <div class="price">
         <div class="plan">
-          <h3>신규/번호이동</h3>
-          <div class="num">특가 진행중</div>
-          <ul>
-            <li>통신 3사 최저가 실시간 견적</li><li>사은품 선택형</li><li>데이터 이전 무료</li>
-          </ul>
+          <h3>신규/번호이동</h3><div class="num">특가 진행중</div>
+          <ul><li>통신 3사 최저가 실시간 견적</li><li>사은품 선택형</li><li>데이터 이전 무료</li></ul>
         </div>
         <div class="plan">
-          <h3>기기변경</h3>
-          <div class="num">보상판매 혜택</div>
-          <ul>
-            <li>중고보상 즉시 반영</li><li>필름 무료 부착</li><li>배터리 무상 점검</li>
-          </ul>
+          <h3>기기변경</h3><div class="num">보상판매 혜택</div>
+          <ul><li>중고보상 즉시 반영</li><li>필름 무료 부착</li><li>배터리 무상 점검</li></ul>
         </div>
         <div class="plan">
-          <h3>알뜰요금제</h3>
-          <div class="num">월 9,000원~</div>
-          <ul>
-            <li>부모님·학생 맞춤 요금</li><li>유심 개통 10분</li><li>번호 그대로 이동</li>
-          </ul>
+          <h3>알뜰요금제</h3><div class="num">월 5,000원~</div> <!-- ← 금액 수정 완료 -->
+          <ul><li>부모님·학생 맞춤 요금</li><li>유심 개통 10분</li><li>번호 그대로 이동</li></ul>
         </div>
       </div>
     </div>
@@ -194,8 +196,36 @@
         <div class="reviews-grid" id="reviewsGrid"></div>
         <div class="fade" aria-hidden="true"></div>
       </div>
-      <div class="more">
-        <button id="toggleMore" class="btn">실후기 더 보기</button>
+      <div class="more"><button id="toggleMore" class="btn">실후기 더 보기</button></div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section id="map" class="section">
+    <div class="container">
+      <h2>오시는 길</h2>
+      <div class="mapcard">
+        <div class="map-wrap">
+          <!-- Google 지도 임베드 (주소 기반, API키 불필요) -->
+          <iframe
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421%2C%20%EC%9D%BC%EB%8F%84%ED%94%84%EB%9D%BC%EC%9E%90%20106-2&output=embed">
+          </iframe>
+        </div>
+        <div class="map-info">
+          <div>
+            <strong>세나폰</strong><br>
+            대구 북구 학정로 421, 일도프라자 106-2호<br>
+            상담 10:00–20:00 · <a href="tel:01080148600">010-8014-8600</a>
+          </div>
+          <div class="map-actions">
+            <a class="btn small" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">카톡 상담</a>
+            <a class="btn small" href="https://map.naver.com/v5/search/%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421" target="_blank" rel="noopener">네이버 길찾기</a>
+            <a class="btn small" href="https://map.kakao.com/link/search/%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421" target="_blank" rel="noopener">카카오 길찾기</a>
+            <a class="btn small" href="https://www.google.com/maps/dir/?api=1&destination=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421%2C%20%EC%9D%BC%EB%8F%84%ED%94%84%EB%9D%BC%EC%9E%90%20106-2" target="_blank" rel="noopener">구글 길찾기</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -212,7 +242,7 @@
   <div class="dock" role="navigation" aria-label="빠른 상담">
     <a href="tel:01080148600">전화</a>
     <a class="primary" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">카톡 상담</a>
-    <a href="#reviews">후기</a>
+    <a href="#map">오시는 길</a>
   </div>
 
   <script>
@@ -227,7 +257,7 @@
       });
     });
 
-    // ==== 후기 데이터 (50개) ====
+    // ==== 후기 50개 ====
     const REVIEWS = [
       {n:"김*우", m:"아이폰 15", t:"가격 깔끔, 설명 친절. 데이터 이전도 바로 끝!", d:"2025-08-02"},
       {n:"박*민", m:"갤럭시 S24", t:"호갱 방지 제대로. 요금제 비교해주셔서 만족합니다.", d:"2025-07-26"},
@@ -293,7 +323,7 @@
       grid.appendChild(el);
     });
 
-    // 더보기/접기 토글 (초기엔 6개 분량만 보이도록 .collapsed 유지)
+    // 더보기/접기 토글 (초기엔 6개 분량 보이도록 .collapsed 유지)
     const wrap = document.querySelector('.reviews-wrap');
     const btn = document.getElementById('toggleMore');
     const total = REVIEWS.length;
@@ -308,7 +338,6 @@
         btn.textContent = '접기';
       }else{
         btn.textContent = `실후기 더 보기 (${total - initialVisible}개)`;
-        // 스크롤 위치 살짝 올려주기 (접었을 때 UX)
         document.getElementById('reviews').scrollIntoView({behavior:'smooth', block:'start'});
       }
     });
