@@ -4,17 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <!-- ===== 검색엔진 타이틀/설명 & 기본 SEO ===== -->
   <title>세나폰 | 대구 북구 휴대폰 매장 · 아이폰/갤럭시 기기변경 · 데이터 이전</title>
   <meta name="description" content="대구 북구 휴대폰 매장 세나폰. 아이폰·갤럭시 기기변경/번호이동, 요금제 상담, 데이터 이전, 빠른 개통·AS까지 한 번에! 주차 가능 · 친절 상담.">
   <link rel="canonical" href="https://sena-phone.com/">
   <meta name="robots" content="index,follow">
   <meta http-equiv="Content-Language" content="ko">
 
-  <!-- ===== 네이버 소유확인 (이 값만 실제 발급값으로 교체!) ===== -->
+  <!-- 네이버 소유확인: 실제 값으로 교체 -->
   <meta name="naver-site-verification" content="여기에-네이버-검증값" />
 
-  <!-- ===== SNS 미리보기 ===== -->
+  <!-- OG/Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="세나폰">
   <meta property="og:locale" content="ko_KR">
@@ -27,183 +26,147 @@
   <meta name="format-detection" content="telephone=no" />
   <link rel="icon" href="favicon.ico" />
 
-  <!-- ===== Fonts (성능 최적화: preconnect) ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#f5f5f7; --card:#ffffff; --text:#0a0a0a; --muted:#6b6b6b; --line:#ececec;
+      --bg:#f6f7f9; --card:#ffffff; --text:#0a0a0a; --muted:#666; --line:#eaeaea;
       --brand:#e0362b; --brand-deep:#c1211a;
       --radius:22px; --shadow:0 10px 30px rgba(0,0,0,.07); --shadow-strong:0 22px 60px rgba(0,0,0,.12);
       --maxw:1080px;
     }
     *{box-sizing:border-box}
-    html,body{
-      margin:0; padding:0; background:var(--bg); color:var(--text);
-      font:16px/1.6 Inter, Noto Sans KR, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Apple SD Gothic Neo, system-ui, sans-serif;
-      letter-spacing:-.2px; word-break:keep-all; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-    }
-    a{color:inherit; text-decoration:none}
-    .container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
-    * { -webkit-tap-highlight-color: rgba(0,0,0,0.08); }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+      font:16px/1.65 Inter,"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Apple SD Gothic Neo,system-ui,sans-serif;
+      letter-spacing:-.2px; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+    *{-webkit-tap-highlight-color:rgba(0,0,0,.08)}
 
-    /* ===== NAV (Glass + Scroll Elevation) ===== */
-    .nav{
-      position:sticky; top:0; z-index:60; border-bottom:1px solid var(--line);
-      background:color-mix(in oklab, var(--bg) 86%, transparent);
-      backdrop-filter:saturate(160%) blur(12px); transition: box-shadow .2s ease, background .2s ease;
-    }
-    .nav.scrolled{ box-shadow: 0 4px 20px rgba(0,0,0,.06); background:color-mix(in oklab, var(--bg) 94%, transparent) }
-    .nav-wrap{display:flex; align-items:center; justify-content:space-between; height:64px}
-    .brand{display:flex; gap:12px; align-items:center; flex-wrap:nowrap}
-    .brand img{height:34px; width:auto; flex-shrink:0}
-    .brand strong{margin:0; font-size:18px; font-weight:900; white-space:nowrap; letter-spacing:-.3px}
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:60;border-bottom:1px solid var(--line);
+      background:color-mix(in oklab,var(--bg) 86%,transparent);backdrop-filter:saturate(160%) blur(12px);
+      transition:box-shadow .2s,background .2s}
+    .nav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.06);background:color-mix(in oklab,var(--bg) 94%,transparent)}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;gap:10px;align-items:center}
+    .brand img{height:34px;width:auto}
+    .brand strong{font-size:18px;font-weight:900;letter-spacing:-.3px}
 
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      height:40px; padding:0 16px; border-radius:14px; border:1px solid var(--line);
-      background:var(--card); box-shadow:var(--shadow);
-      transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
-      font-weight:700; white-space:nowrap
-    }
-    .btn:hover{transform:translateY(-1px); box-shadow:var(--shadow-strong)}
-    .btn-primary{background:linear-gradient(180deg, color-mix(in oklab, var(--brand) 94%, #fff) 0%, var(--brand) 100%); color:#fff; border-color:transparent}
+    .desktop-menu{display:flex;gap:8px;align-items:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:14px;border:1px solid var(--line);
+      background:var(--card);box-shadow:var(--shadow);transition:transform .15s,box-shadow .2s,border-color .2s;background-clip:padding-box;font-weight:700}
+    .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-strong)}
+    .btn-primary{background:linear-gradient(180deg,color-mix(in oklab,var(--brand) 94%,#fff) 0%,var(--brand) 100%);color:#fff;border-color:transparent}
+    .btn-ghost{background:transparent}
+    .active{outline:2px solid color-mix(in oklab,var(--brand) 30%,#fff)}
 
-    /* Desktop menu */
-    .desktop-menu{display:flex; gap:10px; align-items:center}
-    /* Mobile hamburger */
-    .hamburger{display:none; width:40px; height:40px; border-radius:12px; border:1px solid var(--line); background:var(--card);
-      align-items:center; justify-content:center; box-shadow:var(--shadow)}
+    .hamburger{display:none;width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:var(--card);
+      align-items:center;justify-content:center;box-shadow:var(--shadow)}
     .hamburger span{display:block;width:18px;height:2px;background:#111;position:relative}
     .hamburger span::before,.hamburger span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:#111}
     .hamburger span::before{top:-6px}.hamburger span::after{top:6px}
-    @media(max-width:980px){ .desktop-menu{display:none} .hamburger{display:flex} }
+    @media(max-width:980px){.desktop-menu{display:none}.hamburger{display:flex}}
 
-    /* Drawer */
-    .overlay{position:fixed; inset:0; background:rgba(0,0,0,.28); opacity:0; pointer-events:none; transition:opacity .2s; z-index:70}
-    .overlay.show{opacity:1; pointer-events:auto}
-    .drawer{position:fixed; top:0; right:-320px; width:min(88%,320px); height:100%; background:var(--card);
-      display:flex; flex-direction:column; border-left:1px solid var(--line); box-shadow:var(--shadow-strong); z-index:80; transition:right .24s}
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.28);opacity:0;pointer-events:none;transition:opacity .2s;z-index:70}
+    .overlay.show{opacity:1;pointer-events:auto}
+    .drawer{position:fixed;top:0;right:-320px;width:min(88%,320px);height:100%;background:var(--card);
+      display:flex;flex-direction:column;border-left:1px solid var(--line);box-shadow:var(--shadow-strong);z-index:80;transition:right .24s}
     .drawer.open{right:0}
-    .drawer-head{display:flex; align-items:center; justify-content:space-between; padding:16px; border-bottom:1px solid var(--line)}
-    .drawer-body{padding:14px; display:flex; flex-direction:column; gap:10px}
-    .drawer .btn{height:46px; border-radius:14px}
+    .drawer-head{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid var(--line)}
+    .drawer-body{padding:14px;display:flex;flex-direction:column;gap:10px}
+    .drawer .btn{height:46px;border-radius:14px}
 
-    /* ===== HERO ===== */
+    /* HERO */
     .hero{padding:64px 0 42px}
-    .hero-card{
-      position:relative; border:1px solid var(--line); border-radius:calc(var(--radius) + 6px); padding:48px;
+    .hero-card{position:relative;border:1px solid var(--line);border-radius:calc(var(--radius) + 6px);padding:48px;
       background:
         radial-gradient(1200px 600px at 85% -10%, rgba(224,54,43,.10), transparent 60%),
         radial-gradient(900px 500px at -10% 110%, rgba(224,54,43,.08), transparent 60%),
         linear-gradient(180deg,#fff 0%, #fafafa 100%);
-      box-shadow:var(--shadow-strong); overflow:hidden;
-    }
-    .hero-top{display:flex; gap:36px; align-items:center; flex-wrap:wrap}
-    .hero img.logo{width:120px; height:auto; border-radius:22px; box-shadow:var(--shadow)}
-    .title{font-size:42px; line-height:1.15; margin:0 0 12px; font-weight:900; letter-spacing:-.6px}
-    .subtitle{font-size:18px; color:var(--muted); margin:0 0 24px; max-width:720px}
-    .hero-cta{display:flex; gap:12px; flex-wrap:wrap}
-    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:20px}
-    .badge{border:1px solid var(--line); background:var(--card); padding:8px 12px; border-radius:999px; color:var(--muted); font-weight:700}
-    @media(max-width:980px){ .title{font-size:34px} .hero img.logo{width:96px} }
-    @media(max-width:640px){ .hero-card{padding:28px} .title{font-size:28px} }
+      box-shadow:var(--shadow-strong);overflow:hidden}
+    .hero-top{display:flex;gap:36px;align-items:center;flex-wrap:wrap}
+    .hero img.logo{width:120px;height:auto;border-radius:22px;box-shadow:var(--shadow)}
+    .title{font-size:42px;line-height:1.15;margin:0 0 12px;font-weight:900;letter-spacing:-.6px}
+    .subtitle{font-size:18px;color:var(--muted);margin:0 0 24px;max-width:720px}
+    .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+    .badge{border:1px solid var(--line);background:var(--card);padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:700}
+    @media(max-width:980px){.title{font-size:34px}.hero img.logo{width:96px}}
+    @media(max-width:640px){.hero-card{padding:28px}.title{font-size:28px}}
 
-    /* ===== CARDS with icons ===== */
-    .grid{display:grid; gap:18px; grid-template-columns:repeat(12,1fr); margin-top:28px}
-    .card{grid-column:span 4; border:1px solid var(--line); background:var(--card); border-radius:var(--radius); padding:22px;
-      box-shadow:var(--shadow); transition:transform .15s, box-shadow .2s, border-color .2s}
-    .card:hover{transform:translateY(-3px); box-shadow:var(--shadow-strong)}
-    .card .ico{width:28px; height:28px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center;
-      background:color-mix(in oklab, var(--brand) 12%, #fff); border:1px solid var(--line)}
-    .card h3{margin:10px 0 8px; font-size:18px}
-    .card p{margin:0; color:var(--muted)}
-    @media(max-width:980px){ .card{grid-column:span 6} }
-    @media(max-width:640px){ .card{grid-column:span 12} }
+    /* GRID CARDS */
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(12,1fr);margin-top:28px}
+    .card{grid-column:span 4;border:1px solid var(--line);background:var(--card);border-radius:var(--radius);padding:22px;
+      box-shadow:var(--shadow);transition:transform .15s,box-shadow .2s,border-color .2s}
+    .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-strong)}
+    .card .ico{width:28px;height:28px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;background:color-mix(in oklab,var(--brand) 12%,#fff);border:1px solid var(--line)}
+    .card h3{margin:10px 0 8px;font-size:18px}
+    .card p{margin:0;color:var(--muted)}
+    @media(max-width:980px){.card{grid-column:span 6}}
+    @media(max-width:640px){.card{grid-column:span 12}}
 
     .section{padding:28px 0 70px}
-    .section h2{font-size:26px; margin:0 0 18px}
+    .section h2{font-size:26px;margin:0 0 18px}
+    .price{display:flex;gap:18px;flex-wrap:wrap}
+    .price .plan{flex:1 1 260px;border:1px solid var(--line);background:var(--card);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .plan h3{margin:0 0 6px;font-size:18px}
+    .plan .num{font-size:34px;font-weight:900;letter-spacing:-.5px}
+    .plan ul{margin:12px 0 0;padding:0 0 0 18px;color:var(--muted)}
+    .note{color:var(--muted);font-size:14px}
 
-    .price{display:flex; gap:18px; flex-wrap:wrap}
-    .price .plan{flex:1 1 260px; border:1px solid var(--line); background:var(--card); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
-    .plan h3{margin:0 0 6px; font-size:18px}
-    .plan .num{font-size:34px; font-weight:900; letter-spacing:-.5px}
-    .plan ul{margin:12px 0 0; padding:0 0 0 18px; color:var(--muted)}
-    .note{color:var(--muted); font-size:14px}
-
-    /* ===== REVIEWS (avatar + stars) ===== */
+    /* REVIEWS PREVIEW */
     .reviews{padding:10px 0 90px}
     .reviews h2{margin-bottom:14px}
-    .reviews-wrap{position:relative}
-    .reviews-grid{display:grid; grid-template-columns:repeat(12,1fr); gap:14px}
-    .review{grid-column:span 4; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:var(--shadow); min-height:120px}
-    .meta-row{display:flex; align-items:center; gap:10px; margin-bottom:8px}
-    .avatar{width:32px; height:32px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:900; font-size:12px; color:#fff;
-      background: radial-gradient(120% 120% at 80% 20%, var(--brand) 0%, var(--brand-deep) 70%)}
-    .name{font-weight:800}
-    .stars svg{width:14px; height:14px; margin-right:2px; fill:#f1b400}
-    .review .txt{margin:6px 0 10px}
-    .review .meta{color:var(--muted); font-size:13px}
-    @media(max-width:980px){ .review{grid-column:span 6} }
-    @media(max-width:640px){ .review{grid-column:span 12} }
+    .preview{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .preview .review{grid-column:span 4;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+    .meta-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+    .avatar{width:32px;height:32px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:12px;color:#fff;background:radial-gradient(120% 120% at 80% 20%,var(--brand) 0%,var(--brand-deep) 70%)}
+    .stars svg{width:14px;height:14px;margin-right:2px;fill:#f1b400}
+    .preview .txt{margin:6px 0 10px}
+    .preview .meta{color:var(--muted);font-size:13px}
+    @media(max-width:980px){.preview .review{grid-column:span 6}}
+    @media(max-width:640px){.preview .review{grid-column:span 12}}
 
-    /* collapse to ~6cards */
-    .collapsed .reviews-grid{max-height:820px; overflow:hidden}
-    .collapsed .fade{content:""; position:absolute; left:0; right:0; bottom:0; height:120px;
-      background:linear-gradient(180deg, transparent, color-mix(in oklab, var(--bg) 88%, transparent)); pointer-events:none; border-bottom-left-radius:18px; border-bottom-right-radius:18px}
-    .more{display:flex; justify-content:center; margin-top:14px}
-    .more .btn{height:44px; border-radius:16px; padding:0 18px}
+    /* MAP */
+    .mapcard{border:1px solid var(--line);border-radius:20px;background:var(--card);box-shadow:var(--shadow-strong);overflow:hidden}
+    .map-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#ddd}
+    .map-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .map-info{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:14px 16px;border-top:1px solid var(--line);flex-wrap:wrap}
+    .map-actions{display:flex;gap:8px;flex-wrap:wrap}
+    .btn.small{height:36px;border-radius:12px;padding:0 12px;font-weight:800}
 
-    /* ===== MAP ===== */
-    .mapcard{border:1px solid var(--line); border-radius:20px; background:var(--card); box-shadow:var(--shadow-strong); overflow:hidden}
-    .map-wrap{position:relative; width:100%; aspect-ratio:16/9; background:#ddd}
-    .map-wrap iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
-    .map-info{display:flex; gap:16px; align-items:center; justify-content:space-between; padding:14px 16px; border-top:1px solid var(--line); flex-wrap:wrap}
-    .map-actions{display:flex; gap:8px; flex-wrap:wrap}
-    .btn.small{height:36px; border-radius:12px; padding:0 12px; font-weight:800}
-
-    /* ===== FOOTER ===== */
-    .footer{border-top:1px solid var(--line); padding:28px 0; color:var(--muted); font-size:14px}
-
-    /* ===== Sticky CTA (1 button) ===== */
+    /* FOOTER / Sticky CTA */
+    .footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px}
     body{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
-    .sticky-cta{position:fixed; left:50%; bottom:12px; transform:translateX(-50%); width:min(100%, var(--maxw)); z-index:90; padding:8px 10px}
-    .sticky-cta .wrap{
-      display:flex; justify-content:center; background:color-mix(in oklab, var(--card) 98%, transparent);
-      border:1px solid var(--line); box-shadow:var(--shadow-strong); border-radius:999px; padding:6px 8px; backdrop-filter:saturate(140%) blur(8px)
-    }
-    .sticky-cta a{
-      display:flex; align-items:center; justify-content:center; min-width:240px; height:52px; padding:0 24px; border-radius:999px;
-      font-weight:900; font-size:16.5px; line-height:1; letter-spacing:-.2px; background:var(--brand); color:#fff; border:0; box-shadow:var(--shadow-strong)
-    }
-    @media(max-width:420px){ .sticky-cta a{min-width:unset; width:100%} }
+    .sticky-cta{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);width:min(100%,var(--maxw));z-index:90;padding:8px 10px}
+    .sticky-cta .wrap{display:flex;justify-content:center;background:color-mix(in oklab,var(--card) 98%,transparent);border:1px solid var(--line);box-shadow:var(--shadow-strong);border-radius:999px;padding:6px 8px;backdrop-filter:saturate(140%) blur(8px)}
+    .sticky-cta a{display:flex;align-items:center;justify-content:center;min-width:240px;height:52px;padding:0 24px;border-radius:999px;font-weight:900;font-size:16.5px;line-height:1;letter-spacing:-.2px;background:var(--brand);color:#fff;border:0;box-shadow:var(--shadow-strong)}
+    @media(max-width:420px){.sticky-cta a{min-width:unset;width:100%}}
   </style>
 </head>
 <body>
-  <!-- ===== NAV ===== -->
+  <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="container nav-wrap">
-      <div class="brand">
+      <a class="brand" href="/">
         <img src="sena.png" alt="세나폰 로고" loading="lazy" decoding="async" />
         <strong>세나폰</strong>
-      </div>
-
-      <!-- desktop -->
+      </a>
       <div class="desktop-menu">
-        <a class="btn" href="#benefits">혜택</a>
-        <a class="btn" href="#price">프로모션</a>
-        <a class="btn" href="#map">오시는 길</a>
+        <a class="btn" href="/about">소개</a>
+        <a class="btn active" href="/#price">프로모션</a>
+        <a class="btn" href="/#map">오시는 길</a>
+        <a class="btn" href="/reviews">후기</a>
         <a class="btn btn-primary" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">상담하기</a>
       </div>
-
-      <!-- mobile -->
       <button class="hamburger" id="openMenu" aria-label="메뉴 열기" aria-controls="drawer" aria-expanded="false"><span></span></button>
     </div>
   </nav>
 
-  <!-- Drawer & Overlay -->
+  <!-- Drawer -->
   <div class="overlay" id="overlay" aria-hidden="true"></div>
   <aside class="drawer" id="drawer" aria-hidden="true" role="dialog" aria-label="내비게이션 메뉴">
     <div class="drawer-head">
@@ -211,28 +174,28 @@
       <a href="#" id="closeMenu" class="btn" aria-label="메뉴 닫기">닫기</a>
     </div>
     <div class="drawer-body">
-      <a class="btn" href="#benefits">혜택</a>
-      <a class="btn" href="#price">프로모션</a>
-      <a class="btn" href="#map">오시는 길</a>
+      <a class="btn" href="/about">소개</a>
+      <a class="btn" href="/#price">프로모션</a>
+      <a class="btn" href="/#map">오시는 길</a>
+      <a class="btn" href="/reviews">후기</a>
       <a class="btn btn-primary" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">상담하기</a>
     </div>
   </aside>
 
-  <!-- ===== HERO ===== -->
+  <!-- HERO -->
   <header class="hero">
     <div class="container hero-card">
       <div class="hero-top">
         <img class="logo" src="sena.png" alt="세나폰 로고" width="240" height="240" loading="lazy" decoding="async" />
         <div>
-          <!-- 메인 H1: 키워드 포함 -->
           <h1 class="title">대구 북구 휴대폰 매장 세나폰 — 아이폰·갤럭시 기기변경, 데이터 이전</h1>
           <p class="subtitle">합리적인 판매가와 깔끔한 상담, 데이터 이전부터 개통·AS까지 한 번에. 방문 주차 가능 · 친절 상담.</p>
           <div class="hero-cta">
             <a class="btn btn-primary" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">카톡 상담</a>
             <a class="btn" href="tel:01080148600" aria-label="전화 문의 010-8014-8600">전화 문의</a>
-            <a class="btn" href="#reviews">실후기 보기</a>
+            <a class="btn" href="/reviews">실후기 보기</a>
           </div>
-          <div class="badges" aria-label="매장 주요 장점">
+          <div class="badges" aria-label="매장 장점">
             <span class="badge">데이터 이전 무료</span>
             <span class="badge">보상판매 가능</span>
             <span class="badge">요금제 비교상담</span>
@@ -241,26 +204,20 @@
         </div>
       </div>
 
-      <!-- Benefits -->
+      <!-- 3카드 -->
       <div id="benefits" class="grid">
         <article class="card">
-          <span class="ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="16" height="16" role="img" aria-label="가격"><path d="M4 7h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7zm3-3h10l1 3H6l1-3z"/></svg>
-          </span>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 7h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7zm3-3h10l1 3H6l1-3z"/></svg></span>
           <h3>합리적인 판매가</h3>
-          <p>통신 3사 프로모션을 반영해 불필요한 옵션 없이 깔끔한 견적만 제시합니다.</p>
+          <p>통신 3사 프로모션 반영, 불필요한 옵션 없이 깔끔한 견적만 제시합니다.</p>
         </article>
         <article class="card">
-          <span class="ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="16" height="16" role="img" aria-label="데이터 이전"><path d="M7 7h10v10H7z"/><path d="M3 11h4v2H3zM17 11h4v2h-4zM11 3h2v4h-2zM11 17h2v4h-2z"/></svg>
-          </span>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 7h10v10H7z"/><path d="M3 11h4v2H3zM17 11h4v2h-4zM11 3h2v4h-2zM11 17h2v4h-2z"/></svg></span>
           <h3>데이터 그대로 이전</h3>
           <p>사진·연락처·카톡·앱까지 안전 이전. 아이폰↔갤럭시 모두 문제없습니다.</p>
         </article>
         <article class="card">
-          <span class="ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="16" height="16" role="img" aria-label="사후관리"><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm1 5v6l4 2"/></svg>
-          </span>
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm1 5v6l4 2"/></svg></span>
           <h3>사후관리까지 완벽</h3>
           <p>요금제 변경·분실·파손 등 문제 발생 시 빠르게 응대하고 끝까지 챙깁니다.</p>
         </article>
@@ -268,62 +225,48 @@
     </div>
   </header>
 
-  <!-- ===== PRICE ===== -->
+  <!-- PRICE -->
   <section id="price" class="section">
     <div class="container">
       <h2>이달의 프로모션</h2>
       <div class="price" aria-label="프로모션 요약">
-        <div class="plan">
-          <h3>신규/번호이동</h3><div class="num">특가 진행중</div>
+        <div class="plan"><h3>신규/번호이동</h3><div class="num">특가 진행중</div>
           <ul><li>통신 3사 최저가 실시간 견적</li><li>사은품 선택형</li><li>데이터 이전 무료</li></ul>
         </div>
-        <div class="plan">
-          <h3>기기변경</h3><div class="num">보상판매 혜택</div>
+        <div class="plan"><h3>기기변경</h3><div class="num">보상판매 혜택</div>
           <ul><li>중고보상 즉시 반영</li><li>필름 무료 부착</li><li>배터리 무상 점검</li></ul>
         </div>
-        <div class="plan">
-          <h3>알뜰요금제</h3><div class="num">월 5,000원~</div>
+        <div class="plan"><h3>알뜰요금제</h3><div class="num">월 5,000원~</div>
           <ul><li>부모님·학생 맞춤 요금</li><li>유심 개통 10분</li><li>번호 그대로 이동</li></ul>
         </div>
       </div>
-
-      <!-- 지역 키워드 보강(SEO) -->
-      <p class="note" style="margin-top:14px">
-        대구 <strong>북구/칠곡/태전동/학정동</strong> 인근 고객님 환영합니다. 무료 주차 가능, 방문 전 카톡 상담 가능합니다.
-      </p>
+      <p class="note" style="margin-top:14px">대구 <strong>북구/칠곡/태전동/학정동</strong> 인근 고객님 환영합니다. 무료 주차 가능, 방문 전 카톡 상담 가능.</p>
     </div>
   </section>
 
-  <!-- ===== REVIEWS ===== -->
-  <section id="reviews" class="section reviews">
+  <!-- REVIEWS PREVIEW -->
+  <section class="section reviews">
     <div class="container">
-      <h2>고객 후기</h2>
-      <div class="reviews-wrap collapsed">
-        <div class="reviews-grid" id="reviewsGrid"></div>
-        <div class="fade" aria-hidden="true"></div>
+      <h2>실제 고객 후기 미리보기</h2>
+      <div class="preview" id="previewGrid"></div>
+      <div class="more" style="display:flex;justify-content:center;margin-top:14px">
+        <a class="btn" href="/reviews">후기 전체 보기</a>
       </div>
-      <div class="more"><button id="toggleMore" class="btn" aria-expanded="false">실후기 더 보기</button></div>
     </div>
   </section>
 
-  <!-- ===== MAP ===== -->
+  <!-- MAP -->
   <section id="map" class="section">
     <div class="container">
       <h2>오시는 길</h2>
-      <div class="mapcard" itemscope itemtype="https://schema.org/MobilePhoneStore">
-        <meta itemprop="name" content="세나폰">
+      <div class="mapcard">
         <div class="map-wrap">
           <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
             src="https://www.google.com/maps?q=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421%2C%20%EC%9D%BC%EB%8F%84%ED%94%84%EB%9D%BC%EC%9E%90%20106-2&output=embed"
-            title="세나폰 위치 지도">
-          </iframe>
+            title="세나폰 위치 지도"></iframe>
         </div>
         <div class="map-info">
-          <div>
-            <strong>세나폰</strong><br>
-            대구 북구 학정로 421, 일도프라자 106-2호<br>
-            상담 10:00–20:00 · <a href="tel:01080148600">010-8014-8600</a>
-          </div>
+          <div><strong>세나폰</strong><br>대구 북구 학정로 421, 일도프라자 106-2호<br>상담 10:00–20:00 · <a href="tel:01080148600">010-8014-8600</a></div>
           <div class="map-actions">
             <a class="btn small" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">카톡 상담</a>
             <a class="btn small" href="https://map.naver.com/v5/search/%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421" target="_blank" rel="noopener">네이버 길찾기</a>
@@ -335,7 +278,7 @@
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
       <div>© <span id="year"></span> 세나폰 · All rights reserved.</div>
@@ -343,169 +286,42 @@
     </div>
   </footer>
 
-  <!-- ===== Sticky CTA (single) ===== -->
+  <!-- Sticky CTA -->
   <div class="sticky-cta" role="region" aria-label="실시간 최저가 견적받기">
-    <div class="wrap">
-      <a href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">실시간 최저가 견적받기</a>
-    </div>
+    <div class="wrap"><a href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">실시간 최저가 견적받기</a></div>
   </div>
 
-  <!-- ===== 구조화 데이터 (업종 특화 + 좌표) ===== -->
+  <!-- 구조화데이터 -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "MobilePhoneStore",
-    "name": "세나폰",
-    "url": "https://sena-phone.com/",
-    "image": "https://sena-phone.com/sena.png",
-    "telephone": "+82-10-8014-8600",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "KR",
-      "addressRegion": "대구광역시",
-      "addressLocality": "북구",
-      "streetAddress": "학정로 421, 일도프라자 106-2호"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 35.94572,
-      "longitude": 128.57072
-    },
-    "openingHoursSpecification": [
-      {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"10:00","closes":"20:00"}
-    ],
-    "sameAs": [
-      "https://map.naver.com/v5/search/%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421",
-      "http://pf.kakao.com/_Mtxmxcn"
-    ]
+    "@context":"https://schema.org",
+    "@type":"MobilePhoneStore",
+    "name":"세나폰",
+    "url":"https://sena-phone.com/",
+    "image":"https://sena-phone.com/sena.png",
+    "telephone":"+82-10-8014-8600",
+    "address":{"@type":"PostalAddress","addressCountry":"KR","addressRegion":"대구광역시","addressLocality":"북구","streetAddress":"학정로 421, 일도프라자 106-2호"},
+    "geo":{"@type":"GeoCoordinates","latitude":35.94572,"longitude":128.57072},
+    "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"10:00","closes":"20:00"}]
   }
   </script>
 
   <script>
-    // Year + header elevation
+    // year + nav elevate
     document.getElementById('year').textContent = new Date().getFullYear();
-    const nav = document.getElementById('nav');
-    const elevate = () => nav.classList.toggle('scrolled', window.scrollY > 6);
-    elevate(); window.addEventListener('scroll', elevate, {passive:true});
+    const nav=document.getElementById('nav'); const elevate=()=>nav.classList.toggle('scrolled',window.scrollY>6); elevate(); window.addEventListener('scroll',elevate,{passive:true});
 
-    // Smooth scroll + close drawer after click
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id=a.getAttribute('href');
-        if(id.length>1){
-          e.preventDefault();
-          document.querySelector(id)?.scrollIntoView({behavior:'smooth'});
-          closeDrawer();
-        }
-      });
-    });
+    // drawer
+    const drawer=document.getElementById('drawer'), overlay=document.getElementById('overlay'), openBtn=document.getElementById('openMenu'), closeBtn=document.getElementById('closeMenu'); let lastFocus=null;
+    function openDrawer(){ lastFocus=document.activeElement; drawer.classList.add('open'); overlay.classList.add('show'); drawer.setAttribute('aria-hidden','false'); overlay.setAttribute('aria-hidden','false'); openBtn.setAttribute('aria-expanded','true'); closeBtn.focus(); }
+    function closeDrawer(){ drawer.classList.remove('open'); overlay.classList.remove('show'); drawer.setAttribute('aria-hidden','true'); overlay.setAttribute('aria-hidden','true'); openBtn.setAttribute('aria-expanded','false'); if(lastFocus) lastFocus.focus(); }
+    openBtn.addEventListener('click',e=>{e.preventDefault();openDrawer();}); closeBtn.addEventListener('click',e=>{e.preventDefault();closeDrawer();}); overlay.addEventListener('click',closeDrawer); window.addEventListener('keydown',e=>{if(e.key==='Escape') closeDrawer();});
 
-    // Drawer (with basic focus trap)
-    const drawer = document.getElementById('drawer');
-    const overlay = document.getElementById('overlay');
-    const openBtn = document.getElementById('openMenu');
-    const closeBtn = document.getElementById('closeMenu');
-    let lastFocus = null;
-
-    function openDrawer(){
-      lastFocus = document.activeElement;
-      drawer.classList.add('open'); overlay.classList.add('show');
-      drawer.setAttribute('aria-hidden','false'); overlay.setAttribute('aria-hidden','false');
-      openBtn.setAttribute('aria-expanded','true');
-      closeBtn.focus();
-    }
-    function closeDrawer(){
-      drawer.classList.remove('open'); overlay.classList.remove('show');
-      drawer.setAttribute('aria-hidden','true'); overlay.setAttribute('aria-hidden','true');
-      openBtn.setAttribute('aria-expanded','false');
-      if(lastFocus) lastFocus.focus();
-    }
-    openBtn.addEventListener('click', (e)=>{e.preventDefault(); openDrawer();});
-    closeBtn.addEventListener('click', (e)=>{e.preventDefault(); closeDrawer();});
-    overlay.addEventListener('click', closeDrawer);
-    window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeDrawer(); });
-
-    // ===== Reviews =====
-    const REVIEWS = [
-      {n:"김*우", m:"아이폰 15", t:"가격 깔끔, 설명 친절. 데이터 이전도 바로 끝!", d:"2025-08-02"},
-      {n:"박*민", m:"갤럭시 S24", t:"호갱 방지 제대로. 요금제 비교해주셔서 만족합니다.", d:"2025-07-26"},
-      {n:"이*현", m:"아이폰 14", t:"카톡 문의 답변 빠르고 방문하니 바로 개통됐어요.", d:"2025-07-10"},
-      {n:"정*연", m:"갤럭시 A35", t:"부모님 폰 교체 도와주셨는데 응대가 너무 부드러움.", d:"2025-06-30"},
-      {n:"최*석", m:"아이폰 15 Pro", t:"사은품 선택 다양하고 강요 전혀 없음. 강추!", d:"2025-06-21"},
-      {n:"오*진", m:"갤럭시 S24 Ultra", t:"보상판매가 잘 나와서 기변 부담 줄었어요.", d:"2025-06-12"},
-      {n:"문*혁", m:"갤럭시 Z Flip", t:"케이스/필름 서비스까지 완벽. 다음에도 여기!", d:"2025-06-03"},
-      {n:"유*빈", m:"아이폰 SE", t:"학생 맞춤 요금제로 딱 맞춰주셨어요.", d:"2025-05-28"},
-      {n:"조*진", m:"갤럭시 S23", t:"설명 명확. 추가요금 없이 깔끔하게 끝!", d:"2025-05-19"},
-      {n:"장*수", m:"아이폰 13", t:"중고 보상판매 안내가 현실적이어서 신뢰감 굿.", d:"2025-05-10"},
-      {n:"한*지", m:"갤럭시 A24", t:"어르신 폰 이전 천천히 도와주셔서 감사합니다.", d:"2025-05-01"},
-      {n:"서*우", m:"아이폰 15", t:"예약 없이 방문했는데 빠르게 처리됐어요.", d:"2025-04-27"},
-      {n:"노*형", m:"갤럭시 S24", t:"요금제 바꿔서 한달 통신비 절약! 만족.", d:"2025-04-20"},
-      {n:"배*나", m:"아이폰 15", t:"직접 써보는 팁까지 알려주셔서 도움됐습니다.", d:"2025-04-11"},
-      {n:"임*호", m:"갤럭시 S22", t:"데이터 백업/복원 깔끔. 기다림 거의 없음.", d:"2025-04-02"},
-      {n:"민*서", m:"아이폰 12", t:"중학생 폰 처음 개통하는데 친절하게 안내!", d:"2025-03-25"},
-      {n:"권*서", m:"갤럭시 A54", t:"알뜰요금제로 갈아탔는데 만족합니다.", d:"2025-03-16"},
-      {n:"양*흔", m:"아이폰 15 Pro", t:"강매 없고 비교표로 딱 설명해주셔서 신뢰.", d:"2025-03-07"},
-      {n:"신*주", m:"갤럭시 S24", t:"사은품 퀄리티 좋아요. 필름 부착도 깔끔.", d:"2025-02-26"},
-      {n:"오*수", m:"갤럭시 S21", t:"배터리 교체 상담만 했는데도 친절했어요.", d:"2025-02-18"},
-      {n:"하*진", m:"아이폰 15", t:"길찾기 편하고 주차 가능. 다음에 또!", d:"2025-02-10"},
-      {n:"김*하", m:"갤럭시 S24", t:"업무용 폰 다량 개통했는데 처리 매끄러움.", d:"2025-02-01"},
-      {n:"서*윤", m:"아이폰 14", t:"카톡 문의 답변 빨라서 믿고 방문.", d:"2025-01-23"},
-      {n:"이*겸", m:"갤럭시 A15", t:"부모님 폰 최적 요금제로 저렴하게!", d:"2025-01-16"},
-      {n:"주*성", m:"아이폰 15", t:"사후 AS 안내까지 확실. 추천합니다.", d:"2025-01-09"},
-      {n:"장*윤", m:"갤럭시 S23", t:"보상가 잘 쳐줘서 기변 비용 줄었어요.", d:"2024-12-28"},
-      {n:"채*호", m:"아이폰 15", t:"대기시간 짧고 응대 시원시원.", d:"2024-12-20"},
-      {n:"유*성", m:"갤럭시 Z Fold", t:"폴드 특성 설명 자세. 만족!", d:"2024-12-12"},
-      {n:"이*빈", m:"아이폰 13 mini", t:"중고 매입가 투명하게 안내해줌.", d:"2024-12-04"},
-      {n:"공*우", m:"갤럭시 A34", t:"지인 추천으로 왔는데 이유가 있네요.", d:"2024-11-25"},
-      {n:"마*준", m:"아이폰 15", t:"사장님이 직접 셋팅 도와주셔서 고맙습니다.", d:"2024-11-16"},
-      {n:"도*연", m:"갤럭시 S24", t:"유심 개통 10분 컷 실화.", d:"2024-11-08"},
-      {n:"홍*범", m:"아이폰 14", t:"케이스/필름 서비스 만족!", d:"2024-10-30"},
-      {n:"이*선", m:"갤럭시 S22", t:"요금제 상담이 깔끔해서 이해 쉬웠어요.", d:"2024-10-22"},
-      {n:"권*찬", m:"아이폰 SE", t:"학생 요금제 가성비 최고.", d:"2024-10-14"},
-      {n:"박*하", m:"갤럭시 A24", t:"어머니 폰 바꿔드리고 효도했습니다.", d:"2024-10-06"},
-      {n:"정*수", m:"아이폰 15 Pro", t:"재방문 의사 100%!", d:"2024-09-28"},
-      {n:"김*제", m:"갤럭시 S23", t:"상담이 솔직해서 믿음감 있어요.", d:"2024-09-19"},
-      {n:"노*리", m:"아이폰 12", t:"백업 꼼꼼히 챙겨주심.", d:"2024-09-10"},
-      {n:"하*라", m:"갤럭시 A15", t:"부담 없는 견적 제일 좋았음.", d:"2024-09-02"},
-      {n:"문*지", m:"아이폰 13", t:"사장님 센스👍", d:"2024-08-24"},
-      {n:"배*우", m:"갤럭시 S24", t:"옵션 강요 없음. 깔끔!", d:"2024-08-15"},
-      {n:"심*연", m:"아이폰 15", t:"후기보고 왔는데 진짜 친절.", d:"2024-08-07"},
-      {n:"고*민", m:"갤럭시 A35", t:"AS 문의도 빠르게 안내.", d:"2024-07-29"},
-      {n:"정*호", m:"아이폰 15", t:"주차 편하고 매장 깨끗.", d:"2024-07-20"},
-      {n:"김*윤", m:"갤럭시 S23", t:"요금제 추천이 현실적임.", d:"2024-07-11"},
-      {n:"양*우", m:"아이폰 14", t:"데이터 손실 없이 이전 완료.", d:"2024-07-03"},
-      {n:"박*훈", m:"갤럭시 S24", t:"지방에서 일부러 왔습니다. 만족!", d:"2024-06-24"}
-    ];
-    REVIEWS.sort(()=>Math.random()-.5);
-    const grid = document.getElementById('reviewsGrid');
-    const starSVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l-6.2 3.3 1.2-6.9-5-4.8 6.9-1L12 1.5l3.1 6.4 6.9 1-5 4.8 1.2 6.9z"/></svg>';
-    const makeAvatar = (name)=>{ const s = name.replace('*',''); return s[0] + (s[1] || ''); };
-    REVIEWS.forEach(r=>{
-      const el = document.createElement('article');
-      el.className = 'review';
-      el.innerHTML = `
-        <div class="meta-row">
-          <span class="avatar">${makeAvatar(r.n)}</span>
-          <span class="name">${r.n}</span>
-          <span class="stars" aria-label="별점 5점">${starSVG.repeat(5)}</span>
-        </div>
-        <div class="txt">${r.t}</div>
-        <div class="meta">${r.m} · <time datetime="${r.d}">${r.d}</time></div>
-      `;
-      grid.appendChild(el);
-    });
-    const wrap = document.querySelector('.reviews-wrap');
-    const btn = document.getElementById('toggleMore');
-    const initialVisible = 6;
-    btn.textContent = `실후기 더 보기 (${REVIEWS.length - initialVisible}개)`;
-    let expanded = false;
-    btn.addEventListener('click', ()=>{
-      expanded = !expanded;
-      wrap.classList.toggle('collapsed', !expanded);
-      btn.textContent = expanded ? '접기' : `실후기 더 보기 (${REVIEWS.length - initialVisible}개)`;
-      btn.setAttribute('aria-expanded', String(expanded));
-      if(!expanded){ document.getElementById('reviews').scrollIntoView({behavior:'smooth',block:'start'}); }
-    });
+    // preview reviews (상위 6개만)
+    const star='<svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.3 1.2-6.9-5-4.8 6.9-1L12 1.5l3.1 6.4 6.9 1-5 4.8 1.2 6.9z"/></svg>';
+    const REVIEWS=[{n:"김*우",m:"아이폰 15",t:"가격 깔끔, 설명 친절. 데이터 이전도 바로 끝!",d:"2025-08-02"}, {n:"박*민",m:"갤럭시 S24",t:"호갱 방지 제대로. 요금제 비교해주셔서 만족합니다.",d:"2025-07-26"}, {n:"이*현",m:"아이폰 14",t:"카톡 문의 답변 빠르고 방문하니 바로 개통됐어요.",d:"2025-07-10"}, {n:"정*연",m:"갤럭시 A35",t:"부모님 폰 교체 도와주셨는데 응대가 너무 부드러움.",d:"2025-06-30"}, {n:"최*석",m:"아이폰 15 Pro",t:"사은품 선택 다양하고 강요 전혀 없음. 강추!",d:"2025-06-21"}, {n:"오*진",m:"갤럭시 S24 Ultra",t:"보상판매가 잘 나와서 기변 부담 줄었어요.",d:"2025-06-12"}];
+    const grid=document.getElementById('previewGrid');
+    REVIEWS.forEach(r=>{const el=document.createElement('article');el.className='review';el.innerHTML=`<div class="meta-row"><span class="avatar">${r.n.replace('*','')[0]}${(r.n.replace('*','')[1]||'')}</span><span class="name">${r.n}</span><span class="stars" aria-label="별점 5점">${star.repeat(5)}</span></div><div class="txt">${r.t}</div><div class="meta">${r.m} · <time datetime="${r.d}">${r.d}</time></div>`;grid.appendChild(el);});
   </script>
 </body>
 </html>
