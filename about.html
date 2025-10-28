@@ -4,68 +4,87 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>세나폰 소개 | 대구 북구 휴대폰 매장</title>
-  <meta name="description" content="대구 북구 세나폰 소개 — 합리적인 휴대폰 판매와 기기변경, 데이터 이전, 보상판매, 주차 가능 매장 안내.">
+  <meta name="description" content="대구 북구 세나폰 — 합리적인 휴대폰 판매와 기기변경, 데이터 이전, 보상판매, 주차 가능 매장 안내.">
   <link rel="canonical" href="https://sena-phone.com/about">
   <meta name="robots" content="index,follow">
   <meta http-equiv="Content-Language" content="ko">
-  <meta name="format-detection" content="telephone=no">
   <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 
   <style>
-    body{margin:0;padding:0;font-family:'Noto Sans KR',sans-serif;background:#fafafa;color:#111;line-height:1.6}
-    header{background:#e0362b;color:#fff;padding:32px 0;text-align:center}
-    header h1{margin:0;font-size:32px;font-weight:900}
-    main{max-width:960px;margin:0 auto;padding:40px 20px;background:#fff;box-shadow:0 6px 30px rgba(0,0,0,.08);border-radius:16px;margin-top:-40px}
-    h2{margin-top:48px;font-size:22px;border-left:5px solid #e0362b;padding-left:10px}
-    p{margin:12px 0}
-    .info{background:#f9f9f9;padding:18px;border-radius:12px;border:1px solid #eee;margin:12px 0}
-    a{color:#e0362b;text-decoration:none}
-    footer{margin-top:60px;padding:24px;text-align:center;color:#777;font-size:14px}
-    iframe{width:100%;border:0;border-radius:12px;height:360px}
+    :root{--bg:#f6f7f9;--card:#fff;--text:#0a0a0a;--muted:#666;--line:#eaeaea;--brand:#e0362b;--radius:22px;--shadow:0 10px 30px rgba(0,0,0,.07);--maxw:1080px}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,"Noto Sans KR",system-ui,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+    .nav{position:sticky;top:0;z-index:6;border-bottom:1px solid var(--line);background:color-mix(in oklab,var(--bg) 90%,transparent);backdrop-filter:saturate(160%) blur(12px)}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;gap:10px;align-items:center}.brand img{height:34px}.brand strong{font-size:18px;font-weight:900}
+    .btn{display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 14px;border-radius:14px;border:1px solid var(--line);background:var(--card);box-shadow:var(--shadow);font-weight:700}
+    .btn-primary{background:linear-gradient(180deg, color-mix(in oklab, var(--brand) 94%, #fff) 0%, var(--brand) 100%); color:#fff;border-color:transparent}
+    header.hero{padding:44px 0;background:linear-gradient(180deg,#fff, #fafafa)}
+    header.hero h1{margin:0 0 6px;font-size:32px;letter-spacing:-.5px}
+    main{max-width:860px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:var(--shadow);margin-bottom:60px}
+    h2{margin-top:28px;font-size:22px}
+    .info{background:#f9f9f9;padding:16px;border-radius:12px;border:1px solid #eee;margin:12px 0}
+    iframe{width:100%;height:360px;border:0;border-radius:12px}
+    .footer{border-top:1px solid var(--line);padding:28px 0;color:#777;font-size:14px}
   </style>
 </head>
 <body>
-  <header>
-    <h1>세나폰 매장 소개</h1>
-    <p>대구 북구 학정로 421, 일도프라자 106-2호</p>
+  <nav class="nav">
+    <div class="container nav-wrap">
+      <a class="brand" href="/"><img src="sena.png" alt="세나폰 로고"><strong>세나폰</strong></a>
+      <div style="display:flex;gap:8px;align-items:center">
+        <a class="btn" href="/reviews">후기</a>
+        <a class="btn" href="/#map">오시는 길</a>
+        <a class="btn btn-primary" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">상담하기</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1>세나폰 매장 소개</h1>
+      <p>대구 북구 학정로 421, 일도프라자 106-2호 — 주차 가능 · 매일 10:00~20:00</p>
+    </div>
   </header>
 
   <main>
     <h2>👋 세나폰을 소개합니다</h2>
-    <p>세나폰은 <strong>대구 북구</strong> 지역의 <strong>합리적인 휴대폰 전문 매장</strong>으로,
-      <strong>아이폰·갤럭시 기기변경, 번호이동, 데이터 이전</strong>까지 한 곳에서 깔끔하게 해결해드립니다.</p>
-
-    <p>모든 고객에게 <strong>투명한 견적</strong>과 <strong>친절한 상담</strong>을 약속드리며,
-      무리한 판매 없이 고객의 상황에 맞는 <strong>최적의 요금제</strong>를 추천해드리고 있습니다.</p>
+    <p>세나폰은 <strong>대구 북구</strong> 지역의 <strong>합리적인 휴대폰 전문 매장</strong>으로, <strong>아이폰·갤럭시 기기변경/번호이동, 데이터 이전</strong>을 한 곳에서 깔끔하게 해결해드립니다.</p>
+    <p>무리한 판매 없이 <strong>투명한 견적</strong>과 <strong>친절한 상담</strong>을 약속드리며, 고객 상황에 맞는 <strong>최적 요금제</strong>를 추천합니다.</p>
 
     <div class="info">
       <p>📍 <b>주소</b> : 대구 북구 학정로 421, 일도프라자 106-2호</p>
       <p>📞 <b>상담</b> : <a href="tel:01080148600">010-8014-8600</a></p>
       <p>🕐 <b>영업시간</b> : 매일 10:00 ~ 20:00 (연중무휴)</p>
+      <p>🚗 <b>주차</b> : 건물 앞·뒤편 주차 가능</p>
     </div>
 
-    <h2>🚗 오시는 길 및 주차 안내</h2>
-    <p>학정네거리 인근, <strong>일도프라자 1층</strong>에 위치해 있으며,
-      건물 앞·뒤편에 <strong>전용 주차공간</strong>이 마련되어 있습니다.</p>
-    <iframe loading="lazy"
-      src="https://www.google.com/maps?q=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421%2C%20%EC%9D%BC%EB%8F%84%ED%94%84%EB%9D%BC%EC%9E%90%20106-2&output=embed">
-    </iframe>
-
-    <h2>💳 결제 및 서비스 안내</h2>
+    <h2>💳 결제 및 서비스</h2>
     <ul>
-      <li>모든 카드사 결제 및 현금영수증 발급 가능</li>
-      <li>데이터 이전 · 필름 부착 · 액정 보호 무료 서비스</li>
+      <li>모든 카드사 결제 / 현금영수증 발급</li>
+      <li>데이터 이전 · 필름 부착 기본 제공</li>
       <li>보상판매 및 중고기기 매입 지원</li>
       <li>번호이동 / 기기변경 / 알뜰요금제 상담</li>
     </ul>
 
-    <h2>📱 상담 및 문의</h2>
-    <p>카카오톡 플러스친구에서 <b>“세나폰”</b> 검색하거나 아래 버튼을 눌러주세요.</p>
-    <p><a href="http://pf.kakao.com/_Mtxmxcn" target="_blank" style="display:inline-block;background:#e0362b;color:#fff;padding:12px 20px;border-radius:10px;font-weight:700">카톡으로 문의하기</a></p>
+    <h2>📍 위치</h2>
+    <iframe loading="lazy" src="https://www.google.com/maps?q=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421%2C%20%EC%9D%BC%EB%8F%84%ED%94%84%EB%9D%BC%EC%9E%90%20106-2&output=embed"></iframe>
+
+    <h2>📱 카톡으로 간편 상담</h2>
+    <p><a class="btn btn-primary" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">카톡 상담 열기</a></p>
   </main>
 
-  <footer>
-    © <script>document.write(new Date().getFullYear());</script> 세나폰 · All Rights Reserved.
+  <footer class="footer">
+    <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div>© <span id="year"></span> 세나폰 · All Rights reserved.</div>
+      <div>대구 북구 학정로 421, 일도프라자 106-2호 · <a href="tel:01080148600">010-8014-8600</a></div>
+    </div>
   </footer>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
