@@ -3,17 +3,31 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>세나폰 | 세상에 나쁜 폰은 없다</title>
 
-  <!-- Meta / OG -->
-  <meta name="description" content="대구 북구 세나폰 — 합리적인 판매가, 깔끔한 상담, 데이터 이전·개통·AS까지 한 번에." />
-  <meta property="og:title" content="세나폰 | 세상에 나쁜 폰은 없다" />
-  <meta property="og:description" content="합리적인 판매가, 깔끔한 상담, 데이터 이전/개통/AS 한 번에." />
-  <meta property="og:image" content="https://sena-phone.com/sena.png" />
+  <!-- ===== 검색엔진 타이틀/설명 & 기본 SEO ===== -->
+  <title>세나폰 | 대구 북구 휴대폰 매장 · 아이폰/갤럭시 기기변경 · 데이터 이전</title>
+  <meta name="description" content="대구 북구 휴대폰 매장 세나폰. 아이폰·갤럭시 기기변경/번호이동, 요금제 상담, 데이터 이전, 빠른 개통·AS까지 한 번에! 주차 가능 · 친절 상담.">
+  <link rel="canonical" href="https://sena-phone.com/">
+  <meta name="robots" content="index,follow">
+  <meta http-equiv="Content-Language" content="ko">
+
+  <!-- ===== 네이버 소유확인 (이 값만 실제 발급값으로 교체!) ===== -->
+  <meta name="naver-site-verification" content="여기에-네이버-검증값" />
+
+  <!-- ===== SNS 미리보기 ===== -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="세나폰">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="세나폰 | 대구 북구 휴대폰 매장">
+  <meta property="og:description" content="아이폰·갤럭시 기기변경/번호이동, 데이터 이전, 요금제 상담. 빠른 개통·AS 한 번에.">
+  <meta property="og:url" content="https://sena-phone.com/">
+  <meta property="og:image" content="https://sena-phone.com/sena.png">
+  <meta name="twitter:card" content="summary_large_image">
+
   <meta name="format-detection" content="telephone=no" />
   <link rel="icon" href="favicon.ico" />
 
-  <!-- Fonts -->
+  <!-- ===== Fonts (성능 최적화: preconnect) ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -45,7 +59,7 @@
     .nav-wrap{display:flex; align-items:center; justify-content:space-between; height:64px}
     .brand{display:flex; gap:12px; align-items:center; flex-wrap:nowrap}
     .brand img{height:34px; width:auto; flex-shrink:0}
-    .brand h1{margin:0; font-size:18px; font-weight:900; white-space:nowrap; letter-spacing:-.3px}
+    .brand strong{margin:0; font-size:18px; font-weight:900; white-space:nowrap; letter-spacing:-.3px}
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:8px;
@@ -89,13 +103,13 @@
     }
     .hero-top{display:flex; gap:36px; align-items:center; flex-wrap:wrap}
     .hero img.logo{width:120px; height:auto; border-radius:22px; box-shadow:var(--shadow)}
-    .title{font-size:44px; line-height:1.1; margin:0 0 12px; font-weight:900; letter-spacing:-.6px}
+    .title{font-size:42px; line-height:1.15; margin:0 0 12px; font-weight:900; letter-spacing:-.6px}
     .subtitle{font-size:18px; color:var(--muted); margin:0 0 24px; max-width:720px}
     .hero-cta{display:flex; gap:12px; flex-wrap:wrap}
     .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:20px}
     .badge{border:1px solid var(--line); background:var(--card); padding:8px 12px; border-radius:999px; color:var(--muted); font-weight:700}
-    @media(max-width:980px){ .title{font-size:36px} .hero img.logo{width:96px} }
-    @media(max-width:640px){ .hero-card{padding:28px} .title{font-size:30px} }
+    @media(max-width:980px){ .title{font-size:34px} .hero img.logo{width:96px} }
+    @media(max-width:640px){ .hero-card{padding:28px} .title{font-size:28px} }
 
     /* ===== CARDS with icons ===== */
     .grid{display:grid; gap:18px; grid-template-columns:repeat(12,1fr); margin-top:28px}
@@ -173,7 +187,7 @@
     <div class="container nav-wrap">
       <div class="brand">
         <img src="sena.png" alt="세나폰 로고" loading="lazy" decoding="async" />
-        <h1>세나폰</h1>
+        <strong>세나폰</strong>
       </div>
 
       <!-- desktop -->
@@ -210,14 +224,15 @@
       <div class="hero-top">
         <img class="logo" src="sena.png" alt="세나폰 로고" width="240" height="240" loading="lazy" decoding="async" />
         <div>
-          <h2 class="title">세상에 나쁜 폰은 없다.</h2>
-          <p class="subtitle">대구 북구 <b>세나폰</b>. 합리적인 판매가와 깔끔한 상담, 데이터 이전부터 개통·AS까지 한 번에.</p>
+          <!-- 메인 H1: 키워드 포함 -->
+          <h1 class="title">대구 북구 휴대폰 매장 세나폰 — 아이폰·갤럭시 기기변경, 데이터 이전</h1>
+          <p class="subtitle">합리적인 판매가와 깔끔한 상담, 데이터 이전부터 개통·AS까지 한 번에. 방문 주차 가능 · 친절 상담.</p>
           <div class="hero-cta">
             <a class="btn btn-primary" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">카톡 상담</a>
-            <a class="btn" href="tel:01080148600">전화 문의</a>
+            <a class="btn" href="tel:01080148600" aria-label="전화 문의 010-8014-8600">전화 문의</a>
             <a class="btn" href="#reviews">실후기 보기</a>
           </div>
-          <div class="badges">
+          <div class="badges" aria-label="매장 주요 장점">
             <span class="badge">데이터 이전 무료</span>
             <span class="badge">보상판매 가능</span>
             <span class="badge">요금제 비교상담</span>
@@ -230,21 +245,21 @@
       <div id="benefits" class="grid">
         <article class="card">
           <span class="ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 7h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7zm3-3h10l1 3H6l1-3z"/></svg>
+            <svg viewBox="0 0 24 24" width="16" height="16" role="img" aria-label="가격"><path d="M4 7h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7zm3-3h10l1 3H6l1-3z"/></svg>
           </span>
           <h3>합리적인 판매가</h3>
           <p>통신 3사 프로모션을 반영해 불필요한 옵션 없이 깔끔한 견적만 제시합니다.</p>
         </article>
         <article class="card">
           <span class="ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 7h10v10H7z"/><path d="M3 11h4v2H3zM17 11h4v2h-4zM11 3h2v4h-2zM11 17h2v4h-2z"/></svg>
+            <svg viewBox="0 0 24 24" width="16" height="16" role="img" aria-label="데이터 이전"><path d="M7 7h10v10H7z"/><path d="M3 11h4v2H3zM17 11h4v2h-4zM11 3h2v4h-2zM11 17h2v4h-2z"/></svg>
           </span>
           <h3>데이터 그대로 이전</h3>
           <p>사진·연락처·카톡·앱까지 안전 이전. 아이폰↔갤럭시 모두 문제없습니다.</p>
         </article>
         <article class="card">
           <span class="ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm1 5v6l4 2"/></svg>
+            <svg viewBox="0 0 24 24" width="16" height="16" role="img" aria-label="사후관리"><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm1 5v6l4 2"/></svg>
           </span>
           <h3>사후관리까지 완벽</h3>
           <p>요금제 변경·분실·파손 등 문제 발생 시 빠르게 응대하고 끝까지 챙깁니다.</p>
@@ -257,7 +272,7 @@
   <section id="price" class="section">
     <div class="container">
       <h2>이달의 프로모션</h2>
-      <div class="price">
+      <div class="price" aria-label="프로모션 요약">
         <div class="plan">
           <h3>신규/번호이동</h3><div class="num">특가 진행중</div>
           <ul><li>통신 3사 최저가 실시간 견적</li><li>사은품 선택형</li><li>데이터 이전 무료</li></ul>
@@ -271,6 +286,11 @@
           <ul><li>부모님·학생 맞춤 요금</li><li>유심 개통 10분</li><li>번호 그대로 이동</li></ul>
         </div>
       </div>
+
+      <!-- 지역 키워드 보강(SEO) -->
+      <p class="note" style="margin-top:14px">
+        대구 <strong>북구/칠곡/태전동/학정동</strong> 인근 고객님 환영합니다. 무료 주차 가능, 방문 전 카톡 상담 가능합니다.
+      </p>
     </div>
   </section>
 
@@ -282,7 +302,7 @@
         <div class="reviews-grid" id="reviewsGrid"></div>
         <div class="fade" aria-hidden="true"></div>
       </div>
-      <div class="more"><button id="toggleMore" class="btn">실후기 더 보기</button></div>
+      <div class="more"><button id="toggleMore" class="btn" aria-expanded="false">실후기 더 보기</button></div>
     </div>
   </section>
 
@@ -290,10 +310,12 @@
   <section id="map" class="section">
     <div class="container">
       <h2>오시는 길</h2>
-      <div class="mapcard">
+      <div class="mapcard" itemscope itemtype="https://schema.org/MobilePhoneStore">
+        <meta itemprop="name" content="세나폰">
         <div class="map-wrap">
           <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421%2C%20%EC%9D%BC%EB%8F%84%ED%94%84%EB%9D%BC%EC%9E%90%20106-2&output=embed">
+            src="https://www.google.com/maps?q=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421%2C%20%EC%9D%BC%EB%8F%84%ED%94%84%EB%9D%BC%EC%9E%90%20106-2&output=embed"
+            title="세나폰 위치 지도">
           </iframe>
         </div>
         <div class="map-info">
@@ -328,12 +350,13 @@
     </div>
   </div>
 
-  <!-- LocalBusiness Schema -->
+  <!-- ===== 구조화 데이터 (업종 특화 + 좌표) ===== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "MobilePhoneStore",
     "name": "세나폰",
+    "url": "https://sena-phone.com/",
     "image": "https://sena-phone.com/sena.png",
     "telephone": "+82-10-8014-8600",
     "address": {
@@ -343,8 +366,18 @@
       "addressLocality": "북구",
       "streetAddress": "학정로 421, 일도프라자 106-2호"
     },
-    "openingHours": "Mo-Su 10:00-20:00",
-    "url": "https://sena-phone.com"
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 35.94572,
+      "longitude": 128.57072
+    },
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"10:00","closes":"20:00"}
+    ],
+    "sameAs": [
+      "https://map.naver.com/v5/search/%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421",
+      "http://pf.kakao.com/_Mtxmxcn"
+    ]
   }
   </script>
 
@@ -392,7 +425,7 @@
     overlay.addEventListener('click', closeDrawer);
     window.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeDrawer(); });
 
-    // ===== Reviews (50) with avatars & stars =====
+    // ===== Reviews =====
     const REVIEWS = [
       {n:"김*우", m:"아이폰 15", t:"가격 깔끔, 설명 친절. 데이터 이전도 바로 끝!", d:"2025-08-02"},
       {n:"박*민", m:"갤럭시 S24", t:"호갱 방지 제대로. 요금제 비교해주셔서 만족합니다.", d:"2025-07-26"},
@@ -443,18 +476,10 @@
       {n:"양*우", m:"아이폰 14", t:"데이터 손실 없이 이전 완료.", d:"2024-07-03"},
       {n:"박*훈", m:"갤럭시 S24", t:"지방에서 일부러 왔습니다. 만족!", d:"2024-06-24"}
     ];
-
-    // shuffle slightly so 첫 6개가 고정되지 않음
     REVIEWS.sort(()=>Math.random()-.5);
-
     const grid = document.getElementById('reviewsGrid');
     const starSVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l-6.2 3.3 1.2-6.9-5-4.8 6.9-1L12 1.5l3.1 6.4 6.9 1-5 4.8 1.2 6.9z"/></svg>';
-    const makeAvatar = (name)=>{
-      // "김*우" -> "김우" 이니셜
-      const s = name.replace('*','');
-      return s[0] + (s[1] || '');
-    };
-
+    const makeAvatar = (name)=>{ const s = name.replace('*',''); return s[0] + (s[1] || ''); };
     REVIEWS.forEach(r=>{
       const el = document.createElement('article');
       el.className = 'review';
@@ -469,18 +494,16 @@
       `;
       grid.appendChild(el);
     });
-
-    // Show more / collapse
     const wrap = document.querySelector('.reviews-wrap');
     const btn = document.getElementById('toggleMore');
-    const total = REVIEWS.length;
     const initialVisible = 6;
-    btn.textContent = `실후기 더 보기 (${total - initialVisible}개)`;
+    btn.textContent = `실후기 더 보기 (${REVIEWS.length - initialVisible}개)`;
     let expanded = false;
     btn.addEventListener('click', ()=>{
       expanded = !expanded;
       wrap.classList.toggle('collapsed', !expanded);
-      btn.textContent = expanded ? '접기' : `실후기 더 보기 (${total - initialVisible}개)`;
+      btn.textContent = expanded ? '접기' : `실후기 더 보기 (${REVIEWS.length - initialVisible}개)`;
+      btn.setAttribute('aria-expanded', String(expanded));
       if(!expanded){ document.getElementById('reviews').scrollIntoView({behavior:'smooth',block:'start'}); }
     });
   </script>
