@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>세나폰 | 대구 북구 휴대폰 매장 · 아이폰/갤럭시 기기변경 · 데이터 이전</title>
-  <meta name="description" content="대구 북구 휴대폰 매장 세나폰. 아이폰·갤럭시 기기변경/번호이동, 요금제 상담, 데이터 이전, 빠른 개통·AS까지 한 번에! 주차 가능 · 친절 상담.">
+  <title>세나폰 | 전국 휴대폰 성지 · 비대면 개통 · 아이폰/갤럭시 기기변경</title>
+  <meta name="description" content="세나폰 — 전국 휴대폰 성지. 비대면 개통/전국 택배·퀵 발송, 아이폰·갤럭시 기기변경/번호이동, 요금제 상담, 데이터 이전까지 한 번에! 대구 북구 본점 운영.">
   <link rel="canonical" href="https://sena-phone.com/">
   <link rel="alternate" href="https://sena-phone.com" hreflang="ko-KR">
   <meta name="robots" content="index,follow">
@@ -19,8 +19,8 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="세나폰">
   <meta property="og:locale" content="ko_KR">
-  <meta property="og:title" content="세나폰 | 대구 북구 휴대폰 매장">
-  <meta property="og:description" content="아이폰·갤럭시 기기변경/번호이동, 데이터 이전, 요금제 상담. 빠른 개통·AS 한 번에.">
+  <meta property="og:title" content="세나폰 | 전국 휴대폰 성지 · 비대면 개통">
+  <meta property="og:description" content="전국 어디든 비대면 개통/당일 발송. 아이폰·갤럭시 기기변경/번호이동, 데이터 이전, 요금제 상담.">
   <meta property="og:url" content="https://sena-phone.com/">
   <meta property="og:image" content="https://sena-phone.com/sena.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -37,8 +37,12 @@
     :root{
       --bg:#f6f7f9; --card:#ffffff; --text:#0a0a0a; --muted:#666; --line:#e9e9ee;
       --brand:#e0362b; --brand-2:#ff6a5a; --brand-deep:#c1211a;
-      --radius:22px; --shadow:0 10px 30px rgba(9,10,20,.08); --shadow-strong:0 22px 60px rgba(9,10,20,.14);
-      --maxw:1080px;
+      --radius:22px; --maxw:1080px;
+      /* 글래스 공통 변수 */
+      --shadow:0 8px 30px rgba(12,14,24,.10), 0 1px 0 rgba(255,255,255,.6) inset;
+      --shadow-strong:0 22px 70px rgba(12,14,24,.16), 0 1px 0 rgba(255,255,255,.7) inset;
+      --glass-bg: linear-gradient(180deg, rgba(255,255,255,.52), rgba(255,255,255,.34));
+      --glass-bd: color-mix(in oklab, #ffffff 26%, transparent);
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
@@ -48,38 +52,41 @@
     .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
     *{-webkit-tap-highlight-color:rgba(0,0,0,.08)}
 
-    /* ===== NAV (로고/상호 크게 + 메뉴 한 줄 가로 스크롤) ===== */
+    /* ===== NAV (유리 느낌 상단바) ===== */
     .nav{
-      position:sticky; top:0; z-index:60; border-bottom:1px solid var(--line);
-      background:color-mix(in oklab,var(--bg) 90%,transparent); backdrop-filter:saturate(160%) blur(12px);
-      transition:box-shadow .2s, background .2s;
+      position:sticky; top:0; z-index:60; border-bottom:1px solid var(--glass-bd);
+      background:var(--glass-bg); backdrop-filter:saturate(180%) blur(14px);
+      box-shadow:0 10px 30px rgba(12,14,24,.08);
+      transition:box-shadow .25s ease, background .25s ease, border-color .25s ease;
     }
-    .nav.scrolled{ box-shadow:0 6px 26px rgba(9,10,20,.08); background:color-mix(in oklab,var(--bg) 96%,transparent) }
+    .nav.scrolled{ 
+      background:linear-gradient(180deg, rgba(255,255,255,.68), rgba(255,255,255,.42));
+      border-bottom-color: color-mix(in oklab, #ffffff 36%, transparent);
+      box-shadow:0 18px 60px rgba(12,14,24,.14);
+    }
     .nav-wrap{ display:flex; align-items:center; gap:14px; height:70px; padding:6px 0 }
     .brand{ display:flex; align-items:center; gap:10px; flex:0 0 auto; }
     .brand img{ height:44px; width:auto; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,.06)}
     .brand strong{ font-size:22px; font-weight:900; letter-spacing:-.4px; white-space:nowrap }
 
-    /* 메뉴: 가로 스크롤형(모바일) + 넓은 화면은 자동 한 줄 */
-    .nav-links{
-      display:flex; gap:8px; align-items:center; overflow-x:auto; overscroll-behavior:contain;
-      white-space:nowrap; scrollbar-width:none; -ms-overflow-style:none; flex:1 1 auto;
-    }
+    .nav-links{ display:flex; gap:8px; align-items:center; overflow-x:auto; overscroll-behavior:contain;
+      white-space:nowrap; scrollbar-width:none; -ms-overflow-style:none; flex:1 1 auto; }
     .nav-links::-webkit-scrollbar{ display:none }
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:14px;border:1px solid var(--line);
-      background:var(--card);box-shadow:var(--shadow);font-weight:800;transition:transform .15s,box-shadow .2s,border-color .2s}
-    .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-strong)}
-    .btn-primary{background:linear-gradient(180deg,color-mix(in oklab,var(--brand) 94%,#fff) 0%,var(--brand) 100%);color:#fff;border-color:transparent}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:14px;border:1px solid var(--glass-bd);
+      background:var(--glass-bg);box-shadow:var(--shadow);font-weight:800;transition:transform .15s,box-shadow .2s,border-color .2s, background .2s}
+    .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-strong); background:linear-gradient(180deg, rgba(255,255,255,.7), rgba(255,255,255,.46))}
+    .btn-primary{background:linear-gradient(180deg,color-mix(in oklab,var(--brand) 96%,#fff) 0%,var(--brand) 100%);color:#fff;border-color:transparent}
     .btn-pill{border-radius:999px}
 
     /* ===== HERO ===== */
     .hero{padding:62px 0 42px}
     .hero-card{
-      position:relative; border:1px solid var(--line); border-radius:calc(var(--radius) + 8px); padding:42px;
+      position:relative; border:1px solid var(--glass-bd); border-radius:calc(var(--radius) + 8px); padding:42px;
       background:
-        radial-gradient(1600px 800px at 85% -20%, rgba(224,54,43,.10), transparent 60%),
-        radial-gradient(1200px 700px at -10% 120%, rgba(255,106,90,.10), transparent 60%),
-        linear-gradient(180deg,#fff 0%, #fafafa 100%);
+        radial-gradient(1600px 800px at 85% -20%, rgba(224,54,43,.08), transparent 60%),
+        radial-gradient(1200px 700px at -10% 120%, rgba(255,106,90,.08), transparent 60%),
+        var(--glass-bg);
       box-shadow:var(--shadow-strong); overflow:hidden;
     }
     .hero-top{display:flex; gap:34px; align-items:center; flex-wrap:wrap}
@@ -88,17 +95,17 @@
     .subtitle{font-size:18px; color:var(--muted); margin:0 0 22px; max-width:720px}
     .hero-cta{display:flex; gap:12px; flex-wrap:wrap}
     .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
-    .badge{border:1px solid var(--line); background:var(--card); padding:8px 12px; border-radius:999px; color:var(--muted); font-weight:700}
+    .badge{border:1px solid var(--glass-bd); background:var(--glass-bg); padding:8px 12px; border-radius:999px; color:var(--muted); font-weight:700}
     @media(max-width:980px){.title{font-size:32px}.hero img.logo{width:96px}}
     @media(max-width:640px){.hero-card{padding:26px}.title{font-size:26px}}
 
     /* ===== GRID & CARDS ===== */
     .grid{display:grid; gap:18px; grid-template-columns:repeat(12,1fr); margin-top:26px}
-    .card{grid-column:span 4; border:1px solid var(--line); background:var(--card); border-radius:var(--radius); padding:22px;
-      box-shadow:var(--shadow); transition:transform .15s, box-shadow .2s}
-    .card:hover{transform:translateY(-3px); box-shadow:var(--shadow-strong)}
+    .card{grid-column:span 4; border:1px solid var(--glass-bd); background:var(--glass-bg); border-radius:var(--radius); padding:22px;
+      box-shadow:var(--shadow); transition:transform .15s, box-shadow .2s, background .2s}
+    .card:hover{transform:translateY(-3px); box-shadow:var(--shadow-strong); background:linear-gradient(180deg, rgba(255,255,255,.64), rgba(255,255,255,.46))}
     .card .ico{width:28px; height:28px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center;
-      background:color-mix(in oklab, var(--brand) 12%, #fff); border:1px solid var(--line)}
+      background:color-mix(in oklab, var(--brand) 14%, #fff); border:1px solid var(--glass-bd)}
     .card h3{margin:10px 0 8px; font-size:18px}
     .card p{margin:0; color:var(--muted)}
     @media(max-width:980px){.card{grid-column:span 6}}
@@ -111,14 +118,14 @@
 
     /* PRICE */
     .price{display:flex; gap:18px; flex-wrap:wrap}
-    .plan{flex:1 1 260px; border:1px solid var(--line); background:var(--card); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+    .plan{flex:1 1 260px; border:1px solid var(--glass-bd); background:var(--glass-bg); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
     .plan h3{margin:0 0 6px; font-size:18px}
     .plan .num{font-size:34px; font-weight:800; letter-spacing:-.5px}
     .plan ul{margin:12px 0 0; padding:0 0 0 18px; color:var(--muted)}
 
     /* REVIEWS */
     .reviews-grid{display:grid; grid-template-columns:repeat(12,1fr); gap:14px}
-    .review{grid-column:span 4; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px; box-shadow:var(--shadow)}
+    .review{grid-column:span 4; background:var(--glass-bg); border:1px solid var(--glass-bd); border-radius:18px; padding:18px; box-shadow:var(--shadow)}
     @media(max-width:980px){.review{grid-column:span 6}} @media(max-width:640px){.review{grid-column:span 12}}
     .meta-row{display:flex; align-items:center; gap:10px; margin-bottom:8px}
     .avatar{width:32px; height:32px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:800; font-size:12px; color:#fff; background:radial-gradient(120% 120% at 80% 20%, var(--brand) 0%, var(--brand-deep) 70%)}
@@ -128,24 +135,37 @@
     .meta{color:var(--muted); font-size:13px}
 
     /* MAP */
-    .mapcard{border:1px solid var(--line); border-radius:20px; background:var(--card); box-shadow:var(--shadow-strong); overflow:hidden}
+    .mapcard{border:1px solid var(--glass-bd); border-radius:20px; background:var(--glass-bg); box-shadow:var(--shadow-strong); overflow:hidden}
     .map-wrap{position:relative; width:100%; aspect-ratio:16/9; background:#ddd}
     .map-wrap iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
-    .map-info{display:flex; gap:16px; align-items:center; justify-content:space-between; padding:14px 16px; border-top:1px solid var(--line); flex-wrap:wrap}
+    .map-info{display:flex; gap:16px; align-items:center; justify-content:space-between; padding:14px 16px; border-top:1px solid var(--glass-bd); flex-wrap:wrap}
     .map-actions{display:flex; gap:8px; flex-wrap:wrap}
     .btn.small{height:36px; border-radius:12px; padding:0 12px}
 
+    /* DEVICES (신제품 쇼케이스) */
+    .devices{padding:20px 0}
+    .devices .wrap{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .device-card{grid-column:span 4;background:var(--glass-bg);border:1px solid var(--glass-bd);border-radius:24px;box-shadow:var(--shadow-strong);overflow:hidden;position:relative}
+    .device-hero{display:grid;place-items:center;background:linear-gradient(180deg,#fff, #f7f7fb);padding:22px 12px}
+    .device-hero img{width:min(280px,70%);height:auto;filter:drop-shadow(0 24px 24px rgba(0,0,0,.12));animation:float 6s ease-in-out infinite}
+    .device-body{padding:16px 18px}
+    .device-body h3{margin:0 0 6px;font-size:18px}
+    .device-body p{margin:0;color:var(--muted)}
+    .device-actions{display:flex;gap:8px;margin-top:12px}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    @media(max-width:980px){.device-card{grid-column:span 6}}@media(max-width:640px){.device-card{grid-column:span 12}}
+
     /* FOOTER / Sticky CTA */
-    .footer{border-top:1px solid var(--line); padding:28px 0; color:var(--muted); font-size:14px}
+    .footer{border-top:1px solid var(--glass-bd); padding:28px 0; color:var(--muted); font-size:14px}
     body{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
     .sticky-cta{position:fixed; left:50%; bottom:12px; transform:translateX(-50%); width:min(100%, var(--maxw)); z-index:90; padding:8px 10px}
-    .sticky-cta .wrap{display:flex; justify-content:center; background:color-mix(in oklab,var(--card) 98%,transparent); border:1px solid var(--line); box-shadow:var(--shadow-strong); border-radius:999px; padding:6px 8px; backdrop-filter:saturate(140%) blur(8px)}
+    .sticky-cta .wrap{display:flex; justify-content:center; background:var(--glass-bg); border:1px solid var(--glass-bd); box-shadow:var(--shadow-strong); border-radius:999px; padding:6px 8px; backdrop-filter:saturate(180%) blur(10px)}
     .sticky-cta a{display:flex; align-items:center; justify-content:center; min-width:240px; height:52px; padding:0 24px; border-radius:999px; font-weight:900; font-size:16.5px; line-height:1; letter-spacing:-.2px; background:var(--brand); color:#fff; border:0; box-shadow:var(--shadow-strong)}
     @media(max-width:420px){.sticky-cta a{min-width:unset; width:100%}}
   </style>
 </head>
 <body>
-  <!-- ===== NAV (로고 큼 + 메뉴 한 줄) ===== -->
+  <!-- ===== NAV ===== -->
   <nav class="nav" id="nav">
     <div class="container nav-wrap">
       <a class="brand" href="#home" aria-label="세나폰 홈">
@@ -154,9 +174,8 @@
       </a>
 
       <div class="nav-links" role="navigation" aria-label="주요 메뉴">
+        <a class="btn btn-pill" href="#devices">신제품</a>
         <a class="btn btn-pill" href="#about">소개</a>
-        <a class="btn btn-pill" href="#price">프로모션</a>
-        <a class="btn btn-pill" href="#map">오시는 길</a>
         <a class="btn btn-pill" href="#reviews">후기</a>
         <a class="btn btn-primary btn-pill" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">상담하기</a>
       </div>
@@ -169,18 +188,18 @@
       <div class="hero-top">
         <img class="logo" src="sena.png" alt="세나폰 로고" width="240" height="240" loading="lazy" decoding="async" />
         <div>
-          <h1 class="title">대구 북구 휴대폰 매장 세나폰 — 아이폰·갤럭시 기기변경, 데이터 이전</h1>
-          <p class="subtitle">합리적인 판매가와 깔끔한 상담, 데이터 이전부터 개통·AS까지 한 번에. 방문 주차 가능 · 친절 상담.</p>
+          <h1 class="title">세나폰 — <b>전국 휴대폰 성지</b><br>비대면/방문 모두 OK, 아이폰·갤럭시 기기변경</h1>
+          <p class="subtitle">대한민국 어디든 <b>비대면 개통</b>으로 빠르게! 대구 북구 본점 방문은 물론, <b>전국 택배·퀵 당일 발송</b> 지원. 카톡으로 견적부터 개통까지 끝.</p>
           <div class="hero-cta">
             <a class="btn btn-primary" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">카톡 상담</a>
             <a class="btn" href="tel:01080148600" aria-label="전화 문의 010-8014-8600">전화 문의</a>
             <a class="btn" href="#reviews">실후기 보기</a>
           </div>
           <div class="badges" aria-label="매장 장점">
+            <span class="badge">전국 비대면 개통</span>
+            <span class="badge">당일 택배·퀵 발송</span>
+            <span class="badge">통신3사 최저가 비교</span>
             <span class="badge">데이터 이전 무료</span>
-            <span class="badge">보상판매 가능</span>
-            <span class="badge">요금제 비교상담</span>
-            <span class="badge">사후 A/S 안내</span>
           </div>
         </div>
       </div>
@@ -206,6 +225,49 @@
     </div>
   </header>
 
+  <!-- ===== DEVICES ===== -->
+  <section id="devices" class="section devices">
+    <div class="container">
+      <h2>신제품 라인업</h2>
+      <p class="note">아이폰 17 / 갤럭시 S25 / 갤럭시 Z 폴드 7 — 전국 비대면 개통 & 당일 발송</p>
+      <div class="wrap">
+        <article class="device-card" aria-label="iPhone 17">
+          <div class="device-hero"><img src="assets/iphone17.png" alt="iPhone 17" loading="lazy" decoding="async"></div>
+          <div class="device-body">
+            <h3>iPhone 17</h3>
+            <p>번호이동·기변 특가 / 자급제 + 알뜰요금제 조합 가능</p>
+            <div class="device-actions">
+              <a class="btn btn-primary" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">견적 받기</a>
+              <a class="btn" href="#price">프로모션 보기</a>
+            </div>
+          </div>
+        </article>
+        <article class="device-card" aria-label="Galaxy S25">
+          <div class="device-hero"><img src="assets/galaxy-s25.png" alt="Galaxy S25" loading="lazy" decoding="async"></div>
+          <div class="device-body">
+            <h3>Galaxy S25</h3>
+            <p>삼성페이/버즈 번들 옵션 · 보상판매 연동</p>
+            <div class="device-actions">
+              <a class="btn btn-primary" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">견적 받기</a>
+              <a class="btn" href="#price">프로모션 보기</a>
+            </div>
+          </div>
+        </article>
+        <article class="device-card" aria-label="Galaxy Z Fold 7">
+          <div class="device-hero"><img src="assets/galaxy-zfold7.png" alt="Galaxy Z Fold 7" loading="lazy" decoding="async"></div>
+          <div class="device-body">
+            <h3>Galaxy Z Fold 7</h3>
+            <p>프리미엄 라인업 · 퀵/택배 당일 발송</p>
+            <div class="device-actions">
+              <a class="btn btn-primary" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">견적 받기</a>
+              <a class="btn" href="#price">프로모션 보기</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== PRICE ===== -->
   <section id="price" class="section">
     <div class="container">
@@ -221,7 +283,7 @@
           <ul><li>부모님·학생 맞춤 요금</li><li>유심 개통 10분</li><li>번호 그대로 이동</li></ul>
         </div>
       </div>
-      <p class="note" style="margin-top:14px">대구 <strong>북구/칠곡/태전동/학정동</strong> 인근 고객님 환영합니다. 무료 주차 가능, 방문 전 카톡 상담 가능.</p>
+      <p class="note" style="margin-top:14px"><b>전국 어디든</b> 카톡 견적·비대면 개통·당일 발송 가능합니다. 대구 <strong>북구/칠곡/태전동/학정동</strong> 인근은 방문 환영!</p>
     </div>
   </section>
 
@@ -240,14 +302,14 @@
   <section id="about" class="section">
     <div class="container">
       <h2>세나폰 소개</h2>
-      <p>세나폰은 <strong>대구 북구</strong> 지역의 <strong>합리적인 휴대폰 전문 매장</strong>으로,
-        <strong>아이폰·갤럭시 기기변경/번호이동, 데이터 이전</strong>을 한 곳에서 깔끔하게 해결해드립니다.
-        무리한 판매 없이 <strong>투명한 견적</strong>과 <strong>친절한 상담</strong>을 약속드립니다.</p>
-      <div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;margin:14px 0">
-        <p>📍 <b>주소</b> : 대구 북구 학정로 421, 일도프라자 106-2호</p>
-        <p>📞 <b>상담</b> : <a href="tel:01080148600">010-8014-8600</a></p>
+      <p>세나폰은 <strong>전국 휴대폰 성지</strong>를 목표로 운영하는 <strong>대구 북구 본점</strong>입니다.
+        <strong>아이폰·갤럭시 기기변경/번호이동</strong>을 <b>비대면 개통</b> 또는 <b>방문</b>으로 깔끔하게 도와드려요.
+        카톡으로 <b>견적 ▶ 결제 ▶ 개통 ▶ 발송</b>까지 원스톱 진행합니다.</p>
+      <div style="background:#fff;border:1px solid var(--glass-bd);border-radius:12px;padding:14px;margin:14px 0">
+        <p>📍 <b>본점 주소</b> : 대구 북구 학정로421 일도프라자 1층 106-2호</p>
+        <p>📞 <b>상담</b> : <a href="tel:01080148600">010 8014 8600</a> · <a href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">카카오 채널</a></p>
         <p>🕐 <b>영업시간</b> : 매일 10:00 ~ 20:00 (연중무휴)</p>
-        <p>🚗 <b>주차</b> : 건물 앞·뒤편 주차 가능</p>
+        <p>🚚 <b>전국 발송</b> : 택배/퀵 당일 발송, 송장 실시간 안내</p>
       </div>
     </div>
   </section>
@@ -259,16 +321,16 @@
       <div class="mapcard">
         <div class="map-wrap">
           <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421%2C%20%EC%9D%BC%EB%8F%84%ED%94%84%EB%9D%BC%EC%9E%90%20106-2&output=embed"
+            src="https://www.google.com/maps?q=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C421%20%EC%9D%BC%EB%8F%84%ED%94%84%EB%9D%BC%EC%9E%90%201%EC%B8%B5%20106-2%ED%98%B8&output=embed"
             title="세나폰 위치 지도"></iframe>
         </div>
         <div class="map-info">
-          <div><strong>세나폰</strong><br>대구 북구 학정로 421, 일도프라자 106-2호<br>상담 10:00–20:00 · <a href="tel:01080148600">010-8014-8600</a></div>
+          <div><strong>세나폰</strong><br>대구 북구 학정로421 일도프라자 1층 106-2호<br>상담 10:00–20:00 · <a href="tel:01080148600">010 8014 8600</a></div>
           <div class="map-actions">
             <a class="btn small" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">카톡 상담</a>
-            <a class="btn small" href="https://map.naver.com/v5/search/%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421" target="_blank" rel="noopener">네이버 길찾기</a>
-            <a class="btn small" href="https://map.kakao.com/link/search/%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421" target="_blank" rel="noopener">카카오 길찾기</a>
-            <a class="btn small" href="https://www.google.com/maps/dir/?api=1&destination=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C%20421%2C%20%EC%9D%BC%EB%8F%84%ED%94%84%EB%9D%BC%EC%9E%90%20106-2" target="_blank" rel="noopener">구글 길찾기</a>
+            <a class="btn small" href="https://map.naver.com/v5/search/%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C421%20%EC%9D%BC%EB%8F%84%ED%94%84%EB%9D%BC%EC%9E%90%201%EC%B8%B5%20106-2%ED%98%B8" target="_blank" rel="noopener">네이버 길찾기</a>
+            <a class="btn small" href="https://map.kakao.com/link/search/%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C421%20%EC%9D%BC%EB%8F%84%ED%94%84%EB%9D%BC%EC%9E%90%201%EC%B8%B5%20106-2%ED%98%B8" target="_blank" rel="noopener">카카오 길찾기</a>
+            <a class="btn small" href="https://www.google.com/maps/dir/?api=1&destination=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C421%20%EC%9D%BC%EB%8F%84%ED%94%84%EB%9D%BC%EC%9E%90%201%EC%B8%B5%20106-2%ED%98%B8" target="_blank" rel="noopener">구글 길찾기</a>
           </div>
         </div>
       </div>
@@ -280,15 +342,15 @@
     <div class="container">
       <h2>자주 묻는 질문(FAQ)</h2>
       <div style="display:grid;gap:12px">
-        <details style="border:1px solid #eaeaea;background:#fff;border-radius:12px;padding:14px">
+        <details style="border:1px solid var(--glass-bd);background:#fff;border-radius:12px;padding:14px">
           <summary style="font-weight:800">데이터 이전은 정말 무료인가요?</summary>
           <p style="margin:10px 0 0;color:#666">네. 사진·연락처·카톡·앱까지 기본 이전은 무료입니다. 용량이 매우 큰 특별 이전은 사전 안내 후 진행합니다.</p>
         </details>
-        <details style="border:1px solid #eaeaea;background:#fff;border-radius:12px;padding:14px">
+        <details style="border:1px solid var(--glass-bd);background:#fff;border-radius:12px;padding:14px">
           <summary style="font-weight:800">주차가 가능한가요?</summary>
           <p style="margin:10px 0 0;color:#666">건물 앞·뒤편에 전용 주차공간이 있습니다.</p>
         </details>
-        <details style="border:1px solid #eaeaea;background:#fff;border-radius:12px;padding:14px">
+        <details style="border:1px solid var(--glass-bd);background:#fff;border-radius:12px;padding:14px">
           <summary style="font-weight:800">알뜰요금제도 취급하나요?</summary>
           <p style="margin:10px 0 0;color:#666">네. 부모님/학생 맞춤 알뜰요금제도 비교 상담해드립니다.</p>
         </details>
@@ -300,13 +362,13 @@
   <footer class="footer">
     <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
       <div>© <span id="year"></span> 세나폰 · All rights reserved.</div>
-      <div class="note">대구 북구 학정로 421, 일도프라자 106-2호 | 상담 10:00–20:00 · <a href="tel:01080148600">010-8014-8600</a></div>
+      <div class="note">대구 북구 학정로421 일도프라자 1층 106-2호 | 사업자번호 503-27-52116 | 전국 비대면 개통 / 당일 발송 | 상담 10:00–20:00 · <a href="tel:01080148600">010 8014 8600</a></div>
     </div>
   </footer>
 
   <!-- Sticky CTA -->
   <div class="sticky-cta" role="region" aria-label="실시간 최저가 견적받기">
-    <div class="wrap"><a href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">실시간 최저가 견적받기</a></div>
+    <div class="wrap"><a href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">전국 비대면 개통 시작하기</a></div>
   </div>
 
   <!-- 구조화데이터: 업종 + 후기 집계 + FAQ -->
@@ -318,8 +380,9 @@
     "url":"https://sena-phone.com/",
     "image":"https://sena-phone.com/sena.png",
     "telephone":"+82-10-8014-8600",
-    "address":{"@type":"PostalAddress","addressCountry":"KR","addressRegion":"대구광역시","addressLocality":"북구","streetAddress":"학정로 421, 일도프라자 106-2호"},
-    "geo":{"@type":"GeoCoordinates","latitude":35.94572,"longitude":128.57072},
+    "taxID":"503-27-52116",
+    "areaServed":"KR",
+    "address":{"@type":"PostalAddress","addressCountry":"KR","addressRegion":"대구광역시","addressLocality":"북구","streetAddress":"학정로421 일도프라자 1층 106-2호"},
     "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"10:00","closes":"20:00"}],
     "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","bestRating":"5","ratingCount":"50"}
   }
