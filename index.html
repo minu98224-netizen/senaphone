@@ -3,18 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-
   <title>세나폰 | 전국 휴대폰 성지 · 비대면 개통 · 아이폰/갤럭시 기기변경</title>
   <meta name="description" content="세나폰 — 전국 휴대폰 성지. 비대면 개통/전국 택배·퀵 발송, 아이폰·갤럭시 기기변경/번호이동, 요금제 상담, 데이터 이전까지 한 번에! 대구 북구 본점 운영.">
   <link rel="canonical" href="https://sena-phone.com/">
   <link rel="alternate" href="https://sena-phone.com" hreflang="ko-KR">
   <meta name="robots" content="index,follow">
   <meta http-equiv="Content-Language" content="ko">
-  <meta name="theme-color" content="#e0362b">
-
+  <meta name="theme-color" content="#ff5151">
   <!-- 네이버 소유확인: 실제 값으로 교체 -->
   <meta name="naver-site-verification" content="여기에-네이버-검증값" />
-
   <!-- OG/Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="세나폰">
@@ -24,157 +21,192 @@
   <meta property="og:url" content="https://sena-phone.com/">
   <meta property="og:image" content="https://sena-phone.com/sena.png">
   <meta name="twitter:card" content="summary_large_image">
-
   <meta name="format-detection" content="telephone=no" />
   <link rel="icon" href="favicon.ico" />
-
-  <!-- 폰트(슬림) -->
+  <!-- 폰트 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#f6f7f9; --card:#ffffff; --text:#0a0a0a; --muted:#666; --line:#e9e9ee;
-      --brand:#e0362b; --brand-2:#ff6a5a; --brand-deep:#c1211a;
-      --radius:22px; --maxw:1080px;
-      /* 글래스 공통 변수 */
-      --shadow:0 8px 30px rgba(12,14,24,.10), 0 1px 0 rgba(255,255,255,.6) inset;
-      --shadow-strong:0 22px 70px rgba(12,14,24,.16), 0 1px 0 rgba(255,255,255,.7) inset;
+      --bg:#eef2ff;
+      --card:rgba(255,255,255,.78);
+      --card-solid:#ffffff;
+      --text:#10213b;
+      --muted:#5d6f91;
+      --brand:#ff5151;
+      --brand-dark:#f23737;
+      --brand-alt:#ff9451;
+      --accent:#6d7bff;
+      --radius:28px;
+      --maxw:1100px;
+      --shadow:0 26px 70px rgba(16,33,59,.18);
+      --shadow-soft:0 18px 48px rgba(16,33,59,.14);
+      --shadow-hover:0 32px 90px rgba(16,33,59,.2);
       --glass-bg: linear-gradient(180deg, rgba(255,255,255,.52), rgba(255,255,255,.34));
       --glass-bd: color-mix(in oklab, #ffffff 26%, transparent);
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
-      font:16px/1.65 Inter,"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Apple SD Gothic Neo,system-ui,sans-serif;
-      letter-spacing:-.2px; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+    *{box-sizing:border-box;-webkit-tap-highlight-color:rgba(0,0,0,.08)}
+    html,body{
+      margin:0;padding:0;background:var(--bg);color:var(--text);
+      font:16px/1.65 "Inter","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Apple SD Gothic Neo,system-ui,sans-serif;
+      letter-spacing:-.2px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+      position:relative;min-height:100%;
+    }
+    body::before,body::after{
+      content:"";position:fixed;width:520px;height:520px;z-index:-2;pointer-events:none;opacity:.85;
+    }
+    body::before{top:-220px;right:-180px;background:radial-gradient(circle at center, rgba(255,96,96,.35) 0%, rgba(255,96,96,0) 72%)}
+    body::after{bottom:-220px;left:-160px;background:radial-gradient(circle at center, rgba(109,123,255,.3) 0%, rgba(109,123,255,0) 70%)}
     a{color:inherit;text-decoration:none}
-    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
-    *{-webkit-tap-highlight-color:rgba(0,0,0,.08)}
+    img{display:block;max-width:100%;height:auto}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 24px;position:relative}
 
-    /* ===== NAV (유리 느낌 상단바) ===== */
-    .nav{
-      position:sticky; top:0; z-index:60; border-bottom:1px solid var(--glass-bd);
-      background:var(--glass-bg); backdrop-filter:saturate(180%) blur(14px);
-      box-shadow:0 10px 30px rgba(12,14,24,.08);
-      transition:box-shadow .25s ease, background .25s ease, border-color .25s ease;
-    }
-    .nav.scrolled{ 
-      background:linear-gradient(180deg, rgba(255,255,255,.68), rgba(255,255,255,.42));
-      border-bottom-color: color-mix(in oklab, #ffffff 36%, transparent);
-      box-shadow:0 18px 60px rgba(12,14,24,.14);
-    }
-    .nav-wrap{ display:flex; align-items:center; gap:14px; height:70px; padding:6px 0 }
-    .brand{ display:flex; align-items:center; gap:10px; flex:0 0 auto; }
-    .brand img{ height:44px; width:auto; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,.06)}
-    .brand strong{ font-size:22px; font-weight:900; letter-spacing:-.4px; white-space:nowrap }
-
-    .nav-links{ display:flex; gap:8px; align-items:center; overflow-x:auto; overscroll-behavior:contain;
-      white-space:nowrap; scrollbar-width:none; -ms-overflow-style:none; flex:1 1 auto; }
-    .nav-links::-webkit-scrollbar{ display:none }
-
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:40px;padding:0 16px;border-radius:14px;border:1px solid var(--glass-bd);
-      background:var(--glass-bg);box-shadow:var(--shadow);font-weight:800;transition:transform .15s,box-shadow .2s,border-color .2s, background .2s}
-    .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow-strong); background:linear-gradient(180deg, rgba(255,255,255,.7), rgba(255,255,255,.46))}
-    .btn-primary{background:linear-gradient(180deg,color-mix(in oklab,var(--brand) 96%,#fff) 0%,var(--brand) 100%);color:#fff;border-color:transparent}
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:90;backdrop-filter:blur(22px) saturate(160%);background:rgba(255,255,255,.78);border-bottom:1px solid rgba(255,255,255,.55);transition:box-shadow .25s ease, background .25s ease, border-color .25s ease}
+    .nav.scrolled{background:rgba(255,255,255,.9);border-bottom-color:rgba(255,255,255,.7);box-shadow:0 18px 60px rgba(16,33,59,.14)}
+    .nav-wrap{display:flex;align-items:center;gap:18px;height:78px;padding:6px 0}
+    .brand{display:flex;align-items:center;gap:12px;flex:0 0 auto;color:var(--text);font-weight:800}
+    .brand img{height:48px;width:48px;border-radius:14px;box-shadow:0 10px 26px rgba(16,33,59,.12);object-fit:cover}
+    .brand strong{font-size:22px;letter-spacing:-.4px;white-space:nowrap}
+    .nav-links{display:flex;gap:10px;align-items:center;overflow-x:auto;overscroll-behavior:contain;white-space:nowrap;scrollbar-width:none;-ms-overflow-style:none;flex:1 1 auto;justify-content:flex-end}
+    .nav-links::-webkit-scrollbar{display:none}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:42px;padding:0 18px;border-radius:999px;border:0;background:rgba(255,255,255,.6);box-shadow:0 12px 26px rgba(16,33,59,.12);font-weight:800;font-size:14px;color:var(--text);transition:transform .18s ease,box-shadow .25s ease,background .25s ease,color .25s ease}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 20px 40px rgba(16,33,59,.16);background:rgba(255,255,255,.88)}
+    .btn-primary{background:linear-gradient(130deg,var(--brand) 0%,var(--brand-alt) 100%);color:#fff;box-shadow:0 18px 38px rgba(255,81,81,.28)}
     .btn-pill{border-radius:999px}
+    .btn.small{height:36px;padding:0 14px;font-size:13px;border-radius:14px}
 
-    /* ===== HERO ===== */
-    .hero{padding:62px 0 42px}
-    .hero-card{
-      position:relative; border:1px solid var(--glass-bd); border-radius:calc(var(--radius) + 8px); padding:42px;
-      background:
-        radial-gradient(1600px 800px at 85% -20%, rgba(224,54,43,.08), transparent 60%),
-        radial-gradient(1200px 700px at -10% 120%, rgba(255,106,90,.08), transparent 60%),
-        var(--glass-bg);
-      box-shadow:var(--shadow-strong); overflow:hidden;
-    }
-    .hero-top{display:flex; gap:34px; align-items:center; flex-wrap:wrap}
-    .hero img.logo{width:120px; height:auto; border-radius:22px; box-shadow:var(--shadow)}
-    .title{font-size:40px; line-height:1.12; margin:0 0 10px; font-weight:900; letter-spacing:-.6px}
-    .subtitle{font-size:18px; color:var(--muted); margin:0 0 22px; max-width:720px}
-    .hero-cta{display:flex; gap:12px; flex-wrap:wrap}
-    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
-    .badge{border:1px solid var(--glass-bd); background:var(--glass-bg); padding:8px 12px; border-radius:999px; color:var(--muted); font-weight:700}
-    @media(max-width:980px){.title{font-size:32px}.hero img.logo{width:96px}}
-    @media(max-width:640px){.hero-card{padding:26px}.title{font-size:26px}}
+    /* HERO */
+    .hero{padding:120px 0 84px;position:relative}
+    .hero-shell{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,1fr);gap:48px;padding:58px clamp(28px,4vw,56px);border-radius:clamp(32px,5vw,46px);border:1px solid rgba(255,255,255,.58);background:var(--card);box-shadow:var(--shadow);overflow:hidden;isolation:isolate}
+    .hero-shell::before,.hero-shell::after{content:"";position:absolute;border-radius:50%;z-index:-1}
+    .hero-shell::before{width:420px;height:420px;top:-34%;left:-30%;background:radial-gradient(circle at center, rgba(255,141,98,.26) 0%, rgba(255,141,98,0) 72%)}
+    .hero-shell::after{width:360px;height:360px;bottom:-32%;right:-28%;background:radial-gradient(circle at center, rgba(109,123,255,.22) 0%, rgba(109,123,255,0) 74%)}
+    .hero-copy{display:flex;flex-direction:column;gap:18px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.72);color:var(--brand-dark);font-weight:800;font-size:13px;letter-spacing:.4px;width:max-content}
+    .title{font-size:clamp(32px,4vw,48px);line-height:1.1;margin:0;font-weight:900;letter-spacing:-.6px}
+    .subtitle{font-size:18px;color:var(--muted);margin:0;max-width:620px}
+    .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px}
+    .hero-cta .btn{height:48px;padding:0 26px;font-size:15px}
+    .badge-cloud{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 18px}
+    .badge{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.76);color:var(--muted);font-weight:700;font-size:14px;box-shadow:0 10px 24px rgba(16,33,59,.08)}
+    .hero-stats{margin:0;padding:0;list-style:none;display:grid;gap:14px}
+    .hero-stats li{display:flex;gap:16px;align-items:flex-start;padding:16px 18px;border-radius:20px;background:rgba(16,33,59,.06);backdrop-filter:blur(6px);box-shadow:0 12px 26px rgba(16,33,59,.08)}
+    .hero-stats li div{flex:1}
+    .hero-stats li::before{content:"";flex:0 0 auto;width:12px;height:12px;border-radius:50%;background:linear-gradient(130deg,var(--brand),var(--brand-alt));box-shadow:0 0 0 4px rgba(255,81,81,.18);margin-top:6px}
+    .hero-stats strong{display:block;font-size:17px;font-weight:800;letter-spacing:-.2px}
+    .hero-stats span{display:block;color:var(--muted);font-size:14px;line-height:1.5}
+    .hero-side{display:flex;justify-content:center;align-items:stretch}
+    .hero-device{display:flex;flex-direction:column;gap:18px;align-items:stretch;width:100%;max-width:340px}
+    .hero-device-figure{position:relative;border-radius:32px;padding:30px;background:linear-gradient(160deg,rgba(255,255,255,.95),rgba(255,255,255,.68));border:1px solid rgba(255,255,255,.8);box-shadow:var(--shadow-soft);display:grid;place-items:center}
+    .hero-device-figure::after{content:"";position:absolute;inset:auto 24px 24px auto;width:90px;height:90px;border-radius:32px;background:linear-gradient(140deg,rgba(255,149,94,.3),rgba(109,123,255,.28));opacity:.8}
+    .hero-device-figure img{width:160px;height:160px;border-radius:28px;box-shadow:0 26px 48px rgba(16,33,59,.16)}
+    .hero-floating{display:flex;flex-direction:column;gap:16px;padding:22px 24px;border-radius:28px;background:linear-gradient(135deg,var(--brand) 0%,var(--brand-alt) 100%);color:#fff;box-shadow:0 24px 48px rgba(255,81,81,.3)}
+    .hero-floating strong{font-size:20px;font-weight:900;letter-spacing:-.3px}
+    .hero-floating p{margin:2px 0 0;color:rgba(255,255,255,.86);font-size:14px;line-height:1.6}
+    .hero-floating small{font-size:12px;letter-spacing:.4px;text-transform:uppercase;color:rgba(255,255,255,.7)}
+    .hero-floating-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .mini-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:#fff;color:var(--brand-dark);font-weight:800;font-size:14px;box-shadow:0 12px 24px rgba(0,0,0,.12)}
+    .mini-link{display:inline-flex;align-items:center;gap:6px;color:#fff;font-weight:700;font-size:14px;text-decoration:underline;text-decoration-color:rgba(255,255,255,.6)}
+    .mini-link::before{content:"☎";font-size:14px}
 
-    /* ===== GRID & CARDS ===== */
-    .grid{display:grid; gap:18px; grid-template-columns:repeat(12,1fr); margin-top:26px}
-    .card{grid-column:span 4; border:1px solid var(--glass-bd); background:var(--glass-bg); border-radius:var(--radius); padding:22px;
-      box-shadow:var(--shadow); transition:transform .15s, box-shadow .2s, background .2s}
-    .card:hover{transform:translateY(-3px); box-shadow:var(--shadow-strong); background:linear-gradient(180deg, rgba(255,255,255,.64), rgba(255,255,255,.46))}
-    .card .ico{width:28px; height:28px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center;
-      background:color-mix(in oklab, var(--brand) 14%, #fff); border:1px solid var(--glass-bd)}
-    .card h3{margin:10px 0 8px; font-size:18px}
-    .card p{margin:0; color:var(--muted)}
-    @media(max-width:980px){.card{grid-column:span 6}}
-    @media(max-width:640px){.card{grid-column:span 12}}
+    /* FEATURE CARDS */
+    .feature-grid{display:grid;gap:20px;margin-top:48px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+    .card{position:relative;padding:26px 24px;border-radius:24px;background:var(--card);border:1px solid rgba(255,255,255,.65);box-shadow:var(--shadow-soft);transition:transform .2s ease,box-shadow .2s ease;backdrop-filter:blur(8px)}
+    .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover)}
+    .feature-icon{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(255,81,81,.18),rgba(109,123,255,.16));border:1px solid rgba(255,255,255,.7);margin-bottom:16px}
+    .feature-icon svg{width:22px;height:22px;fill:var(--brand)}
+    .card h3{margin:0 0 10px;font-size:19px;line-height:1.3}
+    .card p{margin:0;color:var(--muted)}
 
-    /* ===== SECTIONS ===== */
-    .section{padding:28px 0 70px}
-    .section h2{font-size:26px; margin:0 0 16px}
-    .note{color:var(--muted); font-size:14px}
+    /* GENERIC SECTION */
+    .section{padding:88px 0;position:relative}
+    .section h2{margin:0;font-size:clamp(26px,3vw,32px);letter-spacing:-.4px}
+    .section .note{color:var(--muted);font-size:15px}
+    .section-head{max-width:620px;margin:0 0 34px}
+    .section-head p{margin:12px 0 0;color:var(--muted)}
+    .info-box{margin:22px 0;background:var(--card);border:1px solid rgba(255,255,255,.65);border-radius:22px;padding:22px 26px;box-shadow:var(--shadow-soft)}
+    .info-box a{color:var(--brand-dark);font-weight:700}
+
+    /* DEVICES */
+    .devices{padding:96px 0;background:linear-gradient(180deg, rgba(255,255,255,.76) 0%, rgba(255,255,255,.92) 100%)}
+    .devices .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:34px}
+    .device-card{display:flex;flex-direction:column;border-radius:28px;background:var(--card-solid);border:1px solid rgba(255,255,255,.7);box-shadow:var(--shadow-soft);overflow:hidden;position:relative;transition:transform .2s ease,box-shadow .2s ease}
+    .device-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover)}
+    .device-hero{display:grid;place-items:center;background:linear-gradient(160deg,rgba(255,81,81,.12),rgba(109,123,255,.08));padding:28px 18px}
+    .device-hero img{width:min(280px,72%);height:auto;filter:drop-shadow(0 26px 32px rgba(16,33,59,.18));animation:float 6s ease-in-out infinite}
+    .device-body{padding:22px 24px}
+    .device-body h3{margin:0 0 8px;font-size:20px}
+    .device-body p{margin:0;color:var(--muted)}
+    .device-actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+    .device-actions .btn{height:42px;padding:0 20px;font-size:14px}
 
     /* PRICE */
-    .price{display:flex; gap:18px; flex-wrap:wrap}
-    .plan{flex:1 1 260px; border:1px solid var(--glass-bd); background:var(--glass-bg); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
-    .plan h3{margin:0 0 6px; font-size:18px}
-    .plan .num{font-size:34px; font-weight:800; letter-spacing:-.5px}
-    .plan ul{margin:12px 0 0; padding:0 0 0 18px; color:var(--muted)}
+    .price{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:32px}
+    .plan{position:relative;padding:26px 24px;border-radius:26px;background:var(--card);border:1px solid rgba(255,255,255,.65);box-shadow:var(--shadow-soft);overflow:hidden}
+    .plan::before{content:"";position:absolute;top:-32%;right:-28%;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle at center, rgba(255,148,81,.26) 0%, rgba(255,148,81,0) 72%)}
+    .plan h3{margin:0 0 12px;font-size:18px;color:var(--brand-dark)}
+    .plan .num{font-size:32px;font-weight:800;letter-spacing:-.4px;margin-bottom:16px}
+    .plan ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;color:var(--muted);font-size:15px}
+    .plan ul li{display:flex;align-items:flex-start;gap:10px}
+    .plan ul li::before{content:"";flex:0 0 auto;width:8px;height:8px;border-radius:50%;margin-top:6px;background:linear-gradient(135deg,var(--brand),var(--brand-alt))}
 
     /* REVIEWS */
-    .reviews-grid{display:grid; grid-template-columns:repeat(12,1fr); gap:14px}
-    .review{grid-column:span 4; background:var(--glass-bg); border:1px solid var(--glass-bd); border-radius:18px; padding:18px; box-shadow:var(--shadow)}
-    @media(max-width:980px){.review{grid-column:span 6}} @media(max-width:640px){.review{grid-column:span 12}}
-    .meta-row{display:flex; align-items:center; gap:10px; margin-bottom:8px}
-    .avatar{width:32px; height:32px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:800; font-size:12px; color:#fff; background:radial-gradient(120% 120% at 80% 20%, var(--brand) 0%, var(--brand-deep) 70%)}
+    .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:28px}
+    .review{background:var(--card);border:1px solid rgba(255,255,255,.65);border-radius:22px;padding:20px 22px;box-shadow:var(--shadow-soft)}
+    .meta-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+    .avatar{width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;color:#fff;background:linear-gradient(130deg,var(--brand) 0%,var(--brand-dark) 100%)}
     .name{font-weight:800}
-    .stars svg{width:14px; height:14px; margin-right:2px; fill:#f1b400}
-    .txt{margin:6px 0 10px}
-    .meta{color:var(--muted); font-size:13px}
+    .stars svg{width:14px;height:14px;margin-right:2px;fill:#fbbf24}
+    .txt{margin:6px 0 12px;color:var(--text)}
+    .meta{color:var(--muted);font-size:13px}
+    .more-wrap{display:flex;justify-content:center;margin-top:18px}
 
     /* MAP */
-    .mapcard{border:1px solid var(--glass-bd); border-radius:20px; background:var(--glass-bg); box-shadow:var(--shadow-strong); overflow:hidden}
-    .map-wrap{position:relative; width:100%; aspect-ratio:16/9; background:#ddd}
-    .map-wrap iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
-    .map-info{display:flex; gap:16px; align-items:center; justify-content:space-between; padding:14px 16px; border-top:1px solid var(--glass-bd); flex-wrap:wrap}
-    .map-actions{display:flex; gap:8px; flex-wrap:wrap}
-    .btn.small{height:36px; border-radius:12px; padding:0 12px}
+    .mapcard{border:1px solid rgba(255,255,255,.65);border-radius:30px;background:var(--card);box-shadow:var(--shadow);overflow:hidden}
+    .map-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#dfe3ef}
+    .map-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .map-info{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:18px 20px;border-top:1px solid rgba(255,255,255,.62);flex-wrap:wrap;background:rgba(255,255,255,.88)}
+    .map-actions{display:flex;gap:8px;flex-wrap:wrap}
 
-    /* DEVICES (신제품 쇼케이스) */
-    .devices{padding:20px 0}
-    .devices .wrap{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-    .device-card{grid-column:span 4;background:var(--glass-bg);border:1px solid var(--glass-bd);border-radius:24px;box-shadow:var(--shadow-strong);overflow:hidden;position:relative}
-    .device-hero{display:grid;place-items:center;background:linear-gradient(180deg,#fff, #f7f7fb);padding:22px 12px}
-    .device-hero img{width:min(280px,70%);height:auto;filter:drop-shadow(0 24px 24px rgba(0,0,0,.12));animation:float 6s ease-in-out infinite}
-    .device-body{padding:16px 18px}
-    .device-body h3{margin:0 0 6px;font-size:18px}
-    .device-body p{margin:0;color:var(--muted)}
-    .device-actions{display:flex;gap:8px;margin-top:12px}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-    @media(max-width:980px){.device-card{grid-column:span 6}}@media(max-width:640px){.device-card{grid-column:span 12}}
-
-    /* FOOTER / Sticky CTA */
-    .footer{border-top:1px solid var(--glass-bd); padding:28px 0; color:var(--muted); font-size:14px}
+    /* FOOTER & CTA */
+    .footer{border-top:1px solid rgba(255,255,255,.6);padding:34px 0;color:var(--muted);font-size:14px;background:rgba(255,255,255,.78)}
+    .footer-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
     body{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
-    .sticky-cta{position:fixed; left:50%; bottom:12px; transform:translateX(-50%); width:min(100%, var(--maxw)); z-index:90; padding:8px 10px}
-    .sticky-cta .wrap{display:flex; justify-content:center; background:var(--glass-bg); border:1px solid var(--glass-bd); box-shadow:var(--shadow-strong); border-radius:999px; padding:6px 8px; backdrop-filter:saturate(180%) blur(10px)}
-    .sticky-cta a{display:flex; align-items:center; justify-content:center; min-width:240px; height:52px; padding:0 24px; border-radius:999px; font-weight:900; font-size:16.5px; line-height:1; letter-spacing:-.2px; background:var(--brand); color:#fff; border:0; box-shadow:var(--shadow-strong)}
-    @media(max-width:420px){.sticky-cta a{min-width:unset; width:100%}}
+    .sticky-cta{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);width:min(100%, var(--maxw));z-index:90;padding:8px 10px}
+    .sticky-cta .wrap{display:flex;justify-content:center;background:var(--glass-bg);border:1px solid var(--glass-bd);box-shadow:var(--shadow);border-radius:999px;padding:6px 8px;backdrop-filter:saturate(180%) blur(10px)}
+    .sticky-cta a{display:flex;align-items:center;justify-content:center;min-width:240px;height:52px;padding:0 24px;border-radius:999px;font-weight:900;font-size:16.5px;line-height:1;letter-spacing:-.2px;background:var(--brand);color:#fff;border:0;box-shadow:var(--shadow)}
+
+    /* 접근성/모션 감소 */
+    @media (prefers-reduced-motion: reduce) {
+      *{animation:none !important;transition:none !important}
+    }
+
+    /* UTIL */
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+    /* RWD */
+    @media(max-width:1080px){.hero-shell{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+    @media(max-width:960px){.nav-wrap{height:72px}.hero-shell{grid-template-columns:1fr;gap:36px;padding:48px 32px}.hero-side{order:-1}.hero-copy{gap:16px}}
+    @media(max-width:720px){body::before,body::after{width:380px;height:380px}.hero{padding:96px 0 68px}.hero-shell{padding:40px 26px}.hero-cta .btn{flex:1 1 auto;min-width:200px}.sticky-cta a{min-width:0;width:100%}}
+    @media(max-width:540px){.container{padding:0 20px}.hero-cta .btn{flex:1 1 100%;width:100%}.hero-floating{padding:20px 22px}.mini-btn{flex:1 1 100%;justify-content:center}.mini-link{width:100%;text-align:center}.sticky-cta .wrap{padding:8px}}
+    @media(max-width:420px){.brand strong{font-size:20px}.hero-shell{padding:36px 22px}}
   </style>
 </head>
 <body>
-  <!-- ===== NAV ===== -->
+  <noscript>이 페이지의 일부 기능은 자바스크립트를 사용합니다. 브라우저 설정에서 자바스크립트를 허용해 주세요.</noscript>
+  <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="container nav-wrap">
       <a class="brand" href="#home" aria-label="세나폰 홈">
         <img src="sena.png" alt="세나폰 로고" />
         <strong>세나폰</strong>
       </a>
-
       <div class="nav-links" role="navigation" aria-label="주요 메뉴">
         <a class="btn btn-pill" href="#devices">신제품</a>
+        <a class="btn btn-pill" href="#process">진행절차</a>
         <a class="btn btn-pill" href="#about">소개</a>
         <a class="btn btn-pill" href="#reviews">후기</a>
         <a class="btn btn-primary btn-pill" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">상담하기</a>
@@ -182,12 +214,12 @@
     </div>
   </nav>
 
-  <!-- ===== HERO ===== -->
+  <!-- HERO -->
   <header class="hero" id="home">
-    <div class="container hero-card">
-      <div class="hero-top">
-        <img class="logo" src="sena.png" alt="세나폰 로고" width="240" height="240" loading="lazy" decoding="async" />
-        <div>
+    <div class="container">
+      <div class="hero-shell">
+        <div class="hero-copy">
+          <span class="eyebrow">세나폰 본점</span>
           <h1 class="title">세나폰 — <b>전국 휴대폰 성지</b><br>비대면/방문 모두 OK, 아이폰·갤럭시 기기변경</h1>
           <p class="subtitle">대한민국 어디든 <b>비대면 개통</b>으로 빠르게! 대구 북구 본점 방문은 물론, <b>전국 택배·퀵 당일 발송</b> 지원. 카톡으로 견적부터 개통까지 끝.</p>
           <div class="hero-cta">
@@ -195,44 +227,81 @@
             <a class="btn" href="tel:01080148600" aria-label="전화 문의 010-8014-8600">전화 문의</a>
             <a class="btn" href="#reviews">실후기 보기</a>
           </div>
-          <div class="badges" aria-label="매장 장점">
+          <div class="badge-cloud" aria-label="매장 장점">
             <span class="badge">전국 비대면 개통</span>
             <span class="badge">당일 택배·퀵 발송</span>
             <span class="badge">통신3사 최저가 비교</span>
             <span class="badge">데이터 이전 무료</span>
           </div>
+          <ul class="hero-stats" aria-label="세나폰 핵심 서비스">
+            <li><div><strong>전국 비대면 개통</strong><span>택배·퀵으로 당일 발송, 어디서든 빠르게 완료해요.</span></div></li>
+            <li><div><strong>데이터 이전 무료</strong><span>사진 · 연락처 · 앱까지 모두 안전하게 이전해드립니다.</span></div></li>
+            <li><div><strong>실후기 5.0점</strong><span>50+ 고객 만족 후기와 투명한 견적으로 믿고 맡길 수 있어요.</span></div></li>
+          </ul>
         </div>
+        <aside class="hero-side">
+          <div class="hero-device">
+            <div class="hero-device-figure">
+              <img src="sena.png" alt="세나폰 로고" width="240" height="240" loading="lazy" decoding="async" />
+            </div>
+            <div class="hero-floating">
+              <small>상담 채널</small>
+              <strong>실시간 맞춤 견적</strong>
+              <p>카톡·전화 한 통이면 전국 어디든 비대면 개통부터 발송까지 책임집니다. 상담 10:00~20:00 언제든 연결하세요.</p>
+              <div class="hero-floating-actions">
+                <a class="mini-btn" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">카톡 상담</a>
+                <a class="mini-link" href="tel:01080148600">010-8014-8600</a>
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
 
-      <!-- 3카드 -->
-      <div class="grid">
+      <!-- 특징 3카드 -->
+      <div class="feature-grid" aria-label="세나폰 서비스 특징">
         <article class="card">
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 7h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7zm3-3h10l1 3H6l1-3z"/></svg></span>
+          <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7zm3-3h10l1 3H6l1-3z"/></svg></div>
           <h3>합리적인 판매가</h3>
-          <p>통신 3사 프로모션 반영, 불필요한 옵션 없이 깔끔한 견적만 제시합니다.</p>
+          <p>통신 3사 프로모션을 실시간 반영해 불필요한 옵션 없이 깔끔한 견적만 제시합니다.</p>
         </article>
         <article class="card">
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M7 7h10v10H7z"/><path d="M3 11h4v2H3zM17 11h4v2h-4zM11 3h2v4h-2zM11 17h2v4h-2z"/></svg></span>
+          <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7h10v10H7z"/><path d="M3 11h4v2H3zM17 11h4v2h-4zM11 3h2v4h-2zM11 17h2v4h-2z"/></svg></div>
           <h3>데이터 그대로 이전</h3>
-          <p>사진·연락처·카톡·앱까지 안전 이전. 아이폰↔갤럭시 모두 문제없습니다.</p>
+          <p>사진·연락처·카톡·앱까지 전부 이전. 아이폰↔갤럭시 모두 문제없이 지원합니다.</p>
         </article>
         <article class="card">
-          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm1 5v6l4 2"/></svg></span>
+          <div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm1 5v6l4 2"/></svg></div>
           <h3>사후관리까지 완벽</h3>
-          <p>요금제 변경·분실·파손 등 문제 발생 시 빠르게 응대하고 끝까지 챙깁니다.</p>
+          <p>요금제 변경·분실·파손 등 상황에서도 빠르게 응대하고 끝까지 책임집니다.</p>
         </article>
       </div>
     </div>
   </header>
 
-  <!-- ===== DEVICES ===== -->
+  <!-- PROCESS -->
+  <section id="process" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>견적부터 개통까지 이렇게 진행돼요</h2>
+        <p>첫 상담부터 발송까지 모든 단계를 전담 매니저가 케어합니다. 궁금한 점은 언제든 카톡과 전화로 바로 확인하세요.</p>
+      </div>
+      <div class="process-steps" aria-label="세나폰 진행 절차" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:32px">
+        <article class="step-card" data-step="01"><h3>상담 & 니즈 파악</h3><p>희망 기종·통신사·예산을 알려주시면 요금제와 사은품까지 투명하게 안내드립니다.</p></article>
+        <article class="step-card" data-step="02"><h3>맞춤 견적 제안</h3><p>통신 3사 실시간 조건을 비교해 최적의 금액을 제안하고, 필요 시 알뜰요금제 조합도 도와드립니다.</p></article>
+        <article class="step-card" data-step="03"><h3>개통 & 데이터 이전</h3><p>비대면 개통 시 영상 통화로 본인 확인 후 바로 개통! 방문 고객은 데이터 이전까지 매장 내에서 무료로 완료합니다.</p></article>
+        <article class="step-card" data-step="04"><h3>발송 & 사후관리</h3><p>당일 택배·퀵 발송으로 송장을 안내드리고, 이후 요금제 변경이나 A/S 문의도 끝까지 챙겨드립니다.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVICES -->
   <section id="devices" class="section devices">
     <div class="container">
       <h2>신제품 라인업</h2>
       <p class="note">아이폰 17 / 갤럭시 S25 / 갤럭시 Z 폴드 7 — 전국 비대면 개통 & 당일 발송</p>
       <div class="wrap">
         <article class="device-card" aria-label="iPhone 17">
-          <div class="device-hero"><img src="assets/iphone17.png" alt="iPhone 17" loading="lazy" decoding="async"></div>
+          <div class="device-hero"><img src="assets/iphone17.svg" alt="iPhone 17" loading="lazy" decoding="async"></div>
           <div class="device-body">
             <h3>iPhone 17</h3>
             <p>번호이동·기변 특가 / 자급제 + 알뜰요금제 조합 가능</p>
@@ -243,7 +312,7 @@
           </div>
         </article>
         <article class="device-card" aria-label="Galaxy S25">
-          <div class="device-hero"><img src="assets/galaxy-s25.png" alt="Galaxy S25" loading="lazy" decoding="async"></div>
+          <div class="device-hero"><img src="assets/galaxy-s25.svg" alt="Galaxy S25" loading="lazy" decoding="async"></div>
           <div class="device-body">
             <h3>Galaxy S25</h3>
             <p>삼성페이/버즈 번들 옵션 · 보상판매 연동</p>
@@ -254,7 +323,7 @@
           </div>
         </article>
         <article class="device-card" aria-label="Galaxy Z Fold 7">
-          <div class="device-hero"><img src="assets/galaxy-zfold7.png" alt="Galaxy Z Fold 7" loading="lazy" decoding="async"></div>
+          <div class="device-hero"><img src="assets/galaxy-zfold7.svg" alt="Galaxy Z Fold 7" loading="lazy" decoding="async"></div>
           <div class="device-body">
             <h3>Galaxy Z Fold 7</h3>
             <p>프리미엄 라인업 · 퀵/택배 당일 발송</p>
@@ -268,7 +337,7 @@
     </div>
   </section>
 
-  <!-- ===== PRICE ===== -->
+  <!-- PRICE -->
   <section id="price" class="section">
     <div class="container">
       <h2>이달의 프로모션</h2>
@@ -287,25 +356,23 @@
     </div>
   </section>
 
-  <!-- ===== REVIEWS ===== -->
+  <!-- REVIEWS -->
   <section id="reviews" class="section">
     <div class="container">
       <h2>고객 후기</h2>
       <div class="reviews-grid" id="reviewsGrid"></div>
-      <div style="display:flex;justify-content:center;margin-top:14px">
-        <button id="moreBtn" class="btn">더 보기</button>
-      </div>
+      <div class="more-wrap"><button id="moreBtn" class="btn" aria-label="후기 더 보기">더 보기</button></div>
     </div>
   </section>
 
-  <!-- ===== ABOUT ===== -->
+  <!-- ABOUT -->
   <section id="about" class="section">
     <div class="container">
       <h2>세나폰 소개</h2>
       <p>세나폰은 <strong>전국 휴대폰 성지</strong>를 목표로 운영하는 <strong>대구 북구 본점</strong>입니다.
         <strong>아이폰·갤럭시 기기변경/번호이동</strong>을 <b>비대면 개통</b> 또는 <b>방문</b>으로 깔끔하게 도와드려요.
         카톡으로 <b>견적 ▶ 결제 ▶ 개통 ▶ 발송</b>까지 원스톱 진행합니다.</p>
-      <div style="background:#fff;border:1px solid var(--glass-bd);border-radius:12px;padding:14px;margin:14px 0">
+      <div class="info-box">
         <p>📍 <b>본점 주소</b> : 대구 북구 학정로421 일도프라자 1층 106-2호</p>
         <p>📞 <b>상담</b> : <a href="tel:01080148600">010 8014 8600</a> · <a href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">카카오 채널</a></p>
         <p>🕐 <b>영업시간</b> : 매일 10:00 ~ 20:00 (연중무휴)</p>
@@ -314,7 +381,7 @@
     </div>
   </section>
 
-  <!-- ===== MAP ===== -->
+  <!-- MAP -->
   <section id="map" class="section">
     <div class="container">
       <h2>오시는 길</h2>
@@ -322,45 +389,45 @@
         <div class="map-wrap">
           <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
             src="https://www.google.com/maps?q=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C421%20%EC%9D%BC%EB%8F%84%ED%94%84%EB%9D%BC%EC%9E%90%201%EC%B8%B5%20106-2%ED%98%B8&output=embed"
-            title="세나폰 위치 지도"></iframe>
+            title="세나폰 위치 지도" aria-label="세나폰 위치 지도"></iframe>
         </div>
         <div class="map-info">
           <div><strong>세나폰</strong><br>대구 북구 학정로421 일도프라자 1층 106-2호<br>상담 10:00–20:00 · <a href="tel:01080148600">010 8014 8600</a></div>
           <div class="map-actions">
             <a class="btn small" href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">카톡 상담</a>
             <a class="btn small" href="https://map.naver.com/v5/search/%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C421%20%EC%9D%BC%EB%8F%84%ED%94%84%EB%9D%BC%EC%9E%90%201%EC%B8%B5%20106-2%ED%98%B8" target="_blank" rel="noopener">네이버 길찾기</a>
-            <a class="btn small" href="https://map.kakao.com/link/search/%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C421%20%EC%9D%BC%EB%8F%84%ED%94%84%EB%9D%BC%EC%9E%90%201%EC%B8%B5%20106-2%ED%98%B8" target="_blank" rel="noopener">카카오 길찾기</a>
-            <a class="btn small" href="https://www.google.com/maps/dir/?api=1&destination=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C421%20%EC%9D%BC%EB%8F%84%ED%94%84%EB%9D%BC%EC%9E%90%201%EC%B8%B5%20106-2%ED%98%B8" target="_blank" rel="noopener">구글 길찾기</a>
+            <a class="btn small" href="https://map.kakao.com/link/search/%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C421%20%EC%9D%BC%EB%8F%84%ED%94%84%EB%9D%BC%EC%9E%90%201%EC%B8%B5%20106-2%ED%98%B9" target="_blank" rel="noopener">카카오 길찾기</a>
+            <a class="btn small" href="https://www.google.com/maps/dir/?api=1&destination=%EB%8C%80%EA%B5%AC%20%EB%B6%81%EA%B5%AC%20%ED%95%99%EC%A0%95%EB%A1%9C421%20%EC%9D%BC%EB%8F%84%ED%94%84%EB%9D%BC%EC%9E%90%201%EC%B8%B5%20106-2%ED%98%B9" target="_blank" rel="noopener">구글 길찾기</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== FAQ ===== -->
+  <!-- FAQ -->
   <section class="section" id="faq">
     <div class="container">
       <h2>자주 묻는 질문(FAQ)</h2>
-      <div style="display:grid;gap:12px">
-        <details style="border:1px solid var(--glass-bd);background:#fff;border-radius:12px;padding:14px">
-          <summary style="font-weight:800">데이터 이전은 정말 무료인가요?</summary>
-          <p style="margin:10px 0 0;color:#666">네. 사진·연락처·카톡·앱까지 기본 이전은 무료입니다. 용량이 매우 큰 특별 이전은 사전 안내 후 진행합니다.</p>
+      <div class="faq-list">
+        <details>
+          <summary>데이터 이전은 정말 무료인가요?</summary>
+          <p>네. 사진·연락처·카톡·앱까지 기본 이전은 무료입니다. 용량이 매우 큰 특별 이전은 사전 안내 후 진행합니다.</p>
         </details>
-        <details style="border:1px solid var(--glass-bd);background:#fff;border-radius:12px;padding:14px">
-          <summary style="font-weight:800">주차가 가능한가요?</summary>
-          <p style="margin:10px 0 0;color:#666">건물 앞·뒤편에 전용 주차공간이 있습니다.</p>
+        <details>
+          <summary>주차가 가능한가요?</summary>
+          <p>건물 앞·뒤편에 전용 주차공간이 있습니다.</p>
         </details>
-        <details style="border:1px solid var(--glass-bd);background:#fff;border-radius:12px;padding:14px">
-          <summary style="font-weight:800">알뜰요금제도 취급하나요?</summary>
-          <p style="margin:10px 0 0;color:#666">네. 부모님/학생 맞춤 알뜰요금제도 비교 상담해드립니다.</p>
+        <details>
+          <summary>알뜰요금제도 취급하나요?</summary>
+          <p>네. 부모님/학생 맞춤 알뜰요금제도 비교 상담해드립니다.</p>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <div class="container footer-inner">
       <div>© <span id="year"></span> 세나폰 · All rights reserved.</div>
       <div class="note">대구 북구 학정로421 일도프라자 1층 106-2호 | 사업자번호 503-27-52116 | 전국 비대면 개통 / 당일 발송 | 상담 10:00–20:00 · <a href="tel:01080148600">010 8014 8600</a></div>
     </div>
@@ -371,7 +438,7 @@
     <div class="wrap"><a href="http://pf.kakao.com/_Mtxmxcn" target="_blank" rel="noopener">전국 비대면 개통 시작하기</a></div>
   </div>
 
-  <!-- 구조화데이터: 업종 + 후기 집계 + FAQ -->
+  <!-- 구조화데이터: 매장 정보 -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -387,76 +454,69 @@
     "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","bestRating":"5","ratingCount":"50"}
   }
   </script>
+  <!-- 구조화데이터: FAQ -->
   <script type="application/ld+json">
   {
-   "@context":"https://schema.org",
-   "@type":"FAQPage",
-   "mainEntity":[
-    {"@type":"Question","name":"데이터 이전은 정말 무료인가요?","acceptedAnswer":{"@type":"Answer","text":"기본 데이터 이전은 무료입니다. 용량이 큰 특별 이전은 사전 안내 후 진행합니다."}},
-    {"@type":"Question","name":"주차가 가능한가요?","acceptedAnswer":{"@type":"Answer","text":"건물 앞·뒤편에 전용 주차공간이 있습니다."}},
-    {"@type":"Question","name":"알뜰요금제도 취급하나요?","acceptedAnswer":{"@type":"Answer","text":"네, 부모님/학생 맞춤 알뜰요금제도 비교 상담합니다."}}
-   ]
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"데이터 이전은 정말 무료인가요?","acceptedAnswer":{"@type":"Answer","text":"네. 사진·연락처·카톡·앱까지 기본 이전은 무료입니다. 용량이 매우 큰 특별 이전은 사전 안내 후 진행합니다."}},
+      {"@type":"Question","name":"주차가 가능한가요?","acceptedAnswer":{"@type":"Answer","text":"건물 앞·뒤편에 전용 주차공간이 있습니다."}},
+      {"@type":"Question","name":"알뜰요금제도 취급하나요?","acceptedAnswer":{"@type":"Answer","text":"네. 부모님/학생 맞춤 알뜰요금제도 비교 상담해드립니다."}}
+    ]
   }
   </script>
 
+  <!-- Scripts -->
   <script>
-    // year + nav elevate
+    // sticky nav
+    const nav = document.getElementById('nav');
+    const onScroll = () => {
+      if (window.scrollY > 8) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll); onScroll();
+
+    // year
     document.getElementById('year').textContent = new Date().getFullYear();
-    const nav=document.getElementById('nav');
-    const elevate=()=>nav.classList.toggle('scrolled', window.scrollY > 6);
-    elevate(); window.addEventListener('scroll', elevate, {passive:true});
 
-    // 스무스 스크롤
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id=a.getAttribute('href');
-        if(id.length>1){
-          e.preventDefault();
-          document.querySelector(id)?.scrollIntoView({behavior:'smooth'});
-        }
-      });
-    });
-
-    // 후기 데이터 + 더보기
+    // demo reviews (원하면 실제 API/시트 연동으로 교체)
     const REVIEWS = [
-      {n:"김*우", m:"아이폰 15", t:"가격 깔끔, 설명 친절. 데이터 이전도 바로 끝!", d:"2025-08-02"},
-      {n:"박*민", m:"갤럭시 S24", t:"요금제 비교 정확. 만족합니다.", d:"2025-07-26"},
-      {n:"이*현", m:"아이폰 14", t:"카톡 문의 빠르고 방문 즉시 개통!", d:"2025-07-10"},
-      {n:"정*연", m:"갤럭시 A35", t:"부모님 폰 교체 응대가 너무 좋았어요.", d:"2025-06-30"},
-      {n:"최*석", m:"아이폰 15 Pro", t:"사은품 선택 깔끔, 강요 없음. 강추!", d:"2025-06-21"},
-      {n:"오*진", m:"갤럭시 S24 Ultra", t:"보상판매가 좋아서 기변 부담 줄었어요.", d:"2025-06-12"},
-      {n:"문*혁", m:"갤럭시 Z Flip", t:"케이스/필름 서비스까지 완벽.", d:"2025-06-03"},
-      {n:"유*빈", m:"아이폰 SE", t:"학생 맞춤 요금제 딱!", d:"2025-05-28"},
-      {n:"조*진", m:"갤럭시 S23", t:"추가요금 없이 깔끔하게 끝!", d:"2025-05-19"},
-      {n:"장*수", m:"아이폰 13", t:"보상판매 안내 현실적. 신뢰감 굿.", d:"2025-05-10"},
-      {n:"한*지", m:"갤럭시 A24", t:"어르신 폰 이전 천천히 도와주심.", d:"2025-05-01"},
-      {n:"서*우", m:"아이폰 15", t:"예약 없이 방문해도 빠르게 처리!", d:"2025-04-27"}
+      {n:'JH', name:'정*현', txt:'비대면 개통 처음인데 설명이 너무 친절했어요. 당일 발송 굿!', date:'어제'},
+      {n:'SY', name:'송*영', txt:'데이터 이전까지 깔끔하게 끝. 견적도 투명해서 믿음 갔습니다.', date:'3일 전'},
+      {n:'KM', name:'김*민', txt:'번호이동 진행. 사은품 선택 폭이 넓어서 만족!', date:'1주 전'},
+      {n:'HJ', name:'한*주', txt:'알뜰요금제 조합 추천이 최고였어요.', date:'2주 전'},
+      {n:'BR', name:'박*라', txt:'매장 방문했는데 주차 편하고 빠르게 처리됐어요.', date:'3주 전'},
+      {n:'SW', name:'서*원', txt:'상담부터 개통, 발송까지 당일에 끝!', date:'지난달'}
     ];
-    const grid=document.getElementById('reviewsGrid');
-    const more=document.getElementById('moreBtn');
-    const star='<svg viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.3 1.2-6.9-5-4.8 6.9-1L12 1.5l3.1 6.4 6.9 1-5 4.8 1.2 6.9z"/></svg>';
-    const avatar=(n)=>{const s=n.replace('*','');return (s[0]||'')+(s[1]||'');};
-    let shown=6;
-    function render(){
-      grid.innerHTML='';
-      REVIEWS.slice(0,shown).forEach(r=>{
-        const el=document.createElement('article');
+    const grid = document.getElementById('reviewsGrid');
+    const moreBtn = document.getElementById('moreBtn');
+    let shown = 0;
+    const render = (count=3) => {
+      REVIEWS.slice(shown, shown+count).forEach(r=>{
+        const el = document.createElement('article');
         el.className='review';
-        el.innerHTML=`
+        el.innerHTML = `
           <div class="meta-row">
-            <span class="avatar">${avatar(r.n)}</span>
-            <span class="name">${r.n}</span>
-            <span class="stars" aria-label="별점 5점">${star.repeat(5)}</span>
+            <div class="avatar" aria-hidden="true">${r.n}</div>
+            <div class="name">${r.name}</div>
+            <div class="stars" aria-label="별점 5점 만점">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
           </div>
-          <div class="txt">${r.t}</div>
-          <div class="meta">${r.m} · <time datetime="${r.d}">${r.d}</time></div>
-        `;
+          <div class="txt">${r.txt}</div>
+          <div class="meta">${r.date}</div>`;
         grid.appendChild(el);
       });
-      more.style.display = shown >= REVIEWS.length ? 'none' : 'inline-flex';
-    }
-    more.addEventListener('click',()=>{ shown += 6; render(); });
-    render();
+      shown += count;
+      if (shown >= REVIEWS.length) moreBtn.style.display='none';
+    };
+    render(3);
+    moreBtn.addEventListener('click', ()=>render(3));
   </script>
 </body>
 </html>
