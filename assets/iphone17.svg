@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 640" role="img" aria-labelledby="title desc">
+  <title id="title">iPhone 17 illustration</title>
+  <desc id="desc">Stylized illustration of a smartphone with a soft red to purple gradient background.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe0e0"/>
+      <stop offset="100%" stop-color="#d7d1ff"/>
+    </linearGradient>
+    <linearGradient id="device" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f6f3ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="360" height="640" fill="url(#bg)" rx="60"/>
+  <rect x="70" y="80" width="220" height="480" rx="48" fill="url(#device)" stroke="#f3e6ff" stroke-width="4"/>
+  <rect x="118" y="120" width="124" height="396" rx="28" fill="#faf8ff" stroke="#e4dcff" stroke-width="4"/>
+  <circle cx="180" cy="112" r="8" fill="#d9d4ff"/>
+  <text x="50%" y="560" text-anchor="middle" font-family="'Inter', 'Noto Sans KR', sans-serif" font-size="40" font-weight="700" fill="#ff4f64">iPhone 17</text>
+</svg>
